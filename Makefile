@@ -1,4 +1,4 @@
-commit:_post/*.md
+commit:
 	. ./assets/images/imgcvt.sh
 	git add .
 	git commit -a -m "post blog"
