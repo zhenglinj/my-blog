@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="zhenglj" />
+    <title>Emacs笔记</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="/feed/" rel="alternate" title="zhenglj" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css" />
+    <link rel="stylesheet" href="/media/css/pygments/emacs.css" />
+    <!--
+		<link rel="stylesheet" href="/media/css/highlight.css" />
+		-->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/media/js/outliner.js"></script>
+
+    <!-- MathJax for LaTeX -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {
+      inlineMath: [ ['$','$'], ['$$$','$$$'], ["\\(","\\)"] ],
+      processEscapes: true
+      }
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <!-- google-code-prettify -->
+	<script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script>
+	<!-- <script type="text/javascript" src="/google-code-prettify/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script> -->
+
+  </head>
+  <!--  <body>
+	-->
+  <script type="text/javascript">
+    function setTimeSpan(){
+    var date = new Date();
+    timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+
+    Date.prototype.format = function(format)
+    {
+    var o =
+    {
+    "M+" : this.getMonth()+1, //month
+    "d+" : this.getDate(),    //day
+    "h+" : this.getHours(),   //hour
+    "m+" : this.getMinutes(), //minute
+    "s+" : this.getSeconds(), //second
+    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+    "S" : this.getMilliseconds() //millisecond
+    }
+    if(/(y+)/.test(format))
+    format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    for(var k in o)
+    if(new RegExp("("+ k +")").test(format))
+    format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+    return format;
+    }
+  </script>
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+          <h1>Emacs笔记</h1>
+        </header>
+        <nav id="real_nav">
+          <span><a title="home" class="" href="/">home</a></span>
+          <span><a title="categories" class="" href="/categories/">categories</a></span>
+          <span><a title="tags" class="" href="/tags/">tags</a></span>
+          <!-- <span><a title="logs" class="" href="/logs/">Log</a></span> -->
+          <span><a title="about" class="" href="/about/">about</a></span>
+          <span><a title="subscribe by RSS" class="" href="/feed/">Subscribe</a></span>
+          <!--
+			  <span><a title="sports" class="" href="/sports/">Sport</a></span>
+			  <span><a title="game" class="" href="/game/">Game</a></span>
+			  <span><a title="guestbook" class="" href="/guestbook/">guestbook</a></span>
+			  <span><a title="友情链接" class="" href="/links/">链接</a></span>
+			  <span><a title="种子订阅" class="" href="/feed/" target="_blank">订阅</a></span>
+			  -->
+        </nav>
+        <article class="content">
+          <section class="meta">
+<span class="time">
+  <time datetime="2013-12-27">2013-12-27</time>
+</span>
+
+ | 
+<span class="categories">
+  categories
+  
+  <a href="/categories/#technology" title="technology">technology</a>&nbsp;
+  
+</span>
+
+
+ | 
+<span class="tags">
+  tags
+  
+  <a href="/tags/#emacs" title="emacs">emacs</a>&nbsp;
+  
+  <a href="/tags/#notes" title="notes">notes</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="post">
+
+<p>Emacs常用操作的一些笔记，以及在使用Emacs过程遇上的问题会不断更新在这里。</p>
+
+<hr />
+<p>## 前言</p>
+
+<p>选择Emacs是选择折腾的开始
+官方资料 </p>
+
+<h2 id="section">帮助</h2>
+
+<p>凡事开头难，按<code>F1</code>来帮忙。Emacs默认帮助快捷键绑定<code>F1 + 其他键</code>或<code>C-h + 其他键</code>，但是Emacs的帮助系统也并非零基础就能使用的，所以这里先从Emacs的帮助开始介绍。</p>
+
+<h2 id="section-1">基本操作</h2>
+
+<h3 id="section-2">查找与替换</h3>
+
+<h2 id="mode">常用的mode</h2>
+
+<h3 id="info-mode">info-mode</h3>
+
+<h3 id="org-mode">org-mode</h3>
+
+<h2 id="section-3">杂</h2>
+
+</section>
+<section align="right">
+<br/>
+<span>
+	<a  href="/2013/12/hello-jekyll" class="pageNav"  >上一篇</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/2013/12/git-notes" class="pageNav"  >下一篇</a>
+</span>
+</section>
+
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'zhenglj'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://zhenglinj.github.io/2013/12/hello-jekyll';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://zhenglinj.github.io/2013/12/git-notes';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+        </article>
+        <!-- <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top"> -->
+        <!--   <img src="/assets/btt.png" /> -->
+        <!-- </a> -->
+      </div>
+
+      <footer>
+        <p><small>
+            <a href="http://github.com/zhenglinj/zhenglinj.github.io/new/master/_posts" target="_blank" title="撰写文章">Po</a>wer<a href="http://github.com/zhenglinj/zhenglinj.github.io/edit/master/_posts/2013-12-27-emacs-notes.md" target="_blank" title="编辑页面">ed</a> by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> @ <a href="http://github.com/zhenglinj/zhenglinj.github.io" target="_blank" title="项目主页">GitHub</a> | Copyright 2013 - 2014 by <a href="/about/">Zheng Linj</a> | <span class="label label-info" id="timeSpan"></span></small></p>
+      </footer>
+    </div>
+  </body>
+</html>

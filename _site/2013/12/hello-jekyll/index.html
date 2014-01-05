@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="zhenglj" />
+    <title>Hello Jekyll</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="/feed/" rel="alternate" title="zhenglj" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css" />
+    <link rel="stylesheet" href="/media/css/pygments/emacs.css" />
+    <!--
+		<link rel="stylesheet" href="/media/css/highlight.css" />
+		-->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/media/js/outliner.js"></script>
+
+    <!-- MathJax for LaTeX -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {
+      inlineMath: [ ['$','$'], ['$$$','$$$'], ["\\(","\\)"] ],
+      processEscapes: true
+      }
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <!-- google-code-prettify -->
+	<script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script>
+	<!-- <script type="text/javascript" src="/google-code-prettify/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script> -->
+
+  </head>
+  <!--  <body>
+	-->
+  <script type="text/javascript">
+    function setTimeSpan(){
+    var date = new Date();
+    timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+
+    Date.prototype.format = function(format)
+    {
+    var o =
+    {
+    "M+" : this.getMonth()+1, //month
+    "d+" : this.getDate(),    //day
+    "h+" : this.getHours(),   //hour
+    "m+" : this.getMinutes(), //minute
+    "s+" : this.getSeconds(), //second
+    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+    "S" : this.getMilliseconds() //millisecond
+    }
+    if(/(y+)/.test(format))
+    format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    for(var k in o)
+    if(new RegExp("("+ k +")").test(format))
+    format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+    return format;
+    }
+  </script>
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+          <h1>Hello Jekyll</h1>
+        </header>
+        <nav id="real_nav">
+          <span><a title="home" class="" href="/">home</a></span>
+          <span><a title="categories" class="" href="/categories/">categories</a></span>
+          <span><a title="tags" class="" href="/tags/">tags</a></span>
+          <!-- <span><a title="logs" class="" href="/logs/">Log</a></span> -->
+          <span><a title="about" class="" href="/about/">about</a></span>
+          <span><a title="subscribe by RSS" class="" href="/feed/">Subscribe</a></span>
+          <!--
+			  <span><a title="sports" class="" href="/sports/">Sport</a></span>
+			  <span><a title="game" class="" href="/game/">Game</a></span>
+			  <span><a title="guestbook" class="" href="/guestbook/">guestbook</a></span>
+			  <span><a title="友情链接" class="" href="/links/">链接</a></span>
+			  <span><a title="种子订阅" class="" href="/feed/" target="_blank">订阅</a></span>
+			  -->
+        </nav>
+        <article class="content">
+          <section class="meta">
+<span class="time">
+  <time datetime="2013-12-16">2013-12-16</time>
+</span>
+
+ | 
+<span class="categories">
+  categories
+  
+  <a href="/categories/#technology" title="technology">technology</a>&nbsp;
+  
+</span>
+
+
+ | 
+<span class="tags">
+  tags
+  
+  <a href="/tags/#jekyll" title="jekyll">jekyll</a>&nbsp;
+  
+  <a href="/tags/#markdown" title="markdown">markdown</a>&nbsp;
+  
+  <a href="/tags/#emacs" title="emacs">emacs</a>&nbsp;
+  
+  <a href="/tags/#notes" title="notes">notes</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="post">
+
+<p>这是测试页面，测试显示的效果，以及一些插件、配置是否成功。内容主要介绍Jekyll在Github上建博客，用Emacs编辑Markdown写博文，和一些实用的插件。同时以下是简介及实例作为笔记备忘。</p>
+
+<hr />
+
+<h2 id="jekyllgithub">用Jekyll在Github上建博客</h2>
+
+<p>曾经在cnblog建过博客，但是由于毅力不佳，写过寥寥几篇就半途而废。现在经过几个星期的纠结，决定在Github上建博客。陆陆续续看了一些关于Jekyll建博客的官方文档、个人博文，算是对Jekyll有点了解，写下这篇文章以备忘。关于Jekyll建博客的英文中文文章已经很多，这里不再重复具体的建博过程，介绍一些资料。</p>
+
+<p><strong>官方文档：</strong></p>
+
+<p>总体介绍： <a href="http://jekyllrb.com/">Jekyll • Simple, blog-aware, static sites</a><br />
+快速入门文档： <a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html">Jekyll Quick Start</a><br />
+详细用法的文档： <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a>  </p>
+
+<p><strong>中文教程</strong></p>
+
+<p>主要是一些博文：
+<a href="http://jiyeqian.github.io/2012/07/host-your-pages-at-github-using-jekyll/#outline_0">基于jekyll的github建站指南</a><br />
+<a href="http://beiyuu.com/github-pages/">使用Github Pages建独立博客</a><br />
+<a href="http://yanping.me/cn/blog/2012/03/10/octopress-with-latex/">在Octopress中使用LaTeX</a>  </p>
+
+<p>以上只是几个例子，更多请Baidu, Google.</p>
+
+<h2 id="markdown">Markdown语法说明</h2>
+
+<p>现在用Markdown写博文很流行也确实很方便，很多网站的评论也开始支持Markdown语言。这种轻度标记语言挺简单，并且可以很轻松写出一些排版清楚的文字。同时Jekyll建博客后也是用这种语言发文章的，所以还是值得一学。<br />
+Markdown语法说明：<a href="http://wowubuntu.com/markdown/">Markdown语法说明</a> </p>
+
+<h2 id="emacs">Emacs的配置</h2>
+
+<p>神之编辑器Emacs写Markdown当然不在话下，做一些合适的配置会可以更轻松地用Markdown写文章。先是配置好markdown-mode，只要在网上下载<code>markdown-mode.el</code>并添加到配置文件即可。</p>
+
+<h3 id="ubuntuemacs">Ubuntu下Emacs中文输入法</h3>
+
+<p>Linux(Ubuntu)下一直没有较好的中文输入法，相对来说 <code>ibus-pinyin</code> 和 <code>ibus-googlepinyin</code> 算是比较好的。<br />
+Ubuntu下可以用两条指令装输入法 <code>sudo apt-get install ibus-googlepinyin</code> <code>sudo apt-get install ibus-pinyin</code><br />
+但是在Emacs里有些键盘会有冲突，可以通过装 <code>ibus.el</code> 来解决<br />
+1. Emacs24自带有中文输入法(<code>Ctrl - \</code>切换)不是很好用（不推荐）
+2. 换ibus的GooglePinyin／Pinyin同时添加ibus.el ibus-el等插件可以解决中文输入法的问题（推荐）</p>
+
+<h3 id="section">中文输入法时切换到半角符号有点麻烦</h3>
+
+<p>目前想到方法，是在Emacs的YASnippet配置文件增加一些配置。</p>
+
+<ul>
+  <li>找到类似snippet的文件夹，在其子目录找到markdown文件夹，仿照里面已经有的配置增加一些自己想要的配置（这是我的配置在github上<a href="https://github.com/zhenglinj/dotemacs">dotemacs</a> 在 .emacs.d/dotemacs/snippet/text-mode/markdown-mode/下加文件）</li>
+</ul>
+
+<hr />
+
+<h2 id="section-1">第三方插件演示</h2>
+
+<p>写文章用到的第三方插件的使用方法，主要是代码高亮、数学公式美化的功能。</p>
+
+<h3 id="google-code-prettify">Google Code prettify</h3>
+
+<p>完成代码高亮</p>
+
+<p><strong>示例：</strong></p>
+
+<pre><code>&lt;pre class="prettyprint lang-cpp linenums=true"&gt;
+class Voila {
+public:
+  // Voila
+  static const string VOILA = "Voila";
+
+  // will not interfere with embedded tags.
+}
+&lt;/pre&gt;
+</code></pre>
+
+<p><strong>效果：</strong></p>
+
+<pre class="prettyprint lang-cpp linenums=true">
+class Voila {
+public:
+  // Voila
+  static const string VOILA = "Voila";
+  
+  // will not interfere with embedded tags.
+}
+</pre>
+
+<p>Emacs通过写YASnippet配置文件可以完成代码框架，Markdown模式下输入pretty，再TAB即可出现代码框架。</p>
+
+<h3 id="mathjax">MathJax</h3>
+
+<p>数学公式的插件，使网页支持<script type="math/tex">L^AT_EX</script></p>
+
+<p><strong>示例：</strong></p>
+
+<pre><code>$$(a_1,b_1,a_2,b_2,\cdots,an,bn)$$
+
+$$(O(1))$$
+$$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$
+$$a^2 + b^2 = c^2$$
+</code></pre>
+
+<p><strong>效果：</strong></p>
+
+<script type="math/tex; mode=display">(a_1,b_1,a_2,b_2,\cdots,an,bn)</script>
+
+<p><script type="math/tex">(O(1))</script>
+<script type="math/tex">(a1,a2,\cdots,a_n,b_1,\cdots,b_n)</script>
+<script type="math/tex">a^2 + b^2 = c^2</script></p>
+
+<p>数学公式 <script type="math/tex">(a1,a2,\cdots,a_n,b_1,\cdots,b_n)</script> 和文字</p>
+
+<p><!-- \(a_1,b_1,a_2,b_2,\cdots,an,bn\) -->
+ <!-- \(O(1)\) -->
+ <!-- \(a1,a2,\cdots,a_n,b_1,\cdots,b_n\) -->
+ <!-- \[a^2 + b^2 = c^2\] --></p>
+
+<!-- 数学公式 \(a1,a2,\cdots,a_n,b_1,\cdots,b_n\) 和文字 -->
+
+<h2 id="makefile">Makefile自动完成</h2>
+
+<p>这里开始有点Blogging like a hacker的感觉！通过写makefile实现快速预览／自动推入GitHub仓库。
+写博文步骤：
+1. <code>rake post title="post name.md"</code>
+2. </p>
+
+<ul>
+  <li><code>make commit</code> 完成递交本地管理库，相当于<code>git add .;git commit -a -m "post blog"</code>  </li>
+  <li><code>make push</code> 推入到GitHub仓库，相当于<code>git push origin master</code>  </li>
+</ul>
+
+<p><strong>最后</strong>就是保持现在的这种激情写博文了！</p>
+
+</section>
+<section align="right">
+<br/>
+<span>
+	<a   class="pageNavInvalid"  >上一篇</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/2013/12/emacs-notes" class="pageNav"  >下一篇</a>
+</span>
+</section>
+
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'zhenglj'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://zhenglinj.github.io/2013/12/emacs-notes';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+        </article>
+        <!-- <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top"> -->
+        <!--   <img src="/assets/btt.png" /> -->
+        <!-- </a> -->
+      </div>
+
+      <footer>
+        <p><small>
+            <a href="http://github.com/zhenglinj/zhenglinj.github.io/new/master/_posts" target="_blank" title="撰写文章">Po</a>wer<a href="http://github.com/zhenglinj/zhenglinj.github.io/edit/master/_posts/2013-12-16-hello-jekyll.md" target="_blank" title="编辑页面">ed</a> by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> @ <a href="http://github.com/zhenglinj/zhenglinj.github.io" target="_blank" title="项目主页">GitHub</a> | Copyright 2013 - 2014 by <a href="/about/">Zheng Linj</a> | <span class="label label-info" id="timeSpan"></span></small></p>
+      </footer>
+    </div>
+  </body>
+</html>

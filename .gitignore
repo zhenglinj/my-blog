@@ -1,0 +1,14 @@
+_drafts/
+_posts/
+_posts/\#*
+.pygments-cache/*
+_gist_cache/*
+_theme_packages/*
+assets/images/imgbak/*
+
+!.gitkeep
+
+Thumbs.db
+.DS_Store
+.rbenv-version
+.rvmrc

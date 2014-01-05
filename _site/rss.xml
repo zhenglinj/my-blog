@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title>zhenglj</title>
+        <description>zhenglj - zhenglj</description>
+        <link></link>
+        <link></link>
+        <lastBuildDate>2014-01-05T18:40:54+08:00</lastBuildDate>
+        <pubDate>2014-01-05T18:40:54+08:00</pubDate>
+        <ttl>1800</ttl>
+
+
+        <item>
+                <title>hello world</title>
+                <description>
+&lt;hr /&gt;
+</description>
+                <link>/2014/01/hello-world</link>
+                <guid>/2014/01/hello-world</guid>
+                <pubDate>2014-01-05T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>Git笔记</title>
+                <description>
+&lt;p&gt;Git用法的简明介绍，以及在用Git过程遇到的问题和解决方法，会不断更新。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;官方资料&lt;/h2&gt;
+
+&lt;p&gt;一本挺好的在线书籍&lt;a href=&quot;http://git-scm.com/book/zh&quot;&gt;Pro Git book 中文版&lt;/a&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;git&quot;&gt;Git基础&lt;/h2&gt;
+
+&lt;p&gt;工作目录下面的所有文件都不外乎这两种状态：已跟踪或未跟踪。跟踪的文件处于unmodified、modified、staged三种状态周期循环。在编辑过某些文件之后，Git 将这些文件标为已修改。我们逐步把这些修改过的文件放到暂存区域，直到最后一次性提交所有这些暂存起来的文件，如此重复。所以使用 Git 时的文件状态变化周期如下图所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/git-file-status.png&quot; alt=&quot;git-file-status&quot; /&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;local&quot;&gt;local本地仓库&lt;/h2&gt;
+
+&lt;h3 id=&quot;configinit&quot;&gt;初始化 [config/init]&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;全局变量&lt;/h4&gt;
+
+&lt;pre class=&quot;prettyprint lang-shell linenums=false&quot;&gt;
+git config --global user.name &quot;your name&quot;
+git config --global user.email &quot;your email&quot;
+git config --global color.ui &quot;always&quot;
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;新版本库&lt;/h4&gt;
+
+&lt;pre class=&quot;prettyprint lang-shell linenums=false&quot;&gt;
+git init
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;设置忽略文件&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;这一步骤应该紧跟git init&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;设置每个人都要忽略的文件，则添加&lt;code&gt;.gitignore&lt;/code&gt;文件，在建版本库的目录（根目录）下创建文件&lt;code&gt;.gitignore&lt;/code&gt;；&lt;/li&gt;
+  &lt;li&gt;设置只有自己要忽略的文件，则修改&lt;code&gt;.git/info/exclude&lt;/code&gt;文件，可以用正则表达式。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;.gitignore&lt;/code&gt; &lt;code&gt;.git/info/exclude&lt;/code&gt;文件内容类似，例如：&lt;/p&gt;
+
+&lt;pre class=&quot;prettyprint lang-shell linenums=false&quot;&gt;
+# git-ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+
+!.gitignore
+
+*.svn*
+*~
+*.elc
+*.bak
+*.tar*
+*#
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;基本操作&lt;/h3&gt;
+
+&lt;h4 id=&quot;commit&quot;&gt;提交 [commit]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;提交所有文件 &lt;code&gt;git commit -a -m &quot;comment&quot;&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;提交单个文件 &lt;code&gt;git commit -m &quot;add readme&quot; readme.txt&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;增加修改提交 &lt;code&gt;git commit -C HEAD -a --amend&lt;/code&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;checkoutrevert&quot;&gt;撤销修改 [checkout/revert]&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;撤销未提交的修改&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout HEAD readme.txt&lt;/code&gt; 从HEAD版本检出&lt;br /&gt;
+&lt;code&gt;git checkout HEAD *.txt&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;git checkout HEAD .&lt;/code&gt;  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;撤销已提交的修改&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;反转最近一次提交 &lt;code&gt;git revert --no-commit HEAD&lt;/code&gt; 相当于最近一次提交的反操作，恢复到HEAD版本，并且不添加log记录  &lt;/li&gt;
+  &lt;li&gt;复位到之前的版本 &lt;code&gt;git reset HEAD&lt;/code&gt; &lt;code&gt;git reset HEAD [filename]&lt;/code&gt; 相当与返回到之前的&lt;br /&gt;
+&lt;strong&gt;例：&lt;/strong&gt;撤销&lt;code&gt;readme.txt&lt;/code&gt;到之前某个版本：&lt;br /&gt;
+&lt;code&gt;git log readme.txt&lt;/code&gt; 列出与readme.txt相关的log  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class=&quot;prettyprint lang-shell linenums=flase&quot;&gt;
+commit 87b8f684963ebd01247fb623ab9eaad6acde4f92
+Author: zhenglinj &amp;lt;zhenglinj@hotmail.com&amp;gt;
+Date:   Sun Dec 29 19:33:36 2013 +0800
+
+4th commit
+
+commit 87eac03c968ba2b9abaac3e08969eb47bb0e8c19
+Author: zhenglinj &amp;lt;zhenglinj@hotmail.com&amp;gt;
+Date:   Sun Dec 29 19:31:55 2013 +0800
+
+third commit
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;git reset 87eac03c968ba2b9abaac3e08969eb47bb0e8c19 readme.txt&lt;/code&gt; 撤销到之前的版本，不会删除撤销前的版本&lt;br /&gt;
+  &lt;code&gt;git checkout readme.txt&lt;/code&gt; 检出到本地  &lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;分支操作&lt;/h3&gt;
+
+&lt;h4 id=&quot;branch&quot;&gt;分支基本操作 [branch]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;列出本地所有分支&lt;br /&gt;
+&lt;code&gt;git branch&lt;/code&gt; &lt;code&gt;git branch -a&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;创建分支&lt;br /&gt;
+&lt;code&gt;git branch &amp;lt;branchname&amp;gt; &amp;lt;commitno&amp;gt;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;git branch &amp;lt;branchname&amp;gt; [HEAD]&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;检出分支&lt;br /&gt;
+&lt;code&gt;git checkout &amp;lt;branchname&amp;gt;&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;基于当前分支末梢创建分支并检出&lt;br /&gt;
+&lt;code&gt;git checkout -b &amp;lt;branchname&amp;gt;&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;基于某次提交、分支或标签创建分支&lt;br /&gt;
+&lt;code&gt;git branch &amp;lt;branchname&amp;gt; &amp;lt;commitno&amp;gt;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;git branch &amp;lt;branchname2&amp;gt; &amp;lt;branchname&amp;gt;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;git branch &amp;lt;branchname&amp;gt; &amp;lt;tagname&amp;gt;&lt;/code&gt;  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;删除分支&lt;br /&gt;
+&lt;code&gt;git branch -d &amp;lt;branchname&amp;gt;&lt;/code&gt; 没合并的分支会删除失败&lt;br /&gt;
+&lt;code&gt;git branch -D &amp;lt;branchname&amp;gt;&lt;/code&gt; 没合并的分支也会被删除，强行删除  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;重命名分支
+&lt;code&gt;git branch -m &amp;lt;branchname&amp;gt; &amp;lt;newname&amp;gt;&lt;/code&gt; 不会覆盖已存在的同名分支&lt;br /&gt;
+&lt;code&gt;git branch -M &amp;lt;branchname&amp;gt; &amp;lt;newname&amp;gt;&lt;/code&gt; 会覆盖已存在的同名分支  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;merge&quot;&gt;分支合并 [merge]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;普通合并&lt;br /&gt;
+合并并提交 &lt;code&gt;git merge &amp;lt;branchname&amp;gt;&lt;/code&gt;  如果发生冲突则不自动提交；如果冲突很多，可以&lt;code&gt;git checkout HEAD .&lt;/code&gt;撤销&lt;br /&gt;
+合并不提交 &lt;code&gt;git merge --no-commit &amp;lt;branchname&amp;gt;&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;压合合并&lt;br /&gt;
+压合并提交 &lt;code&gt;git merge --squash &amp;lt;branchname&amp;gt;&lt;/code&gt;&lt;br /&gt;
+压合不提交 &lt;code&gt;git merge --squash --no-commit &amp;lt;branchname&amp;gt;&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;挑选合并  &lt;strong&gt;推荐使用&lt;/strong&gt;&lt;br /&gt;
+挑选某次提交合并但不提交 &lt;code&gt;git cherry-pick --no-commit &amp;lt;commitno&amp;gt;&lt;/code&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;mergetool&quot;&gt;解决分支合并的冲突 [mergetool]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;冲突少时，直接编辑冲突文件再提交  &lt;/li&gt;
+  &lt;li&gt;冲突多复杂时，使用 &lt;code&gt;mergetool&lt;/code&gt;&lt;br /&gt;
+使用 &lt;code&gt;mergetool&lt;/code&gt; 依次完成：
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code&gt;mergetool&lt;/code&gt; 自动生成 &lt;code&gt;.BACKUP&lt;/code&gt; &lt;code&gt;.BASE&lt;/code&gt; &lt;code&gt;.LOCAL&lt;/code&gt; &lt;code&gt;.REMOTE&lt;/code&gt; 四个文件&lt;/li&gt;
+      &lt;li&gt;指定调用冲突解决工具，如 &lt;code&gt;meld&lt;/code&gt; &lt;code&gt;kdiff3&lt;/code&gt; 等&lt;/li&gt;
+      &lt;li&gt;解决后删除 &lt;code&gt;.orig&lt;/code&gt; 文件&lt;/li&gt;
+      &lt;li&gt;提交
+用&lt;code&gt;meld&lt;/code&gt; &lt;code&gt;kdiff3&lt;/code&gt; 编辑冲突
+&lt;code&gt;git mergetool -t meld&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;git mergetool -t kdiff3&lt;/code&gt;&lt;br /&gt;
+具体可以见 &lt;a href=&quot;http://www.gitguys.com/topics/merging-with-a-gui/&quot;&gt;这里&lt;/a&gt; &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;stash&quot;&gt;储藏 [stash]&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;暂存不提交的功能，不适合多用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;储藏&lt;/code&gt;当你做了修改想暂时储藏，但有不想commit时，可以用&lt;code&gt;git stash [save]&lt;/code&gt;。&lt;br /&gt;
+&lt;strong&gt;不提倡使用&lt;code&gt;git stash&lt;/code&gt;&lt;/strong&gt;，因为没有commit很容易忘记。&lt;code&gt;git stash&lt;/code&gt;以后要及时挑选合并（cherry-pick）。  &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;git stash [save]&lt;/code&gt; 将当前的工作区内容暂时&lt;code&gt;储藏&lt;/code&gt;到Git栈中。从最近的一次提交HEAD中读取相关内容，让工作区保证和上次提交的内容一致。  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;git stash list&lt;/code&gt;   显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。&lt;br /&gt;
+&lt;code&gt;stash@{0}: WIP on master: 95c87fd after merge&lt;/code&gt; &lt;code&gt;stash@{1}&lt;/code&gt; &lt;code&gt;stash@{2}&lt;/code&gt;等。  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;git stash pop&lt;/code&gt;    从Git栈中读取最近一次&lt;code&gt;储藏&lt;/code&gt;的内容，恢复工作区。栈中可能存在多个stash的内容，pop会从最近的一个stash恢复。  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;git stash apply stash@{n}&lt;/code&gt; 从Git栈中读取&lt;code&gt;stash@{n}&lt;/code&gt;，例如：&lt;code&gt;stash@{0}&lt;/code&gt; &lt;code&gt;stash@{1}&lt;/code&gt; &lt;code&gt;stash@{2}&lt;/code&gt;等。  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;git stash clear&lt;/code&gt;  清空Git栈。此时使用gitk等图形化工具会发现，原来stash的哪些节点都消失了。  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tag&quot;&gt;标签 [tag]&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;创建标签&lt;br /&gt;
+&lt;code&gt;git tag 1.0&lt;/code&gt; 为当前分支最近一次提交创建标签 &lt;strong&gt;标签无法重命名&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;git tag &amp;lt;tagname&amp;gt; &amp;lt;branchname&amp;gt;&lt;/code&gt; 为某分支创建标签 &lt;br /&gt;
+&lt;code&gt;git tag 1.1 &amp;lt;commitno&amp;gt;&lt;/code&gt; 为某次提交创建标签  &lt;/li&gt;
+  &lt;li&gt;显示标签&lt;br /&gt;
+&lt;code&gt;git tag&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;检出标签&lt;br /&gt;
+&lt;code&gt;git checkout 1.0&lt;/code&gt; 查看标签断面很方便，但不能提交  &lt;/li&gt;
+  &lt;li&gt;由标签创建分支&lt;br /&gt;
+&lt;code&gt;git branch &amp;lt;branchname&amp;gt; &amp;lt;tagname&amp;gt;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;git checkout -b &amp;lt;branchname&amp;gt; &amp;lt;tagname&amp;gt;&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;删除标签&lt;br /&gt;
+&lt;code&gt;git tag -d 1.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;loggitk&quot;&gt;查看状态 [log/gitk]&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;当前状态
+&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;历史状态
+&lt;code&gt;git log&lt;/code&gt;  查看分支历史记录
+&lt;code&gt;gitk [&amp;lt;branchname&amp;gt;]&lt;/code&gt;
+&lt;code&gt;gitk --all&lt;/code&gt; 查看所有分支&lt;/li&gt;
+  &lt;li&gt;每个分支最后的提交
+&lt;code&gt;git branch -v&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;archive&quot;&gt;导出版本库 [archive]&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git archive --format=zip HEAD&amp;gt;projectname.zip&lt;/code&gt;
+&lt;code&gt;git archive --format=zip --prefix=tag1.0/ HEAD&amp;gt;projectname.zip&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;remote&quot;&gt;remote远程仓库&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;初始化&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-7&quot;&gt;创建本地库&lt;/h4&gt;
+
+&lt;p&gt;可以在移动存储设备上创建仓库，从而实现不同主机代码同步&lt;br /&gt;
+&lt;code&gt;git init --bare --share&lt;/code&gt;  创建了一个公共的仓库，bare库  &lt;/p&gt;
+
+&lt;h4 id=&quot;clone&quot;&gt;克隆版本库 [clone]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;git clone &amp;lt;url&amp;gt;&lt;/code&gt; &lt;br /&gt;
+&lt;code&gt;git clone h:\gitrep\projectname&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;克隆后自动添加一些config
+&lt;code&gt;remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;remote.origin.url=...&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;branch.master.remote=origin&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;branch.master.merge=refs/heads/master&lt;/code&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-8&quot;&gt;别名&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;添加别名&lt;br /&gt;
+&lt;code&gt;git remote add &amp;lt;alias&amp;gt; &amp;lt;remote url&amp;gt;&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;添加后自动添加一些config
+&lt;code&gt;remote.origin.url=...&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;删除别名&lt;br /&gt;
+&lt;code&gt;git remote rm &amp;lt;alias&amp;gt;&lt;/code&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-9&quot;&gt;基本操作&lt;/h3&gt;
+
+&lt;h4 id=&quot;branch-1&quot;&gt;分支 [branch]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;列出远程分支&lt;br /&gt;
+&lt;code&gt;git branch -r&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;删除远程库中不存在的分支&lt;br /&gt;
+&lt;code&gt;git remote prune origin&lt;/code&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;fetchpull&quot;&gt;远程库中获取 [fetch/pull]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;获取但不合并&lt;br /&gt;
+&lt;code&gt;git fetch &amp;lt;remote repo&amp;gt;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;git fetch origin&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;git fetch &amp;lt;url&amp;gt;&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;获取且合并到当前本地分支&lt;br /&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code&gt;git pull&lt;/code&gt;
+从默认远程仓库获取，相当于 &lt;code&gt;git pull origin&lt;/code&gt;&lt;br /&gt;
+需配置 &lt;code&gt;branch.master.remote=origin&lt;/code&gt; &lt;code&gt;branch.master.merge=refs/heads/master&lt;/code&gt;，如果使用 &lt;code&gt;git clone&lt;/code&gt; 远程库会自动添加以上配置   &lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;git pull h:\gitrep\projectname master&lt;/code&gt;&lt;br /&gt;
+不是从默认远程仓库获取，所以要指定获取哪个分支  &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;push&quot;&gt;推入远程库 [push]&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;git push origin master&lt;/code&gt; 远程库的master不是当前分支&lt;/p&gt;
+
+&lt;h3 id=&quot;githubcom&quot;&gt;github.com&lt;/h3&gt;
+
+</description>
+                <link>/2013/12/git-notes</link>
+                <guid>/2013/12/git-notes</guid>
+                <pubDate>2013-12-29T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>Emacs笔记</title>
+                <description>
+&lt;p&gt;Emacs常用操作的一些笔记，以及在使用Emacs过程遇上的问题会不断更新在这里。&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;## 前言&lt;/p&gt;
+
+&lt;p&gt;选择Emacs是选择折腾的开始
+官方资料 &lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;帮助&lt;/h2&gt;
+
+&lt;p&gt;凡事开头难，按&lt;code&gt;F1&lt;/code&gt;来帮忙。Emacs默认帮助快捷键绑定&lt;code&gt;F1 + 其他键&lt;/code&gt;或&lt;code&gt;C-h + 其他键&lt;/code&gt;，但是Emacs的帮助系统也并非零基础就能使用的，所以这里先从Emacs的帮助开始介绍。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;基本操作&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;查找与替换&lt;/h3&gt;
+
+&lt;h2 id=&quot;mode&quot;&gt;常用的mode&lt;/h2&gt;
+
+&lt;h3 id=&quot;info-mode&quot;&gt;info-mode&lt;/h3&gt;
+
+&lt;h3 id=&quot;org-mode&quot;&gt;org-mode&lt;/h3&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;杂&lt;/h2&gt;
+</description>
+                <link>/2013/12/emacs-notes</link>
+                <guid>/2013/12/emacs-notes</guid>
+                <pubDate>2013-12-27T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>Hello Jekyll</title>
+                <description>
+&lt;p&gt;这是测试页面，测试显示的效果，以及一些插件、配置是否成功。内容主要介绍Jekyll在Github上建博客，用Emacs编辑Markdown写博文，和一些实用的插件。同时以下是简介及实例作为笔记备忘。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;jekyllgithub&quot;&gt;用Jekyll在Github上建博客&lt;/h2&gt;
+
+&lt;p&gt;曾经在cnblog建过博客，但是由于毅力不佳，写过寥寥几篇就半途而废。现在经过几个星期的纠结，决定在Github上建博客。陆陆续续看了一些关于Jekyll建博客的官方文档、个人博文，算是对Jekyll有点了解，写下这篇文章以备忘。关于Jekyll建博客的英文中文文章已经很多，这里不再重复具体的建博过程，介绍一些资料。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;官方文档：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;总体介绍： &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll • Simple, blog-aware, static sites&lt;/a&gt;&lt;br /&gt;
+快速入门文档： &lt;a href=&quot;http://jekyllbootstrap.com/usage/jekyll-quick-start.html&quot;&gt;Jekyll Quick Start&lt;/a&gt;&lt;br /&gt;
+详细用法的文档： &lt;a href=&quot;http://jekyllbootstrap.com&quot;&gt;Jekyll Bootstrap&lt;/a&gt;  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;中文教程&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;主要是一些博文：
+&lt;a href=&quot;http://jiyeqian.github.io/2012/07/host-your-pages-at-github-using-jekyll/#outline_0&quot;&gt;基于jekyll的github建站指南&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://beiyuu.com/github-pages/&quot;&gt;使用Github Pages建独立博客&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://yanping.me/cn/blog/2012/03/10/octopress-with-latex/&quot;&gt;在Octopress中使用LaTeX&lt;/a&gt;  &lt;/p&gt;
+
+&lt;p&gt;以上只是几个例子，更多请Baidu, Google.&lt;/p&gt;
+
+&lt;h2 id=&quot;markdown&quot;&gt;Markdown语法说明&lt;/h2&gt;
+
+&lt;p&gt;现在用Markdown写博文很流行也确实很方便，很多网站的评论也开始支持Markdown语言。这种轻度标记语言挺简单，并且可以很轻松写出一些排版清楚的文字。同时Jekyll建博客后也是用这种语言发文章的，所以还是值得一学。&lt;br /&gt;
+Markdown语法说明：&lt;a href=&quot;http://wowubuntu.com/markdown/&quot;&gt;Markdown语法说明&lt;/a&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;emacs&quot;&gt;Emacs的配置&lt;/h2&gt;
+
+&lt;p&gt;神之编辑器Emacs写Markdown当然不在话下，做一些合适的配置会可以更轻松地用Markdown写文章。先是配置好markdown-mode，只要在网上下载&lt;code&gt;markdown-mode.el&lt;/code&gt;并添加到配置文件即可。&lt;/p&gt;
+
+&lt;h3 id=&quot;ubuntuemacs&quot;&gt;Ubuntu下Emacs中文输入法&lt;/h3&gt;
+
+&lt;p&gt;Linux(Ubuntu)下一直没有较好的中文输入法，相对来说 &lt;code&gt;ibus-pinyin&lt;/code&gt; 和 &lt;code&gt;ibus-googlepinyin&lt;/code&gt; 算是比较好的。&lt;br /&gt;
+Ubuntu下可以用两条指令装输入法 &lt;code&gt;sudo apt-get install ibus-googlepinyin&lt;/code&gt; &lt;code&gt;sudo apt-get install ibus-pinyin&lt;/code&gt;&lt;br /&gt;
+但是在Emacs里有些键盘会有冲突，可以通过装 &lt;code&gt;ibus.el&lt;/code&gt; 来解决&lt;br /&gt;
+1. Emacs24自带有中文输入法(&lt;code&gt;Ctrl - \&lt;/code&gt;切换)不是很好用（不推荐）
+2. 换ibus的GooglePinyin／Pinyin同时添加ibus.el ibus-el等插件可以解决中文输入法的问题（推荐）&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;中文输入法时切换到半角符号有点麻烦&lt;/h3&gt;
+
+&lt;p&gt;目前想到方法，是在Emacs的YASnippet配置文件增加一些配置。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;找到类似snippet的文件夹，在其子目录找到markdown文件夹，仿照里面已经有的配置增加一些自己想要的配置（这是我的配置在github上&lt;a href=&quot;https://github.com/zhenglinj/dotemacs&quot;&gt;dotemacs&lt;/a&gt; 在 .emacs.d/dotemacs/snippet/text-mode/markdown-mode/下加文件）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;第三方插件演示&lt;/h2&gt;
+
+&lt;p&gt;写文章用到的第三方插件的使用方法，主要是代码高亮、数学公式美化的功能。&lt;/p&gt;
+
+&lt;h3 id=&quot;google-code-prettify&quot;&gt;Google Code prettify&lt;/h3&gt;
+
+&lt;p&gt;完成代码高亮&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;示例：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;pre class=&quot;prettyprint lang-cpp linenums=true&quot;&amp;gt;
+class Voila {
+public:
+  // Voila
+  static const string VOILA = &quot;Voila&quot;;
+
+  // will not interfere with embedded tags.
+}
+&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;效果：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre class=&quot;prettyprint lang-cpp linenums=true&quot;&gt;
+class Voila {
+public:
+  // Voila
+  static const string VOILA = &quot;Voila&quot;;
+  
+  // will not interfere with embedded tags.
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Emacs通过写YASnippet配置文件可以完成代码框架，Markdown模式下输入pretty，再TAB即可出现代码框架。&lt;/p&gt;
+
+&lt;h3 id=&quot;mathjax&quot;&gt;MathJax&lt;/h3&gt;
+
+&lt;p&gt;数学公式的插件，使网页支持&lt;script type=&quot;math/tex&quot;&gt;L^AT_EX&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;示例：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$$(a_1,b_1,a_2,b_2,\cdots,an,bn)$$
+
+$$(O(1))$$
+$$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$
+$$a^2 + b^2 = c^2$$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;效果：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(a_1,b_1,a_2,b_2,\cdots,an,bn)&lt;/script&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(O(1))&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(a1,a2,\cdots,a_n,b_1,\cdots,b_n)&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;a^2 + b^2 = c^2&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;数学公式 &lt;script type=&quot;math/tex&quot;&gt;(a1,a2,\cdots,a_n,b_1,\cdots,b_n)&lt;/script&gt; 和文字&lt;/p&gt;
+
+&lt;p&gt;&lt;!-- \(a_1,b_1,a_2,b_2,\cdots,an,bn\) --&gt;
+ &lt;!-- \(O(1)\) --&gt;
+ &lt;!-- \(a1,a2,\cdots,a_n,b_1,\cdots,b_n\) --&gt;
+ &lt;!-- \[a^2 + b^2 = c^2\] --&gt;&lt;/p&gt;
+
+&lt;!-- 数学公式 \(a1,a2,\cdots,a_n,b_1,\cdots,b_n\) 和文字 --&gt;
+
+&lt;h2 id=&quot;makefile&quot;&gt;Makefile自动完成&lt;/h2&gt;
+
+&lt;p&gt;这里开始有点Blogging like a hacker的感觉！通过写makefile实现快速预览／自动推入GitHub仓库。
+写博文步骤：
+1. &lt;code&gt;rake post title=&quot;post name.md&quot;&lt;/code&gt;
+2. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;make commit&lt;/code&gt; 完成递交本地管理库，相当于&lt;code&gt;git add .;git commit -a -m &quot;post blog&quot;&lt;/code&gt;  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;make push&lt;/code&gt; 推入到GitHub仓库，相当于&lt;code&gt;git push origin master&lt;/code&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;最后&lt;/strong&gt;就是保持现在的这种激情写博文了！&lt;/p&gt;
+</description>
+                <link>/2013/12/hello-jekyll</link>
+                <guid>/2013/12/hello-jekyll</guid>
+                <pubDate>2013-12-16T00:00:00+08:00</pubDate>
+        </item>
+
+
+</channel>
+</rss>
