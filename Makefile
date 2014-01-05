@@ -1,5 +1,7 @@
+SHELL :=/bin/bash
 commit:
-	. ./assets/images/imgcvt.sh
+	@pwd
+	${SHELL} ./assets/images/imgcvt.sh
 	git add .
 	git commit -a -m "post blog"
 push:

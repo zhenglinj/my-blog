@@ -14,6 +14,3 @@ do
     fi
 done
 echo $n
-
-
-
