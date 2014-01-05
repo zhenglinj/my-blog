@@ -13,7 +13,9 @@ Emacs常用操作的一些笔记，以及在使用Emacs过程遇上的问题会�
 ## 前言
 
 选择Emacs是选择折腾的开始
-官方资料 
+
+官方资料 [GNU Emacs Manual](http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top ) 
+		 
 
 ## 帮助
 

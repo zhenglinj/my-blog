@@ -1,9 +1,10 @@
+_site/
 _drafts/
 _posts/\#*
 .pygments-cache/*
 _gist_cache/*
 _theme_packages/*
-assets/images/imgbak/*
+assets/images/imgbak/
 
 !.gitkeep
 

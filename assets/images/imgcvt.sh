@@ -13,4 +13,4 @@ do
         fi
     fi
 done
-echo $n
+echo -n $n
