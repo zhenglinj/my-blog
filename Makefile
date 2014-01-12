@@ -4,6 +4,7 @@ amend:
 	@echo "convert images..."
 	@cd ./assets/images/ && pwd && ${SHELL} imgcvt.sh
 	@echo " image(s) converted"
+	@pwd
 	git add .
 	git commit -C HEAD -a --amend
 commit:
