@@ -34,4 +34,8 @@ Emacs常用操作的一些笔记，以及在使用Emacs过程遇上的问题会�
 
 ### org-mode
 
+### ediff-mode ###
+
+[Ediff User's Manual](http://www.chemie.fu-berlin.de/chemnet/use/info/ediff/ediff.html ) 
+
 ## 杂
