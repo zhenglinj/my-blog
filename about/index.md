@@ -4,10 +4,10 @@ layout: page
 comments: no
 ---
 
-### About Me:
+### 关于我:
 
-准程序员，热爱游戏，编程，数学。  
-技术方向 Linux／底层／  
+准程序员，热爱数学，编程。  
+50% Technology + 50% Life = 100% Blog  
 
 ### 订阅：
 
