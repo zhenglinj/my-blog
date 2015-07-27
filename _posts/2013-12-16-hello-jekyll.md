@@ -3,17 +3,17 @@ layout: post
 title: "Hello Jekyll"
 description: "这是测试页面，测试显示的效果，以及一些插件、配置是否成功。内容主要介绍Jekyll在Github上建博客，用Emacs编辑Markdown写博文，和一些实用的插件。同时以下是简介及实例作为笔记备忘。"
 category: "technology"
-tags: [jekyll, markdown, emacs, notes]
+tags: [jekyll, markdown, notes]
 ---
 {% include JB/setup %}
 
-这是测试页面，测试显示的效果，以及一些插件、配置是否成功。内容主要介绍Jekyll在Github上建博客，用Emacs编辑Markdown写博文，和一些实用的插件。同时以下是简介及实例作为笔记备忘。
+这是测试页面，测试显示的效果，以及一些插件、配置是否成功。内容主要介绍Jekyll在Github上建博客，用Markdown写博文，和一些实用的插件。同时以下是简介及实例作为笔记备忘。
 
 ---
 
 ## 用Jekyll在Github上建博客
 
-曾经在cnblog建过博客，但是由于毅力不佳，写过寥寥几篇就半途而废。现在经过几个星期的纠结，决定在Github上建博客。陆陆续续看了一些关于Jekyll建博客的官方文档、个人博文，算是对Jekyll有点了解，写下这篇文章以备忘。关于Jekyll建博客的英文中文文章已经很多，这里不再重复具体的建博过程，介绍一些资料。
+经过几个星期的纠结，决定在Github上建博客。陆陆续续看了一些关于Jekyll建博客的官方文档、个人博文，算是对Jekyll有点了解，写下这篇文章以备忘。关于Jekyll建博客的英文中文文章已经很多，这里不再重复具体的建博过程，介绍一些资料。
 
 **官方文档：**
 
@@ -47,17 +47,35 @@ Markdown语法说明：[Markdown语法说明](http://wowubuntu.com/markdown/ )
 
 **示例：**
 
+<!-- ``` cpp -->
+<!-- class Voila { -->
+<!-- public: -->
+<!-- 	// Voila -->
+<!-- 	static const string VOILA = "Voila"; -->
+<!-- 	// will not interfere with embedded tags. -->
+<!-- } -->
+<!-- ``` -->
+
 	<pre class="prettyprint lang-cpp linenums=true">
 	class Voila {
 	public:
 	  // Voila
 	  static const string VOILA = "Voila";
 
-	  // will not interfere with embedded tags.
+      // will not interfere with embedded tags.
 	}
 	</pre>
 	
 **效果：**
+
+<!-- ``` cpp -->
+<!-- class Voila { -->
+<!-- public: -->
+<!-- 	// Voila -->
+<!-- 	static const string VOILA = "Voila"; -->
+<!-- 	// will not interfere with embedded tags. -->
+<!-- } -->
+<!-- ``` -->
 
 <pre class="prettyprint lang-cpp linenums=true">
 class Voila {
@@ -69,7 +87,6 @@ public:
 }
 </pre>
 
-Emacs通过写YASnippet配置文件可以完成代码框架，Markdown模式下输入pretty，再TAB即可出现代码框架。
 
 ### MathJax
 

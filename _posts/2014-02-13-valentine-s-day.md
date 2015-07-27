@@ -2,8 +2,9 @@
 layout: post
 title: "情人节，写给顾MM"
 description: "To Miss Gu"
+draft: true
 category: "life"
-tags: [life]
+tags: [life, love]
 ---
 {% include JB/setup %}
 
