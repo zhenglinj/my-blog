@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Google C++ Style Guide中英对照"
+title: "Google C++ Style Guide中英对照 (1)"
 description: ""
-category: "life"
-tags: [mathematic, life]
+category: "technology"
+tags: [C++, google]
 ---
 {% include JB/setup %}
 

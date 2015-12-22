@@ -11,3 +11,5 @@ def Fib(n,b1=1,b2=1,c=3):
             return b1+b2
         else:
             return Fib(n,b1=b2,b2=b1+b2,c=c+1)
+
+Fib(10)
