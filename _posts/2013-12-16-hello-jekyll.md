@@ -76,11 +76,9 @@ Content Cell  | Content Cell
 
 写文章/代码用到的第三方插件的使用方法，主要是代码高亮、数学公式美化的功能。
 
-### Highlightjs
+### 代码高亮 Highlightjs
 
-使用 [highlightjs](https://highlightjs.org/ ) 代码高亮
-
-**`_config.yml`做相应配置** 如果采用kramdown解析markdown，那么修改如下：
+使用 [highlightjs](https://highlightjs.org/ ) 代码高亮。在 Jekyll 根目录**`_config.yml`做相应配置** 如果采用kramdown解析markdown，那么修改如下：
 
 ```yml
 markdown: kramdown  # [ maruku | rdiscount | kramdown | redcarpet ]
@@ -90,7 +88,7 @@ kramdown:
   auto_id_prefix: 'id-'
 ```
 
-同时，**`default.html`中添加`highlight.js`**，如下代码：
+同时，在 Jekyll 根目录**`_layouts/default.html`文件中添加`highlight.js`**，如下代码：
 
 ```html
 <!-- highlight -->
@@ -103,7 +101,8 @@ kramdown:
 
 **示例：**
 
-```nohighlight
+````nohighlight
+```cpp
 class Voila {
 public:
     // Voila
@@ -111,10 +110,11 @@ public:
     // will not interfere with embedded tags.
 }
 ```
+````
 
 **效果：**
 
-``` cpp
+```cpp
 class Voila {
 public:
 	// Voila
@@ -125,11 +125,9 @@ public:
 
 [参考这里](http://noyobo.com/2014/10/19/jekyll-kramdown-highlight.html ) 
 
-### MathJax
+### LATEX显示数学公式 MathJax
 
-使用[MathJax](https://www.mathjax.org/ ) 漂亮地显示数学公式，使网页支持$$L^AT_EX$$
-
-**`default.html`中添加`MathJax.js`**，如下代码：
+使用[MathJax](https://www.mathjax.org/ ) 漂亮地显示数学公式，使网页支持$$L^AT_EX$$。**`_layouts/default.html`中添加`MathJax.js`**，如下代码：
 
 ```html
 <!-- MathJax for LaTeX -->
