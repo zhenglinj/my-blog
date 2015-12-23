@@ -22,7 +22,7 @@ margin-right:auto;
 a{color:#dd0000;text-decoration:none;}
 a:hover{color:#333333;text-decoration:underline;}
 hr{margin:.7em 0;border-top:1px dashed #d0d0d0;border-bottom:1px dashed #f9f9f9;}
-p{padding:.5em 0;}
+p{padding:.2em 0;}
 li{padding:0em 0;}
 /* ol,ul{list-style-position:inside;} */
 ol,ul{list-style:decimal;margin:0 0 18px 25px;}
@@ -60,7 +60,7 @@ h2{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB
 h3{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.4em;color:#222;line-height:38px}
 h4{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.2em;color:#333;line-height:38px}
 pre,code{font-family:Menlo,"Andale Mono",Consolas,"Courier New",Monaco,"Microsoft YaHei",monospace;font-size:13px;margin:0 0 0px 3px;}
-pre{padding:0 0 0px 15px;}
+pre{padding:0 0 0px 0px;}
 code{padding:0 0 0px 3px;}
 /* code{background-color:#D0D0D0;} */
 code{background-color:#E8E8E8;}
