@@ -30,6 +30,8 @@ tags: [jekyll, markdown, notes]
 
 以上只是几个例子，更多见Baidu, Google.  
 
+---
+
 ## Markdown语法说明
 
 现在用Markdown写博文很流行也确实很方便，很多网站的评论也开始支持Markdown语言。这种轻度标记语言挺简单，并且可以很轻松写出一些排版清楚的文字。同时Jekyll建博客后也是用这种语言发文章的，所以还是值得一学。  
@@ -37,69 +39,94 @@ Markdown语法说明：[Markdown语法说明](http://wowubuntu.com/markdown/ )
 
 ---
 
-## 第三方插件演示
+## 插件演示
 
-写文章用到的第三方插件的使用方法，主要是代码高亮、数学公式美化的功能。
+写文章/代码用到的第三方插件的使用方法，主要是代码高亮、数学公式美化的功能。
 
-### Google Code prettify
+### Highlightjs
 
-完成代码高亮
+使用 [highlightjs](https://highlightjs.org/ ) 代码高亮
+
+**`_config.yml`做相应配置** 如果采用kramdown解析markdown，那么修改如下：
+
+```yml
+markdown: kramdown  # [ maruku | rdiscount | kramdown | redcarpet ]
+kramdown:
+  input:          GFM
+  auto_ids:       true
+  auto_id_prefix: 'id-'
+```
+
+同时，**`default.html`中添加`highlight.js`**，如下代码：
+
+```html
+<!-- highlight -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad(); </script>
+```
+
+类似markdown的语法将代码块包括在两个 \`\`\` 中，就可以实现代码高亮
 
 **示例：**
 
-<!-- ``` cpp -->
-<!-- class Voila { -->
-<!-- public: -->
-<!-- 	// Voila -->
-<!-- 	static const string VOILA = "Voila"; -->
-<!-- 	// will not interfere with embedded tags. -->
-<!-- } -->
-<!-- ``` -->
-
-	<pre class="prettyprint lang-cpp linenums=true">
-	class Voila {
-	public:
-	  // Voila
-	  static const string VOILA = "Voila";
-
-      // will not interfere with embedded tags.
-	}
-	</pre>
-	
-**效果：**
-
-<!-- ``` cpp -->
-<!-- class Voila { -->
-<!-- public: -->
-<!-- 	// Voila -->
-<!-- 	static const string VOILA = "Voila"; -->
-<!-- 	// will not interfere with embedded tags. -->
-<!-- } -->
-<!-- ``` -->
-
-<pre class="prettyprint lang-cpp linenums=true">
+```nohighlight
 class Voila {
 public:
-  // Voila
-  static const string VOILA = "Voila";
-  
-  // will not interfere with embedded tags.
+    // Voila
+    static const string VOILA = "Voila";
+    // will not interfere with embedded tags.
 }
-</pre>
+```
 
+**效果：**
+
+``` cpp
+class Voila {
+public:
+	// Voila
+	static const string VOILA = "Voila";
+	// will not interfere with embedded tags.
+}
+```
+
+[参考这里](http://noyobo.com/2014/10/19/jekyll-kramdown-highlight.html ) 
 
 ### MathJax
 
-数学公式的插件，使网页支持$$L^AT_EX$$
+使用[MathJax](https://www.mathjax.org/ ) 漂亮地显示数学公式，使网页支持$$L^AT_EX$$
+
+**`default.html`中添加`MathJax.js`**，如下代码：
+
+```html
+<!-- MathJax for LaTeX -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {
+  inlineMath: [ ['$','$'], ['$$$','$$$'], ["\\(","\\)"] ],
+  processEscapes: true
+  }
+  });
+</script>
+```
 
 **示例：**
 
-	$$(a_1,b_1,a_2,b_2,\cdots,an,bn)$$
-	
-	$$(O(1))$$
-	$$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$
-	$$a^2 + b^2 = c^2$$
-	
+```nohighlight
+$$(a_1,b_1,a_2,b_2,\cdots,an,bn)$$
+
+$$(O(1))$$
+$$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$
+$$a^2 + b^2 = c^2$$
+数学公式 $$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$ 和文字
+```
+
 **效果：**
 
 $$(a_1,b_1,a_2,b_2,\cdots,an,bn)$$
