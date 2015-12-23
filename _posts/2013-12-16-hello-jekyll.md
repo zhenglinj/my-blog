@@ -37,6 +37,39 @@ tags: [jekyll, markdown, notes]
 现在用Markdown写博文很流行也确实很方便，很多网站的评论也开始支持Markdown语言。这种轻度标记语言挺简单，并且可以很轻松写出一些排版清楚的文字。同时Jekyll建博客后也是用这种语言发文章的，所以还是值得一学。  
 Markdown语法说明：[Markdown语法说明](http://wowubuntu.com/markdown/ )   
 
+### 表格
+
+建表格使用连字符 `` - `` 和竖线 `` | `` ，区分开表头和单元格：
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+想好看一些的话，也可以在开头和结尾加竖线：
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+顶部的连字符无需一定匹配表头文本的长度（但必须保证至少3个连字符）；也可以添加行内的Markdown语法文本，如链接、加粗、删除线等：
+
+| Name | Description          |
+| ------------- | ----------- |
+| Help      | ~~Display the~~ help window.|
+| Close     | _Closes_ a window     |
+
+表头行使用冒号:实现表格内列的文本对齐方式：
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+
+冒号在最左边表示该列文本左对齐，最右边表示文本右对齐，两边都加冒号表示居中对齐文本。
+
 ---
 
 ## 插件演示
@@ -66,7 +99,7 @@ kramdown:
 <script type="text/javascript"> hljs.initHighlightingOnLoad(); </script>
 ```
 
-类似markdown的语法将代码块包括在两个 \`\`\` 中，就可以实现代码高亮
+类似markdown的语法将代码块包括在两个 ```` ``` ```` 中，就可以实现代码高亮
 
 **示例：**
 
