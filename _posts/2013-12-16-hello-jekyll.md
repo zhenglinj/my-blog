@@ -3,6 +3,9 @@ layout: post
 title: "Hello Jekyll"
 description: "这是测试页面，测试显示的效果，以及一些插件、配置是否成功。内容主要介绍Jekyll在Github上建博客，用Emacs编辑Markdown写博文，和一些实用的插件。同时以下是简介及实例作为笔记备忘。"
 category: "technology"
+draft: false
+analytics: true
+comments: true
 tags: [jekyll, markdown, notes]
 ---
 {% include JB/setup %}
@@ -17,7 +20,7 @@ tags: [jekyll, markdown, notes]
 
 **官方文档：**
 
-总体介绍： [Jekyll • Simple, blog-aware, static sites](http://jekyllrb.com/)  
+总体介绍： 英文 [Jekyll • Simple, blog-aware, static sites](http://jekyllrb.com/)  中文 [Jekyll 简单静态博客网站生成器](http://jekyllcn.com/)  
 快速入门文档： [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)  
 详细用法的文档： [Jekyll Bootstrap](http://jekyllbootstrap.com)  
 
@@ -35,7 +38,36 @@ tags: [jekyll, markdown, notes]
 ## Markdown语法说明
 
 现在用Markdown写博文很流行也确实很方便，很多网站的评论也开始支持Markdown语言。这种轻度标记语言挺简单，并且可以很轻松写出一些排版清楚的文字。同时Jekyll建博客后也是用这种语言发文章的，所以还是值得一学。  
-Markdown语法说明：[Markdown语法说明](http://wowubuntu.com/markdown/ )   
+Markdown语法说明：[Markdown语法说明](http://wowubuntu.com/markdown/ )  [讲解 Markdown](http://alfred-sun.github.io/blog/2015/01/10/markdown-syntax-documentation/)  
+
+### 语法文档
+
+![markdownsheet](/assets/images/markdownsheet.png )
+
+### 列表
+
+嵌套的列表：
+
+Create nested lists by indenting list items by two spaces.
+
+1. Item 1
+  1. A corollary to the above item.
+  2. Yet another point to consider.
+2. Item 2
+  * A corollary that does not need to be ordered.
+    * This is indented four spaces, because it's two spaces further than the item above.
+    * You might want to consider making a new list.
+3. Item 3
+
+### 引用
+
+Markdown 标记区块引用是使用类似 email 中用 `>` 的引用方式：
+
+> This is the first level of quoting.
+>
+> > This is nested blockquote.
+>
+> Back to the first level.
 
 ### 表格
 
@@ -115,12 +147,7 @@ public:
 **效果：**
 
 ```cpp
-class Voila {
-public:
-	// Voila
-	static const string VOILA = "Voila";
-	// will not interfere with embedded tags.
-}
+{% include_relative code/hello-jekyll_demo.cpp %}
 ```
 
 [参考这里](http://noyobo.com/2014/10/19/jekyll-kramdown-highlight.html ) 
