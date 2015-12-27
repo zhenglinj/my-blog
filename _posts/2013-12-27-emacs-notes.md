@@ -21,7 +21,7 @@ EMACS = Editor MACroS (Offical) 宏编辑器
 
 **符号约定**
 
-`C` 代表 Ctrl，示例 `C-h 其他键` => Ctrl + h 其他键；`M` 代表 Alt，示例 `M-x 命令` => Alt + x 命令。其中 `C-h`, `C-x`, `C-c`, `C-u` 一般作为前缀操作 (Prefix Command)。
+`C` 代表 Ctrl，示例 `C-h 其他键` => Ctrl+h 其他键；`M` 代表 Alt，示例 `M-x 命令` => Alt+x 命令。其中 `C-h`, `C-x`, `C-c`, `C-u` 一般作为前缀操作 (Prefix Command)。
 
 官方资料 [GNU Emacs Manual](http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top )
 
