@@ -92,7 +92,7 @@ int main (int argc, char *argv[]) {
     }
     /* 创建事件数组并清零 */
     events = calloc(MAXEVENTS, sizeof(event));
-    /* 开始事件循环 */
+    /* 开始事件循环 Event loop*/
     while (1) {
         int n, i;
         n = epoll_wait(efd, events, MAXEVENTS, -1);
@@ -103,7 +103,7 @@ int main (int argc, char *argv[]) {
                 close(events[i].data.fd);
                 continue;
             }
-            if(events[i].events & EPOLLIN) {
+            if (events[i].events & EPOLLIN) {
                 if (sfd == events[i].data.fd) {
                     /* 处理新接入的socket */
                     while (1) {
@@ -122,7 +122,7 @@ int main (int argc, char *argv[]) {
                         }
                         inet_ntop(AF_INET, &sa.sin_addr, hbuf, sizeof(hbuf));
                         printf("Accepted connection on descriptor %d "
-                                    "(host=%s, port=%d)\n", infd, hbuf, sa.sin_port);
+                               "(host=%s, port=%d)\n", infd, hbuf, ntohs(sa.sin_port));
                         /* 设置接入的socket为非阻塞 */
                         s = make_socket_non_blocking(infd);
                         if (s == -1)

@@ -33,7 +33,7 @@ tags: [socket, epoll, notes]
 
 ## epoll相关函数
 
-### epoll_create 或 epoll_cteate1
+### epoll_create或epoll_cteate1
 
 ```c
 int epoll_create1(int flags);
@@ -131,15 +131,66 @@ int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout)
 + `EINTR` : 在请求事件发生或者过期之前，调用被信号打断
 + `EINVAL` : epfd是无效的epoll文件描述符
 
-## 水平触发和边缘触发
+## 水平触发和边缘触发（LT和ET模式）
 
-用英文来表示，水平触发为Level Trigger，边缘触发为Edge Trigger。
+用英文来表示，水平触发为Level Trigger，边缘触发为Edge Trigger:
 
-那么为什么在这里突兀得提及ET和LT呢？是这样的，想必各位应该已经注意到EPOLLET了，这个就代表ET事件，而epoll默认采取的是LT，也就是说在能够正确使用epoll之前，我们必须弄明白ET和LT，尤其是准备直接使用nonblocking和ET的朋友。
++ LT 意思是水平触发 如果有数据到来没有被处理或者没有处理完(数据没有接收全)那么下次会再次进行通知；
++ ET 意思是边缘触发 数据到来只通知一次，即使没有处理或者没有处理完也不再通知；
 
-LT和ET原本应该是用于脉冲信号的，可能用它来解释更加形象。Level和Edge指的就是触发点，Level为只要处于水平，那么就一直触发，而Edge则为上升沿和下降沿的时候触发。听起来到时挺玄乎的，那么怎么区分这个Level和Edge呢？很简单，0->1这种类型的事件就是Edge，而Level则正好相反，1->1这种类型就是，由此可见，当缓冲区有数据可取的时候，ET会触发一次事件，之后就不会再触发，而LT只要我们没有取完缓冲区的数据，就会一直触发。
+那么为什么在这里突兀得提及ET和LT呢？是这样的，想必各位应该已经注意到EPOLLET了，这个就代表ET事件，而epoll默认采取的是LT，也就是说在能够正确使用epoll之前，我们必须弄明白ET和LT。有一点需要强调ET模式只能应用于设置了O_NONBLOCK的fd，而LT则同时支持阻塞和非阻塞。使用得当ET效率比LT高，但是LT更加易用，不容易除错。
 
-还有一点需要强调ET模式只能应用于设置了O_NONBLOCK的fd，而LT则同时支持同步和异步。使用得当ET效率比LT高，但是LT更加易用，不容易除错。
+通过上面的简单解释我相信大家应该知道两者的差别了：
+
+1. LT 保证了数据不会丢失，但是性能低
+2. ET 不保证数据安全，但是性能高效
+
+可以通过在添加事件的时候添加EPOLLET(边缘触发)开启边缘触发，默认是水平触发。poll和select都只支持水平触发。下面是对两种模式的处理方式:
+
+**LT模式:**
+
+```c
+if (events[i].events & EPOLLIN) // 数据可读事件
+{
+    // 在一次数据到来的时候，下面这段代码可能会被触发多次
+    // 因为buf没有存放完所有的数据，所以还会再次触发事件进行读取
+    printf("trigger one\n");
+    bzero(buf, sizeof(buf));
+    int ret = recv(sockfd, buf, sizeof(buf)-1, 0);
+    if (ret < 0) {
+        close(sockfd);
+        continue;
+    }
+    printf("get some bytes data\n");
+}
+```
+
+**ET模式:**
+
+```c
+if (events[i].events & EPOLLIN) // 数据可读事件
+{
+    // 在一次数据到来的时候,下面这段代码只触发一次
+    printf("only trigger one\n");
+    while (1) {
+        bzero(buf, sizeof(buf));
+        int ret = recv(sockfd, buf, sizeof(buf)-1, 0);
+        if (ret < 0) {
+            // 非阻塞的socket描述符当errno出现这两种情况表明数据读取完毕
+            if ((errno == EAEGIN) || (errno == EWOULDBLOCK)) {
+                printf("read later\n");
+                break;
+            }
+            close(sockfd);
+            break;
+        } else if (ret == 0) {
+            close(sockfd);
+        } else {
+            printf("get some bytes data\n");
+        }
+    }
+}
+```
 
 ## epoll的使用模式
 
@@ -183,7 +234,7 @@ while (true) {
 
 使用上述的框架，我们可以完成很多事情，但是内部的细节，比如错误处理，信号处理等，还是不能大意，需要完善。
 
-## epoll实例 echo man
+## epoll实例echo man
 
 接下来，让我们来看个示例吧。这只是一个hello world级别的代码，无论是你发送什么数据给它，它只会回复 "it's echo man"。使用的是ET模式，相信对于大家应该有些许参考价值。
 
@@ -199,12 +250,26 @@ hello
 it's echo man
 ```
 
-ncat和echo_man通信的时候其实用的是长连接（除非我们自己CTRL+C）。对于长连接这种东西，需要一定的处理策略。一般而言，我们会采用如下几种策略来处理：
+ncat和echo_man通信的时候其实用的是长连接（除非我们自己CTRL+C）。对于长连接需要一定的处理策略。一般而言，我们会采用如下几种策略来处理：
 
-心跳，通过这个来表示长连接有效，没有了心跳自然就表示结束
-特殊字符，标记数据传输完毕
-协议中添加length，这个比较常规
-设置timeout，超过这个threshold就关闭半连接或者全连接
++ 心跳，通过这个来表示长连接有效，没有了心跳自然就表示结束
++ 特殊字符，标记数据传输完毕
++ 协议中添加length，这个比较常规
++ 设置timeout，超过这个threshold就关闭半连接或者全连接
+
 总之，长连接绝对是个好东西，在很大程度上避免了建立和关闭TCP连接时握手带来的延迟，不过，想要让服务端一直持有长连接也是有点理想化。
+
+## echo man代码分析
+
+`main()`首先调用`create_and_bind()`来新建一个socket。然后将其设置为非阻塞`make_socket_non_blocking()`，再调用 `listen()`。之后，我们新建一个epoll实例`efd`，并将监听套接字`sfd`以采用边沿触发的方式加入它，用以监听输入事件。
+在外面的while循环是主要的事件循环(Event loop)。它调用`epoll_wait()`，它所在线程以阻塞的方式来等待事件的到来。当事件就绪，`epoll_wait()`在其`epoll_event`类型的参数中返回相应的事件。
+
+其中，**事件循环**有很多讨论情况。当我们添加新的传入连接，当他们终止时我们删除现有的连接，epoll 的实例 `efd` 的事件循环不断更新。
+当事件的状态为可用的时候，他们有以下三种类型：
+**错误**：当错误情况发生时，或者事件是不是一个有关数据可以被读取的通知，我们只需关闭相关的描述符。关闭描述符会自动移除其 epoll 实例 `efd`。
+**新的连接**：当监听到 descriptor `sfd` 已经准备好用于读取的时候，这意味着已经到达一个或多个新的连接。当有新连接时，`accept()`连接`infd`，打印关于连接的信息，并设置 socket `infd` 非阻塞，并将其添加到 epoll 实例 `efd` 监听事件。
+**客户端数据**：当数据在客户端描述符上为可读状态，我们在 `read()` 中使用 while 循环来读去存储在512位数据块`buf`中的数据。这是因为我们现在要读取所有可用的数据，在 edge-triggered 模式下，我们不会进一步获取事件描述符。使用 `write()` 将读取的数据被写入到 stdout (fd=1)，如果 `read()` 返回 0，这意味着到达了一个 EOF(End of File)，这时我们就可以断开与客户端的连接。如果 `read()` 返回 -1，errno 为 EAGAIN，这意味着该事件所有的数据已读完，我们可以返回主循环了。
+
+就是这样，它在一个循环中一遍又一遍地执行，在监听的集合中添加和删除描述。
 
 这就是epoll简单应用的全部内容了，当然一旦涉及多线程和多进程，那么这种场景下处理epoll会变得极其有趣。暂且说到这里，谢谢阅读！
