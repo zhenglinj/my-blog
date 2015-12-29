@@ -87,18 +87,18 @@ Content Cell  | Content Cell
 
 顶部的连字符无需一定匹配表头文本的长度（但必须保证至少3个连字符）；也可以添加行内的Markdown语法文本，如链接、加粗、删除线等：
 
-| Name | Description          |
-| ------------- | ----------- |
-| Help      | ~~Display the~~ help window.|
-| Close     | _Closes_ a window     |
+| Name          | Description                  |
+| ------------- | ---------------------------- |
+| Help          | ~~Display the~~ help window. |
+| Close         | _Closes_ a window            |
 
 表头行使用冒号:实现表格内列的文本对齐方式：
 
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ |:---------------:| -----:|
-| col 3 is      | some wordy text | $1600 |
-| col 2 is      | centered        |   $12 |
-| zebra stripes | are neat        |    $1 |
+| Left-Aligned  | Center Aligned    | Right Aligned |
+| :------------ | :---------------: | ------------: |
+| col 3 is      | some wordy text   | $1600         |
+| col 2 is      | centered          | $12           |
+| zebra stripes | are neat          | $1            |
 
 冒号在最左边表示该列文本左对齐，最右边表示文本右对齐，两边都加冒号表示居中对齐文本。
 
@@ -150,7 +150,7 @@ public:
 {% include_relative code/hello-jekyll_demo.cpp %}
 ```
 
-[参考这里](http://noyobo.com/2014/10/19/jekyll-kramdown-highlight.html ) 
+[参考这里](http://noyobo.com/2014/10/19/jekyll-kramdown-highlight.html )  
 
 ### LATEX显示数学公式 MathJax
 
