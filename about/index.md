@@ -19,6 +19,7 @@ comments: no
 GitHub : [{{ site.author.github }}](http://github.com/{{ site.author.github }})  
 微博 : [{{ site.author.sinaweibo }}](http://weibo.com/zhenglinj )  
 邮箱 : [{{ site.author.email }}]({{ site.author.email }})
+[简历](http://pan.baidu.com/s/1jHoWxfS)
 <!-- QQ : [{{ site.author.qq }}](http://wpa.qq.com/msgrd?v=3&uin=657006463&site=qq&menu=yes )   -->
 
 ----
