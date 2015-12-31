@@ -14,8 +14,8 @@ Thumbs.db
 .rvmrc
 
 # src files
-!/src_code
-/src_code/*
+!/_posts/code
+/_posts/code/*
 !*.[ch]
 !*.[ch]pp
 !*.[ch]+
