@@ -155,7 +155,7 @@ border: 1px solid gray;
 table
 {
 border-collapse:collapse;
-width:50%
+/* width:50% */
 }
 
 th
@@ -167,3 +167,5 @@ td
 {
 padding:1px;
 }
+tr:nth-child(2n) {background: #e8e8e8;}
+tr {background-color: expression((this.sectionRowIndex % 2 == 0) ? "#ffffff" : "#e8e8e8" );}
