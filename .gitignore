@@ -15,8 +15,10 @@ Thumbs.db
 
 # src files
 !/_posts/code
-/_posts/code/*
 !*.[ch]
 !*.[ch]pp
 !*.[ch]+
 !*.py
+## IDEA
+!*.java
+!*.iml
