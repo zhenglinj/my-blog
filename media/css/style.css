@@ -64,7 +64,7 @@ pre,code{font-family:Menlo,"Andale Mono",Consolas,"Courier New",Monaco,"Microsof
 pre{padding:0 0 0px 0px;}
 code{padding:0 0 0px 3px;}
 /* code{background-color:#D0D0D0;} */
-code{background-color:#f0f0f0;}
+code{background-color:#f0f0f0;word-spacing:0px}
 embed,object,iframe{display:block;margin:4px auto;}
 .gist{font-size: 12px;line-height:1.6;}
 
