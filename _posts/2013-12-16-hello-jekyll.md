@@ -46,6 +46,12 @@ Markdown语法说明：[Markdown语法说明](http://wowubuntu.com/markdown/ )  
 
 ### 列表
 
+无序号列表：
+
+* kram
++ down
+- now
+
 嵌套的列表：
 
 Create nested lists by indenting list items by two spaces.
@@ -54,9 +60,9 @@ Create nested lists by indenting list items by two spaces.
   1. A corollary to the above item.
   2. Yet another point to consider.
 2. Item 2
-  * A corollary that does not need to be ordered.
-    * This is indented four spaces, because it's two spaces further than the item above.
-    * You might want to consider making a new list.
+  -  A corollary that does not need to be ordered.
+  -  This is indented four spaces, because it's two spaces further than the item above.
+  -  You might want to consider making a new list.
 3. Item 3
 
 ### 引用
@@ -99,8 +105,71 @@ Content Cell  | Content Cell
 | col 3 is      | some wordy text   | $1600         |
 | col 2 is      | centered          | $12           |
 | zebra stripes | are neat          | $1            |
+| col 3 is      | some wordy text   | $1600         |
+| col 2 is      | centered          | $12           |
+| zebra stripes | are neat          | $1            |
 
 冒号在最左边表示该列文本左对齐，最右边表示文本右对齐，两边都加冒号表示居中对齐文本。
+
+---
+
+## Kramdown 语法简介  {#intro-kramdown}
+
+Jekyll 可以采用不同的 Markdown 解释器，如：Maruku, Redcarpet和Kramdown等。其中kramdown是最接近pandoc功能的解释器。[kramdown 语法简介](http://yufree.cn/blogcn/2014/10/25/kramdown.html)，这里介绍kramdown特有的一些功能。
+
+### 表格扩展
+
+````nohighlight
+|-----------------|------------|-----------------|----------------|
+| Default aligned |Left aligned| Center aligned  | Right aligned  |
+|-----------------|:-----------|:---------------:|---------------:|
+| First body part |Second cell | Third cell      | fourth cell    |
+| Second line     |foo         | **strong**      | baz            |
+| Third line      |quux        | baz             | bar            |
+|-----------------|------------|-----------------|----------------|
+| Second body     |            |                 |                |
+| 2 line          |            |                 |                |
+| Second body     |            |                 |                |
+|=================+============+=================+================|
+| Footer row      |            |                 |                |
+|-----------------|------------|-----------------|----------------|
+````
+
+|-----------------|------------|-----------------|----------------|
+| Default aligned |Left aligned| Center aligned  | Right aligned  |
+|-----------------|:-----------|:---------------:|---------------:|
+| First body part |Second cell | Third cell      | fourth cell    |
+| Second line     |foo         | **strong**      | baz            |
+| Third line      |quux        | baz             | bar            |
+|-----------------|------------|-----------------|----------------|
+| Second body     |            |                 |                |
+| 2 line          |            |                 |                |
+| Second body     |            |                 |                |
+|=================+============+=================+================|
+| Footer row      |            |                 |                |
+|-----------------|------------|-----------------|----------------|
+
+### 脚注
+
+扩展功能，其实就是加了上标的链接。
+
+That\'s some text with a footnote.[^1]
+
+[^1]: And that\'s the footnote.
+
+That\'s the second paragraph.
+
+### Header ID
+
+扩展功能，使用ID为你的标题提供页面内引用地址，可以像超链接一样跳转。
+
+```nohighlight
+## Kramdown 语法简介  {#intro-kramdown}
+
+[Goto introduce kramdown](#intro-kramdown)
+```
+
+[Goto introduce kramdown](#intro-kramdown)
 
 ---
 
