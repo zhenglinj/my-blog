@@ -6,7 +6,7 @@ category: "technology"
 draft: false
 analytics: true
 comments: true
-tags: [jekyll, markdown, notes]
+tags: [jekyll, markdown, 笔记]
 ---
 {% include JB/setup %}
 
@@ -251,6 +251,7 @@ $$(a_1,b_1,a_2,b_2,\cdots,an,bn)$$
 $$(O(1))$$
 $$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$
 $$a^2 + b^2 = c^2$$
+$$\frac{fenzi}{fenmu}$$
 数学公式 $$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$ 和文字
 ```
 
@@ -261,6 +262,7 @@ $$(a_1,b_1,a_2,b_2,\cdots,an,bn)$$
 $$(O(1))$$
 $$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$
 $$a^2 + b^2 = c^2$$
+$$\frac{fenzi}{fenmu}$$
 
 数学公式 $$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$ 和文字
 

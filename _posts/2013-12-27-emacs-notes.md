@@ -3,7 +3,7 @@ layout: post
 title: "Emacs 开箱即用 —— 简易说明书"
 description: "Emacs 常用操作的一些笔记，以及在使用 Emacs 过程遇上的问题会不断更新在这里。"
 category: "technology"
-tags: [emacs, notes]
+tags: [emacs, 笔记]
 ---
 {% include JB/setup %}
 

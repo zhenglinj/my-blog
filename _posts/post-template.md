@@ -2,7 +2,7 @@
 layout: post
 title: ""
 description: ""
-category: ""
+category: "technology"
 draft: false
 analytics: true
 comments: true
