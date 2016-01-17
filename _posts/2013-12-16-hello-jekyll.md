@@ -177,6 +177,13 @@ That\'s the second paragraph.
 
 写文章/代码用到的第三方插件的使用方法，主要是代码高亮、数学公式美化的功能。
 
+### CSS额外定义
+
+**按钮的效果：**
+
+`<kbd>M-x package-list-packages</kbd> , then <kbd>U</kbd> followed by <kbd>x</kbd>.`
+<kbd>M-x package-list-packages</kbd> , then <kbd>U</kbd> followed by <kbd>x</kbd>.
+
 ### 代码高亮 Highlightjs
 
 使用 [highlightjs](https://highlightjs.org/ ) 代码高亮。在 Jekyll 根目录**`_config.yml`做相应配置** 如果采用kramdown解析markdown，那么修改如下：
@@ -262,7 +269,7 @@ $$(a_1,b_1,a_2,b_2,\cdots,an,bn)$$
 $$(O(1))$$
 $$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$
 $$a^2 + b^2 = c^2$$
-$$\frac{fenzi}{fenmu}$$
+$$\frac{f(x)}{g(x)}$$
 
 数学公式 $$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$ 和文字
 
