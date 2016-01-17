@@ -39,9 +39,9 @@ EMACS = Editor MACroS (Offical) 宏编辑器
 - major mode: 
 - minor mode: 
 
-## 帮助系统
+## 帮助文档
 
-Emacs 的帮助系统很强大
+Emacs 的帮助文档很强大
 
 + `F1 其他键` 或 `C-h 其他键`，`C-h h` 查看所有其他键选项；
 + `M-x info` 可以查看各个插件的内置帮助文档；
