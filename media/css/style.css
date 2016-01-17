@@ -154,6 +154,8 @@ table,th,td {
 
 table {
     border-collapse:collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 th {
     padding:2px;
