@@ -273,11 +273,30 @@ $$\frac{f(x)}{g(x)}$$
 
 数学公式 $$(a1,a2,\cdots,a_n,b_1,\cdots,b_n)$$ 和文字
 
- <!-- \(a_1,b_1,a_2,b_2,\cdots,an,bn\) -->
- <!-- \(O(1)\) -->
- <!-- \(a1,a2,\cdots,a_n,b_1,\cdots,b_n\) -->
- <!-- \[a^2 + b^2 = c^2\] -->
+<!-- ### Mermaid flowchart 流程图 -->
 
-<!-- 数学公式 \(a1,a2,\cdots,a_n,b_1,\cdots,b_n\) 和文字 -->
+<!-- 文档： [mermaid docs](http://knsv.github.io/mermaid/index.html#mermaid) -->
+
+<!-- <div class="mermaid"> -->
+<!-- graph TD; -->
+<!--     A-\->B; -->
+<!--     A-\->C; -->
+<!--     B-\->D; -->
+<!--     C-\->D; -->
+<!-- </div> -->
+
+<!-- <div class="mermaid"> -->
+<!-- sequenceDiagram -->
+<!--     participant Alice -->
+<!--     participant Bob -->
+<!--     Alice->John: Hello John, how are you? -->
+<!--     loop Healthcheck -->
+<!--         John->John: Fight against hypochondria -->
+<!--     end -->
+<!--     Note right of John: Rational thoughts <br/>prevail... -->
+<!--     John-\->Alice: Great! -->
+<!--     John->Bob: How about you? -->
+<!--     Bob-\->John: Jolly good! -->
+<!-- </div> -->
 
 **最后**就是保持现在的这种激情写博文了！
