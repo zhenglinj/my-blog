@@ -131,7 +131,7 @@ int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout)
 + `EINTR` : 在请求事件发生或者过期之前，调用被信号打断
 + `EINVAL` : epfd是无效的epoll文件描述符
 
-## 水平触发和边缘触发（LT和ET模式）
+## 水平触发和边缘触发
 
 用英文来表示，水平触发为Level Trigger，边缘触发为Edge Trigger:
 

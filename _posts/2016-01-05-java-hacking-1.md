@@ -74,7 +74,10 @@ HelloB
 - Java关键字
 - [Java基本数据类型](http://www.runoob.com/java/java-basic-datatypes.html)
 - [Java String的使用](http://www.runoob.com/java/java-string.html)
-- [Java集合框架](http://sparkandshine.net/java-collections-framework-overview-collection-list-set-queue-map/)
+
+## Java集合框架
+
+[Java集合框架](http://sparkandshine.net/java-collections-framework-overview-collection-list-set-queue-map/)
 
 **Java集合框架**用来表示和操作集合的统一框架，它包含接口，实现类以及一些编程辅助算法，具体位于java.util包下。
 
@@ -294,14 +297,17 @@ JDK src.zip 源代码
 
 ## Java虚拟机JVM
 
-### Java内存模型，Java内存管理，Java堆和栈，垃圾回收
+### Java内存模型，Java内存管理，Java堆和栈
 
 [http://www.jcp.org/en/jsr/detail?id=133](http://www.jcp.org/en/jsr/detail?id=133)
 
 [Java内存模型FAQ](http://ifeve.com/jmm-faq/)
 
-### JVM各种参数及调优
+### Java垃圾回收机制
 
+[深入理解java垃圾回收机制](http://www.cnblogs.com/sunniest/p/4575144.html)
+
+### JVM各种参数及调优
 
 
 ### Java工具的使用

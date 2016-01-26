@@ -28,6 +28,8 @@ tags: [sorting, algorithm, 笔记]
 > [快速排序 Quick sort](http://www.cnblogs.com/morewindows/archive/2011/08/13/2137415.html)
 > [堆排序   Heap sort](http://www.cnblogs.com/morewindows/archive/2011/08/22/2149612.html)
 
+## 常用算法复杂度比较
+
 | 排序法 | 平均时间        | 最差情形          | 稳定度 | 额外空间       | 备注                          |
 |--------|-----------------|-------------------|--------|----------------|-------------------------------|
 | 冒泡   | $$O(n^2)$$      | $$O(n^2)$$        | 稳定   | $$O(1)$$       | n小时较好                     |
