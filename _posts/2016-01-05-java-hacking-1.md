@@ -77,25 +77,16 @@ HelloB
 
 ## Java集合框架
 
-[Java集合框架](http://sparkandshine.net/java-collections-framework-overview-collection-list-set-queue-map/)
-
-**Java集合框架**用来表示和操作集合的统一框架，它包含接口，实现类以及一些编程辅助算法，具体位于java.util包下。
+[**Java集合框架**](http://sparkandshine.net/java-collections-framework-overview-collection-list-set-queue-map/)用来表示和操作集合的统一框架，它包含接口，实现类以及一些编程辅助算法，具体位于`java.util`包下。
 
 > `java.util.ArrayList` `java.util.LinkedList` `java.util.HashMap` `java.util.LinkedHashMap` `java.util.TreeMap` `java.util.HashSet` `java.util.LinkedHashSet` `java.util.TreeSet` `...`
 
-Java集合框架(Java collections framework, JCF)是一组实现集合数据结构的类和接口。Collection接口是一组允许重复的对象，有3个接口继承了该接口。值得注意的是，Map接口不由Collection派生。如下：
-
-- Set，不允许重复，使用自己内部的一个排列机制
-- List，允许重复，以元素安插的次序来放置元素，不会重新排列
-- Queue，先进先出
-- Map，一组成对的键－值对象(key-value pairs)。不能有重复的key，但value可以相同
-
-Java集合框架示意图如下(实际远比下图复杂)，图片来源于[这里](http://www.codejava.net/images/articles/javacore/collections/collections%20framework%20overview.png)
+Java集合框架(Java collections framework, JCF)是一组实现集合数据结构的类和接口。集合框架示意图如下(实际远比下图复杂)，图片来源于[这里](http://www.codejava.net/images/articles/javacore/collections/collections%20framework%20overview.png)
 ![Alt Text](/assets/images/collections-framework-overview_thumb.png )
 
 ### Java基础包源代码
 
-> `java.lang.String` `java.lang.Integer` `java.lang.Long` `java.lang.Enum` `java.math.BigDecimal` `java.lang.ThreadLocal` `java.lang.ClassLoader` `java.net.URLClassLoader`
+> `java.lang.String` `java.lang.Integer` `java.lang.Long` `java.lang.Enum` `java.lang.ThreadLocal` `java.lang.ClassLoader` `java.net.URLClassLoader` `java.math.BigDecimal`
 
 ### Java IO 和 Java NIO
 

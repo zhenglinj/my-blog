@@ -26,8 +26,8 @@ EMACS = Editor MACroS (Offical) 宏编辑器
 
 **符号约定**
 
-本文中所出现的符号： <kbd>C<\kbd> 代表 <kbd>Ctrl<\kbd>，<kbd>M<\kbd> 代表 <kbd>Alt<\kbd> 。示例： `C-h 其他键` => Ctrl+h 其他键； `M-x 命令` => Alt+x 命令。
-其中 `C-h`, `C-x`, `C-c`, `C-u` 一般作为前缀操作 (Prefix Command)，前缀操作要加上其他快捷键组合完成功能。如： `C-h t` => Emacs Tutorail
+本文中所出现的符号： <kbd>C</kbd> 代表 <kbd>Ctrl</kbd>，<kbd>M</kbd> 代表 <kbd>Alt</kbd> 。示例： <kbd>C-h 其他键</kbd> => <kbd>Ctrl+h 其他键</kbd>； <kbd>M-x 命令</kbd> => <kbd>Alt+x 命令</kbd>。
+其中 <kbd>C-h</kbd>, <kbd>C-x</kbd>, <kbd>C-c</kbd>, <kbd>C-u</kbd> 一般作为前缀操作 (Prefix Command)，前缀操作要加上其他快捷键组合完成功能。如： <kbd>C-h t</kbd> => Emacs Tutorail
 
 官方资料 [GNU Emacs Manual](http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top )
 
