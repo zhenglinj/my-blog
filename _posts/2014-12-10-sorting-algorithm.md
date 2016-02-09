@@ -16,19 +16,19 @@ tags: [sorting, algorithm, 笔记]
 
 ## 图说排序
 
-> [7 种常用的排序算法](http://blog.jobbole.com/11745/)
+> [7 种常用的排序算法](http://blog.jobbole.com/11745/)  
 
-## 具体介绍常用排序算法
+## 具体介绍
 
-> [冒泡排序 Bubble sort](http://www.cnblogs.com/morewindows/archive/2011/08/06/2129603.html)
-> [插入排序 Insertion sort](http://www.cnblogs.com/morewindows/archive/2011/08/06/2129610.html)
-> [希尔排序 Shell sort](http://www.cnblogs.com/morewindows/archive/2011/08/08/2130684.html)
-> [选择排序 Selection sort](http://www.cnblogs.com/morewindows/archive/2011/08/09/2131953.html)
-> [归并排序 Merge sort](http://www.cnblogs.com/morewindows/archive/2011/08/11/2134593.html)
-> [快速排序 Quick sort](http://www.cnblogs.com/morewindows/archive/2011/08/13/2137415.html)
-> [堆排序   Heap sort](http://www.cnblogs.com/morewindows/archive/2011/08/22/2149612.html)
+> [冒泡排序 Bubble sort](http://www.cnblogs.com/morewindows/archive/2011/08/06/2129603.html)  
+> [插入排序 Insertion sort](http://www.cnblogs.com/morewindows/archive/2011/08/06/2129610.html)  
+> [希尔排序 Shell sort](http://www.cnblogs.com/morewindows/archive/2011/08/08/2130684.html)  
+> [选择排序 Selection sort](http://www.cnblogs.com/morewindows/archive/2011/08/09/2131953.html)  
+> [归并排序 Merge sort](http://www.cnblogs.com/morewindows/archive/2011/08/11/2134593.html)  
+> [快速排序 Quick sort](http://www.cnblogs.com/morewindows/archive/2011/08/13/2137415.html)  
+> [堆排序   Heap sort](http://www.cnblogs.com/morewindows/archive/2011/08/22/2149612.html)  
 
-## 常用算法复杂度比较
+## 复杂度比较
 
 | 排序法 | 平均时间        | 最差情形          | 稳定度 | 额外空间       | 备注                          |
 |--------|-----------------|-------------------|--------|----------------|-------------------------------|
@@ -42,15 +42,19 @@ tags: [sorting, algorithm, 笔记]
 | 归并   | $$O(n log n)$$  | $$O(n log n)$$    | 稳定   | $$O(1)$$       | n大时较好                     |
 | 堆     | $$O(n log n)$$  | $$O(n log n)$$    | 不稳定 | $$O(1)$$       | n大时较好                     |
 
-## 排序算法简单实现
+## 简单实现
 
-Python 实现：
+C++和Python实现：
+
+```cpp
+{% include_relative code/xxx_sort.h %}
+```
 
 ```python
 {% include_relative code/xxx_sort.py %}
 ```
 
-输出结果：
+演示输出结果：
 
 ````nohighlight
 Quick sort

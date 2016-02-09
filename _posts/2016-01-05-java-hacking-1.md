@@ -19,7 +19,6 @@ Java 学习笔记之基础篇
 Java入门教程：[Java教程](http://www.runoob.com/java/java-tutorial.html) 教程中内容有些小错误 <!-- TODO -->
 开发环境教程：[IntelliJ IDEA 使用教程](http://wiki.jikexueyuan.com/project/intellij-idea-tutorial/) [Eclipse 使用教程]()
 
-
 ```java
 class HelloA {
 
