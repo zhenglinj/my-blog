@@ -4,11 +4,12 @@
 permalink: /:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
+gems: [jekyll-paginate]
 paginate: 20
+paginate_path: "page:num"
 
 # pygments: true
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown  # [ maruku | rdiscount | kramdown | redcarpet ]
 markdown_ext:  markdown,mkd,mkdn,md
 textile_ext:   textile
