@@ -1,12 +1,17 @@
 ---
 layout: post
-title: "情人节，写给顾MM"
-description: "To Miss Gu"
-draft: true
+title: "To X.Ys"
+description: "白色情人节"
+draft: false
 category: "life"
-tags: [life, love]
+tags: [life]
 ---
+
 {% include JB/setup %}
+
+---
+
+### 补上晚到的“玫瑰”
 
 <!-- background music cyx-yg -->
 <!-- <a href="#" onClick="musicPaused()">停止</a> -->
@@ -16,9 +21,9 @@ tags: [life, love]
 <!-- music.pause(); -->
 <!-- } -->
 <!-- </script> -->
-<audio id="clickSound" autoplay="autoplay" loop="loop">
-<source src="/assets/cyx-yg.mp3">
-</audio>
+<!-- <audio id="clickSound" autoplay="autoplay" loop="loop"> -->
+<!-- <source src="/assets/cyx-yg.mp3"> -->
+<!-- </audio> -->
 
 <!-- pic rose -->
 <!-- <p align="left" style="text-align: center;"><img src="http://namepk.sinaapp.com/blog/3d_flower.gif" alt=""><br></p> -->
@@ -69,16 +74,5 @@ with(m=Math)C=cos,S=sin,P=pow,R=random;c.width=c.height=f=500;h=-250;function p(
 <!-- 	</script> -->
 <!-- </body> -->
 <!-- </html> -->
-
-
-
-
-#### 写给顾MM：
-
-你突然不理，多少有点失落和茫然。  
-想了许久算是想到可能的答案，现在希望你能给点时间。  
-喜欢你不单是你的外表，也是欣赏你温柔含蓄，欣赏你文质彬彬……  
-情人节元宵节到了，有点拖延送你一朵晚到的“玫瑰”，希望你看到能有点惊喜，祝情人节开心:-)  
-（最后说明下，背景音乐部分代表我的想法：～～我一再试探，你一再隐瞒～有一种预感爱就要离岸，所有回忆却慢慢碎成片段～有一种预感想挽回太难，对你还有无可救药的期盼～。希望你能给回复～）  
 
 ---

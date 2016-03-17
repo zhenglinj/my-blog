@@ -2,6 +2,7 @@
 layout: post
 title: "一个数学题..."
 description: ""
+draft: true
 category: "life"
 tags: [mathematic, life]
 ---
