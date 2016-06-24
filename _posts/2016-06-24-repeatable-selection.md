@@ -52,7 +52,7 @@ $$
  2           & 1          & 0          & 0          & \cdots     & 0          & 0      \\
  3           & 3          & 1          & 0          & \cdots     & 0          & 0      \\
  4           & 6          & 4          & 1          & \cdots     & 0          & 0      \\
- \vdots      & \vdots     & \ddots     & \vdots     & \vdots     & \vdots     & \vdots \\
+ \vdots      & \vdots     & \vdots     & \vdots     & \ddots     & \vdots     & \vdots \\
  C_{n-1}^1   & C_{n-1}^2  & C_{n-1}^3  & C_{n-1}^4  & \cdots     & 0          & 0      \\
  C_{n}^1     & C_{n}^2    & C_{n}^3    & C_{n}^4    & \cdots     & 0          & 0      \\
 \end{matrix}
