@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "To X.Ys"
-description: "白色情人节"
+title: "TO SOMEONE"
+description: "情人节"
 draft: true
 category: "life"
 tags: [life]
@@ -11,7 +11,7 @@ tags: [life]
 
 ---
 
-### 补上晚到的“玫瑰”
+### "玫瑰"
 
 <!-- background music cyx-yg -->
 <!-- <a href="#" onClick="musicPaused()">停止</a> -->
