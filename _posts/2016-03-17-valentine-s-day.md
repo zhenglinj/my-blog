@@ -13,17 +13,6 @@ tags: [life]
 
 ### "玫瑰"
 
-<!-- background music cyx-yg -->
-<!-- <a href="#" onClick="musicPaused()">停止</a> -->
-<!-- <script type="text/javascript"> -->
-<!-- function musicPaused() { -->
-<!-- var music = document.getElementById("clickSound"); -->
-<!-- music.pause(); -->
-<!-- } -->
-<!-- </script> -->
-<!-- <audio id="clickSound" autoplay="autoplay" loop="loop"> -->
-<!-- <source src="/assets/cyx-yg.mp3"> -->
-<!-- </audio> -->
 
 <!-- pic rose -->
 <!-- <p align="left" style="text-align: center;"><img src="http://namepk.sinaapp.com/blog/3d_flower.gif" alt=""><br></p> -->
