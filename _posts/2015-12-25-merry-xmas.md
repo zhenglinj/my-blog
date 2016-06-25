@@ -3,7 +3,7 @@ layout: post
 title: "Merry Christmas"
 description: "Just for fun"
 category: "life"
-draft: false
+draft: true
 analytics: true
 comments: true
 tags: [funny]
