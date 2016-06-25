@@ -28,10 +28,10 @@ def main(args=None):
         ])
     belta_mat = np.matrix([i**NUM for i in range(1, NUM+1)]).getT()
     result = params_mat.getI() * belta_mat
-    print("K items repeatable all selection N times (N >= k, N = %d):" % NUM)
+    print("K items repeatable all selection N times (N >= k, N = {0:d}):".format(NUM))
     k = 1
     for r in result:
-        print('a(%d, %d) = %d,' % (NUM, k, np.round(r)))
+        print("a({0:d}, {1:d}) = {2:d},".format(NUM, k, int(np.round(r))))
         k += 1
     print()
 
