@@ -181,7 +181,12 @@ That\'s the second paragraph.
 
 **按钮的效果：**
 
+**示例：**
+
 `<kbd>M-x package-list-packages</kbd> , then <kbd>U</kbd> followed by <kbd>x</kbd>.`
+
+**效果：**
+
 <kbd>M-x package-list-packages</kbd> , then <kbd>U</kbd> followed by <kbd>x</kbd>.
 
 ### 代码高亮 Highlightjs
