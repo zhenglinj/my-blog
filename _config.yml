@@ -4,9 +4,13 @@
 permalink: /:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-mermaid] # jekyll-coffeescript, jekyll-watch, jekyll-assets
+# This will require each of these gems automatically.
 paginate: 20
 paginate_path: "page:num"
+
+# mermaid:                        # mermaid gem is not supported yet
+#   src: '/media/js/mermaid.min.js'
 
 # pygments: true
 highlighter: rouge
