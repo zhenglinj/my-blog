@@ -56,10 +56,10 @@ nav{font-family:"Microsoft YaHei","Electrolize",sans-serif;font-size:1.1em;text-
 nav a{display:block;padding:.7em 1em;color:#000000;}
 nav a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
 .post{padding:.5em 0em;}
-h1{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.8em;color:#000;line-height:40px}
-h2{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.6em;color:#111;line-height:40px}
-h3{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.4em;color:#222;line-height:38px}
-h4{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.2em;color:#333;line-height:38px}
+h1{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.8em;color:#000;line-height:50px}
+h2{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.6em;color:#111;line-height:50px}
+h3{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.4em;color:#222;line-height:45px}
+h4{font-family:"微软雅黑Monaco","Microsoft YaHei","Cuprum","Hiragino Sans GB",sans-serif;font-size:1.2em;color:#333;line-height:45px}
 pre,code{font-family:Menlo,"Andale Mono",Consolas,"Courier New",Monaco,"Microsoft YaHei",monospace;font-size:16px;margin:0 0 0px 3px;border-radius:3px;}
 pre{padding:0 0 0px 0px;}
 code{padding:0 3px 0px 3px;border: 1px solid #ddd;}
