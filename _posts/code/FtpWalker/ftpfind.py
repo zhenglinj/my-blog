@@ -6,6 +6,7 @@
 ./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\\.tar\\.gz" --type f --depth 1
 ./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\\.tar\\.gz" --type f --depth 2
 ./ftpfind.py ftp.gnu.org /gnu/apl/ --name "(.*)-(.*)(\\.tar\\.gz)" --type f --evalprint "m.group(1)+'-{version}'+m.group(3)"
+./ftpfind.py uatproxy.statestr.com /Daily/AllHoldings --ftpusr "ondemandstatestreet@ftp.morningstar.com" --ftppw "ondemand975" --name "(.*_)(20\d{6}|20\d{2}-\d{1,2}|20\d{2}-\d{1,2}-\d{1,2})(.*\.zip|gz)" --evalprint "m.group(1)+'{EffectiveDate}'+m.group(3)"
 """
 
 from __future__ import print_function
@@ -24,7 +25,6 @@ import six
 def _parse_list_line(line, files=[], subdirs=[], links=None):
     """Parse *line* and insert into either *files* or *subdirs* depending on
     whether the line is for a directory or not.
-
     This is used as the callback to the ftplib.FTPConnection.dir callback.
     """
     dst = None
@@ -45,7 +45,6 @@ def _parse_list_line(line, files=[], subdirs=[], links=None):
 
 class FTPHost(object):
     """Represent a connection to a remote host.
-
     A remote host has a working directory, and an ftplib object connected.
     """
 
@@ -166,7 +165,6 @@ class FTPHost(object):
     def mirror_to_remote(self, source, destination, create_destination=False,
             ignore_dotfiles=True):
         """Upload local directory `source` to remote destination `destination`.
-
         Create destination directory only if `create_destination` is True, and
         don't upload or descend into files or directories starting with a dot
         if `ignore_dotfiles` is True.
@@ -229,7 +227,6 @@ class FTPHost(object):
 
     def makedirs(self, dpath):
         """Try to create directories out of each part of `dpath`.
-
         First tries to change directory into `dpath`, to see if it exists. If
         it does, returns immediately. Otherwise, splits `dpath` up into parts,
         trying to create each accumulated part as a directory.
@@ -384,82 +381,87 @@ class FTPFileProxy(object):
         return self.__class__(self.ftp_obj, new_abs_name)
 
 
-# 格式：\033[显示方式;前景色;背景色m
-# 说明：
-# 前景色            背景色           颜色
-# ---------------------------------------
-# 30                40              黑色
-# 31                41              红色
-# 32                42              绿色
-# 33                43              黃色
-# 34                44              蓝色
-# 35                45              紫红色
-# 36                46              青蓝色
-# 37                47              白色
-# 显示方式           意义
-# -------------------------
-# 0                终端默认设置
-# 1                高亮显示
-# 4                使用下划线
-# 5                闪烁
-# 7                反白显示
-# 8                不可见
-# 例子：
-# \033[1;31;40m    <!--1-高亮显示 31-前景色红色  40-背景色黑色-->
-# \033[0m          <!--采用终端默认设置，即取消颜色设置-->
+
 class BColors:
-     ENDC = '\033[0m'
+    """
+    格式：\033[显示方式;前景色;背景色m
+    说明：
+    前景色            背景色           颜色
+    ---------------------------------------
+    30                40              黑色
+    31                41              红色
+    32                42              绿色
+    33                43              黃色
+    34                44              蓝色
+    35                45              紫红色
+    36                46              青蓝色
+    37                47              白色
+    显示方式           意义
+    -------------------------
+    0                终端默认设置
+    1                高亮显示
+    4                使用下划线
+    5                闪烁
+    7                反白显示
+    8                不可见
+    例子：
+    \033[1;31;40m    <!--1-高亮显示 31-前景色红色  40-背景色黑色-->
+    \033[0m          <!--采用终端默认设置，即取消颜色设置-->
+    """
+    ENDC = '\033[0m'
 
-     @staticmethod
-     def C(highlight_cd, front_cd, back_cd):
-         result = '\033[' + str(highlight_cd) + ';'
-         result += str({ "B": 30, "r": 31, "g": 32, "y": 33, "b": 34, "m": 35, "a": 36, "w": 37, "": 99 }[front_cd]) + ';'
-         result += str({ "B": 40, "r": 41, "g": 42, "y": 43, "b": 44, "m": 45, "a": 46, "w": 47, "": 99 }[back_cd]) + 'm'
-         return result
+    @staticmethod
+    def C(highlight_cd, front_cd, back_cd):
+     result = '\033[' + str(highlight_cd) + ';'
+     result += str({ "B": 30, "r": 31, "g": 32, "y": 33, "b": 34, "m": 35, "a": 36, "w": 37, "": 99 }[front_cd]) + ';'
+     result += str({ "B": 40, "r": 41, "g": 42, "y": 43, "b": 44, "m": 45, "a": 46, "w": 47, "": 99 }[back_cd]) + 'm'
+     return result
 
 
-def FindInFtp(a_host, cwd, spec_type, maxdepth, name_pat, eval_print, color):
-    def WalkFtp(cwd, spec_type, maxdepth):
+def FindInFtp(a_host, startdir, spec_type, maxdepth, name_pat, eval_print, color):
+    def WalkFtp(startdir, spec_type, maxdepth):
         if (maxdepth is None):
             pass
         elif ((type(maxdepth) is int) and maxdepth > 0):
             maxdepth = maxdepth-1
         else:
             return
-        a_host.current_directory = cwd
-        subdirs, files, links = a_host.listdir(cwd, True)
+        a_host.current_directory = startdir
+        subdirs, files, links = a_host.listdir(startdir, True)
         last_xs = [""]
         if (spec_type is None or spec_type == "f"):
             for fn in files:
                 mat = name_pattern.match(fn)
                 if (mat):
-                    EvalPrint(cwd, fn, last_xs, mat, eval_print)
+                    EvalPrint(startdir, fn, last_xs, mat, eval_print)
         if (spec_type is None or spec_type == "l"):
             for l in links:
                 mat = name_pattern.match(l)
                 if (mat):
-                    EvalPrint(cwd, l, last_xs, mat, eval_print)
+                    EvalPrint(startdir, l, last_xs, mat, eval_print)
         for sd in subdirs:
+            if (sd == "." or sd == ".."):
+                continue
             mat = name_pattern.match(sd)
             if ((spec_type is None or spec_type == "d") and mat):
-                EvalPrint(cwd, sd, last_xs, mat, eval_print)
-            WalkFtp(posixpath.join(cwd, sd), spec_type, maxdepth)
+                EvalPrint(startdir, sd, last_xs, mat, eval_print)
+            WalkFtp(posixpath.join(startdir, sd), spec_type, maxdepth)
 
-    def EvalPrint(cwd, x, last_xs, m, eval_print):
+    def EvalPrint(startdir, x, last_xs, m, eval_print):
         try:
             newx = eval(eval_print)
         except Exception as ex:
             print("Eval print statements error: {0}".format(ex.strerror))
         if (last_xs[0] != newx):
-            print(posixpath.join(cwd, BColors.C(0, "r", "") + newx + BColors.ENDC)) if color else print(posixpath.join(cwd, newx))
+            print(posixpath.join(startdir, BColors.C(0, "r", "") + newx + BColors.ENDC)) if color else print(posixpath.join(startdir, newx))
             last_xs[0] = newx
 
     try:
-        name_pat = name_pat if (name_pat.endswith("\Z")) else name_pat+"\Z"
+        name_pat = name_pat if (name_pat.endswith("\Z")) else "(?:"+name_pat+")\Z"
         name_pattern = re.compile(name_pat)
     except Exception as ex:
         print("Re compile error: {0}".format(ex.strerror))
-    WalkFtp(cwd, spec_type, maxdepth)
+    WalkFtp(startdir, spec_type, maxdepth)
 
 
 if __name__ == "__main__":
@@ -470,7 +472,7 @@ if __name__ == "__main__":
                         help="ftp user name")
     parser.add_argument("--ftppw", default="",
                         help="ftp password")
-    parser.add_argument("cwd", type=str, default="/",
+    parser.add_argument("startdir", type=str, default="/",
                         help="current work directory")
     parser.add_argument("--type", choices=["f", "d"], default=None,
                         help="type ((f)ile, (d)irectory), default all")
@@ -487,4 +489,4 @@ if __name__ == "__main__":
 
     # a_host = FTPHost.connect("ftp.python.org", user="foo", password="bar")
     a_host = FTPHost.connect(options.ftpurl, user=options.ftpusr, password=options.ftppw)
-    FindInFtp(a_host, options.cwd, options.type, options.maxdepth, options.name, options.evalprint, options.color)
+    FindInFtp(a_host, options.startdir, options.type, options.maxdepth, options.name, options.evalprint, options.color)
