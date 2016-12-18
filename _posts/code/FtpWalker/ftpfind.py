@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-./ftpfind.py ftp.gnu.org /gnu/apl/ --name ".*\\.tar\\.gz" --type f
-./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\\.tar\\.gz" --type f --depth 1
-./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\\.tar\\.gz" --type f --depth 2
-./ftpfind.py ftp.gnu.org /gnu/apl/ --name "(.*)-(.*)(\\.tar\\.gz)" --type f --evalprint "m.group(1)+'-{version}'+m.group(3)"
+./ftpfind.py ftp.gnu.org /gnu/apl/ --name ".*\.tar\.gz" --type f
+./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\.tar\.gz" --type f --depth 1
+./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\.tar\.gz" --type f --depth 2
+./ftpfind.py ftp.gnu.org /gnu/apl/ --name "(.*-)(.*)(\.tar\.gz)" --type f --evalprint "m.group(1)+'{version}'+m.group(3)"
 ./ftpfind.py uatproxy.statestr.com /Daily/AllHoldings --ftpusr "ondemandstatestreet@ftp.morningstar.com" --ftppw "ondemand975" --name "(.*_)(20\d{6}|20\d{2}-\d{1,2}|20\d{2}-\d{1,2}-\d{1,2})(.*\.zip|gz)" --evalprint "m.group(1)+'{EffectiveDate}'+m.group(3)"
 """
 
