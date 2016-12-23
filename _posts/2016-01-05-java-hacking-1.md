@@ -324,12 +324,12 @@ jps, jstack, jmap, jconsole, jinfo, jhat, javap, …
 
 **编写outofmemory, stackoverflow程序**
 
-> HeapOutOfMemory
-> Young OutOfMemory
-> MethodArea OutOfMemory
-> ConstantPool OutOfMemory
-> DirectMemory OutOfMemory
-> Stack OutOfMemory Stack OverFlow
+> HeapOutOfMemory  
+> Young OutOfMemory  
+> MethodArea OutOfMemory  
+> ConstantPool OutOfMemory  
+> DirectMemory OutOfMemory  
+> Stack OutOfMemory Stack OverFlow  
 
 **使用工具尝试解决以下问题，并写下总结**
 
