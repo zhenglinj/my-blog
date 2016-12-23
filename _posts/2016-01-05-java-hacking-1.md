@@ -322,14 +322,17 @@ jps, jstack, jmap, jconsole, jinfo, jhat, javap, …
 
 [http://visualvm.java.net/oqlhelp.html](http://visualvm.java.net/oqlhelp.html)
 
-**编写outofmemory, stackoverflow程序**
+**编写OutOfMemory, StackOverFlow程序**
 
-> HeapOutOfMemory  
+> Heap OutOfMemory  
 > Young OutOfMemory  
 > MethodArea OutOfMemory  
 > ConstantPool OutOfMemory  
 > DirectMemory OutOfMemory  
-> Stack OutOfMemory Stack OverFlow  
+> Stack OutOfMemory  
+> Stack OverFlow  
+
+[https://plumbr.eu/blog/memory-leaks/understanding-java-lang-outofmemoryerror](https://plumbr.eu/blog/memory-leaks/understanding-java-lang-outofmemoryerror)
 
 **使用工具尝试解决以下问题，并写下总结**
 
@@ -347,8 +350,8 @@ jps, jstack, jmap, jconsole, jinfo, jhat, javap, …
 
 ### 阅读源代码
 
-> `java.lang.Thread`
-> `java.lang.Runnable`
+> `java.lang.Thread`  
+> `java.lang.Runnable`  
 > `java.util.concurrent.Callable` `java.util.concurrent.locks.ReentrantLock` `java.util.concurrent.locks.ReentrantReadWriteLock` `java.util.concurrent.atomic.Atomic*` `java.util.concurrent.Semaphore` `java.util.concurrent.CountDownLatch` `java.util.concurrent.CyclicBarrier` `java.util.concurrent.ConcurrentHashMap` `java.util.concurrent.Executors`
 
 **线程的生命周期**
