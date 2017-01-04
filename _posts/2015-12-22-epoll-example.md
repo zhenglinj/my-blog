@@ -2,6 +2,7 @@
 layout: post
 title: "Linux Socket 事件触发模型 epoll 示例"
 description: "这里会写一个用C语言的TCP服务器的完全实现的简单程序"
+draft: true
 category: "technology"
 tags: [socket, epoll, 笔记]
 ---
