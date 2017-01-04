@@ -3,7 +3,7 @@ layout: post
 title: "C# 之禅 基础"
 description: "C# 学习笔记"
 category: "technology"
-draft: false
+draft: true
 analytics: true
 comments: true
 tags: [csharp, 笔记]
