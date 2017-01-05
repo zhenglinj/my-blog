@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-./ftpfind.py ftp.gnu.org /gnu/apl/ --name ".*\.tar\.gz" --type f
-./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\.tar\.gz" --type f --depth 1
-./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\.tar\.gz" --type f --depth 2
-./ftpfind.py ftp.gnu.org /gnu/apl/ --name "(.*-)(.*)(\.tar\.gz)" --type f --evalprint "m.group(1)+'{version}'+m.group(3)"
+./ftpfind.py ftp.gnu.org /gnu/apl/ --name ".*\\.tar\\.gz" --type f
+./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\\.tar\\.gz" --type f --depth 1
+./ftpfind.py ftp.gnu.org /gnu/autogen/ --name ".*\\.tar\\.gz" --type f --depth 2
+./ftpfind.py ftp.gnu.org /gnu/apl/ --name "(.*)-(.*)(\\.tar\\.gz)" --type f --evalprint "m.group(1)+'-{version}'+m.group(3)"
 ./ftpfind.py uatproxy.statestr.com /Daily/AllHoldings --ftpusr "ondemandstatestreet@ftp.morningstar.com" --ftppw "ondemand975" --name "(.*_)(20\d{6}|20\d{2}-\d{1,2}|20\d{2}-\d{1,2}-\d{1,2})(.*\.zip|gz)" --evalprint "m.group(1)+'{EffectiveDate}'+m.group(3)"
 """
 
@@ -452,15 +452,15 @@ def FindInFtp(a_host, startdir, spec_type, maxdepth, name_pat, eval_print, color
             newx = eval(eval_print)
         except Exception as ex:
             print("Eval print statements error: {0}".format(ex.strerror))
-        if (last_xs[0] != newx):
+        if (newx not in last_xs):
             print(posixpath.join(startdir, BColors.C(0, "r", "") + newx + BColors.ENDC)) if color else print(posixpath.join(startdir, newx))
-            last_xs[0] = newx
+            last_xs.append(newx)
 
     try:
         name_pat = name_pat if (name_pat.endswith("\Z")) else "(?:"+name_pat+")\Z"
         name_pattern = re.compile(name_pat)
     except Exception as ex:
-        print("Re compile error: {0}".format(ex.strerror))
+        print("RE compile error: {0}".format(ex.strerror))
     WalkFtp(startdir, spec_type, maxdepth)
 
 
