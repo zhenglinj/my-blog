@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """
-./ftpfind.py /gnu/apl/ --ftpurl ftp.gnu.org --name ".*\\.tar\\.gz" --type f
-./ftpfind.py /gnu/autogen/ --ftpurl ftp.gnu.org --name ".*\\.tar\\.gz" --type f --depth 1
-./ftpfind.py /gnu/autogen/ --ftpurl ftp.gnu.org --name ".*\\.tar\\.gz" --type f --depth 2
-./ftpfind.py /gnu/apl/ --ftpurl ftp.gnu.org --name "(.*)-(.*)(\\.tar\\.gz)" --type f --evalprint "m.group(1)+'-{version}'+m.group(3)"
-./ftpfind.py /Daily/AllHoldings --ftpurl uatproxy.statestr.com --ftpusr "ondemandstatestreet@ftp.morningstar.com" --ftppw "ondemand975" --name "(.*_)(20\d{6}|20\d{2}-\d{1,2}|20\d{2}-\d{1,2}-\d{1,2})(.*\.zip|gz)" --evalprint "m.group(1)+'{EffectiveDate}'+m.group(3)"
+./find4ftp.py /gnu/apl/ --ftpurl ftp.gnu.org --name ".*\\.tar\\.gz" --type f
+./find4ftp.py /gnu/autogen/ --ftpurl ftp.gnu.org --name ".*\\.tar\\.gz" --type f --depth 1
+./find4ftp.py /gnu/autogen/ --ftpurl ftp.gnu.org --name ".*\\.tar\\.gz" --type f --depth 2
+./find4ftp.py /gnu/apl/ --ftpurl ftp.gnu.org --name "(.*)-(.*)(\\.tar\\.gz)" --type f --evalprint "m.group(1)+'-{version}'+m.group(3)"
+./find4ftp.py /Daily/AllHoldings --ftpurl uatproxy.statestr.com --ftpusr "ondemandstatestreet@ftp.morningstar.com" --ftppw "ondemand975" --name "(.*_)(20\d{6}|20\d{2}-\d{1,2}|20\d{2}-\d{1,2}-\d{1,2})(.*\.zip|gz)" --evalprint "m.group(1)+'{EffectiveDate}'+m.group(3)"
 """
 
 from __future__ import print_function
