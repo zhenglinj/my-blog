@@ -428,7 +428,7 @@ def FindInFtp(a_host, startdir, spec_type, maxdepth, name_pat, eval_print, color
             return
         a_host.current_directory = startdir
         subdirs, files, links = a_host.listdir(startdir, True)
-        last_xs = [""]
+        last_xs = []
         if (spec_type is None or spec_type == "f"):
             for fn in files:
                 mat = name_pattern.match(fn)
@@ -484,9 +484,11 @@ if __name__ == "__main__":
                         help="eval print, embed python print content, default like: m.group(0)")
     parser.add_argument("--color", action="store_true",
                         help="colorfull print if enabled")
+    parser.add_argument("--debug", action="store_true",
+                        help="print debug info if enabled")
     options = parser.parse_args()
-    print(options)
+    if (options.debug):
+        print(options)
 
-    # a_host = FTPHost.connect("ftp.python.org", user="foo", password="bar")
     a_host = FTPHost.connect(options.ftpurl, user=options.ftpusr, password=options.ftppw)
     FindInFtp(a_host, options.startdir, options.type, options.maxdepth, options.name, options.evalprint, options.color)
