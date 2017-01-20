@@ -74,6 +74,10 @@ HelloB
 - [Java基本数据类型](http://www.runoob.com/java/java-basic-datatypes.html)
 - [Java String的使用](http://www.runoob.com/java/java-string.html)
 
+## Java基础包源代码
+
+> `java.lang.String` `java.lang.Integer` `java.lang.Long` `java.lang.Enum` `java.lang.ThreadLocal` `java.lang.ClassLoader` `java.net.URLClassLoader` `java.math.BigDecimal`
+
 ## Java集合框架
 
 [**Java集合框架**](http://sparkandshine.net/java-collections-framework-overview-collection-list-set-queue-map/)用来表示和操作集合的统一框架，它包含接口，实现类以及一些编程辅助算法，具体位于`java.util`包下。
@@ -83,11 +87,7 @@ HelloB
 Java集合框架(Java collections framework, JCF)是一组实现集合数据结构的类和接口。集合框架示意图如下(实际远比下图复杂)，图片来源于[这里](http://www.codejava.net/images/articles/javacore/collections/collections%20framework%20overview.png)
 ![Alt Text](/assets/images/collections-framework-overview_thumb.png )
 
-### Java基础包源代码
-
-> `java.lang.String` `java.lang.Integer` `java.lang.Long` `java.lang.Enum` `java.lang.ThreadLocal` `java.lang.ClassLoader` `java.net.URLClassLoader` `java.math.BigDecimal`
-
-### Java IO 和 Java NIO
+## Java IO 和 Java NIO
 
 Java的IO操作中有面向字节(Byte)和面向字符(Character)两种方式。
 
@@ -98,7 +98,7 @@ Java的IO操作中有面向字节(Byte)和面向字符(Character)两种方式。
 
 ![Alt Text](/assets/images/java_io_stream.jpg )
 
-#### Java NIO和IO的主要区别
+### Java NIO和IO的主要区别
 
 | `java.io.*`    | `java.nio.*`         |
 | :------------: | :------------------: |
@@ -108,7 +108,7 @@ Java的IO操作中有面向字节(Byte)和面向字符(Character)两种方式。
 
 参考 [Java NIO 入门](http://www.ibm.com/developerworks/cn/education/java/j-nio/j-nio.html) [Java NIO与IO](http://ifeve.com/java-nio-vs-io/) 总结整理使用方法如下。
 
-#### NIO程序设计
+### NIO程序设计
 
 读和写是 I/O 的基本过程。从一个通道中读取很简单：只需创建一个缓冲区，然后让通道将数据读到这个缓冲区中。写入也相当简单：创建一个缓冲区，用数据填充它，然后让通道用这些数据来执行写入操作。
 
@@ -121,9 +121,9 @@ Java的IO操作中有面向字节(Byte)和面向字符(Character)两种方式。
 {% include_relative code/JavaNIO/CopyFile.java %}
 ```
 
-#### 缓冲区内部细节
+### 缓冲区内部细节
 
-#### 连网和异步 I/O
+### 连网和异步 I/O
 
 通常，在代码进行 read() 调用时，代码会阻塞直至有可供读取的数据。同样， write() 调用将会阻塞直至数据能够写入。
 异步 I/O 是一种__没有阻塞地__读写数据的方法。相反，您将注册对特定 I/O 事件的兴趣可读的数据的到达、新的套接字连接等等，而在发生这样的事件时，系统将会告诉您。
@@ -144,7 +144,7 @@ Accepted connection from 127.0.0.1 java.nio.channels.SocketChannel[connected loc
 127.0.0.1 disconnected java.nio.channels.SocketChannel[connected local=/127.0.0.1:12345 remote=/127.0.0.1:22665].
 ```
 
-#### 字符集
+### 字符集
 
 根据 Sun 的文档，一个 Charset 是“十六位 Unicode 字符序列与字节序列之间的一个命名的映射”。实际上，一个 Charset 允许您以尽可能最具可移植性的方式读写字符序列。
 
@@ -164,9 +164,11 @@ CharsetDecoder 用于将逐位表示的一串字符转换为具体的 char 值�
 {% include_relative code/JavaNIO/UseCharsets.java %}
 ```
 
-#### Reactor模式
+### Reactor模式
 
 IO并发设计：Reactor模式与Proactor模式
+
+## Java特性
 
 ### Java反射与javassist
 
