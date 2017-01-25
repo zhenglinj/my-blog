@@ -457,6 +457,12 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 
 [http://en.wikipedia.org/wiki/Volatile_variable](http://en.wikipedia.org/wiki/Volatile_variable)
 
+[java中volatile关键字的含义](http://www.cnblogs.com/aigongsi/archive/2012/04/01/2429166.html)
+
+[Java 理论与实践: 正确使用Volatile 变量](http://www.ibm.com/developerworks/cn/java/j-jtp06197.html+&cd=2&hl=en&ct=clnk&gl=us)
+
+[http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.4](http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.4)
+
 [http://preshing.com/20130702/the-happens-before-relation/](http://preshing.com/20130702/the-happens-before-relation/)
 
 ### 线程安全
