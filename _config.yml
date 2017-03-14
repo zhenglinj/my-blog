@@ -114,6 +114,9 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
+    # provider : cloudtie
+    # cloudtie :
+    #   short_name : zjzhenglj
     provider : duoshuo
     duoshuo :
       short_name : zhenglinj
