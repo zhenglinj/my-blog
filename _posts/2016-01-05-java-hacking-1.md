@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Java 之禅 基础"
+title: "Java Hacking 基础"
 description: "Java 学习笔记之基础篇"
 category: "technology"
 draft: false
@@ -80,7 +80,7 @@ HelloB
 
 ## Java集合框架
 
-[**Java集合框架**](http://sparkandshine.net/java-collections-framework-overview-collection-list-set-queue-map/)用来表示和操作集合的统一框架，它包含接口，实现类以及一些编程辅助算法，具体位于`java.util`包下。
+**Java集合框架**([参考这里](http://sparkandshine.net/java-collections-framework-overview-collection-list-set-queue-map/))用来表示和操作集合的统一框架，它包含接口，实现类以及一些编程辅助算法，具体位于`java.util`包下。
 
 > `java.util.ArrayList` `java.util.LinkedList` `java.util.HashMap` `java.util.LinkedHashMap` `java.util.TreeMap` `java.util.HashSet` `java.util.LinkedHashSet` `java.util.TreeSet` `...`
 
