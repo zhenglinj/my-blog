@@ -6,7 +6,7 @@ category: "technology"
 draft: false
 analytics: true
 comments: true
-tags: [C++, 内存管理, 笔记]
+tags: [C++, notes]
 ---
 {% include JB/setup %}
 

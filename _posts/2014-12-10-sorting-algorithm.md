@@ -6,7 +6,7 @@ category: "technology"
 draft: false
 analytics: true
 comments: true
-tags: [sorting, algorithm, 笔记]
+tags: [sorting, algorithm, notes]
 ---
 {% include JB/setup %}
 

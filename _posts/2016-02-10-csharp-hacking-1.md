@@ -6,7 +6,7 @@ category: "technology"
 draft: true
 analytics: true
 comments: true
-tags: [csharp, 笔记]
+tags: [csharp, notes]
 ---
 {% include JB/setup %}
 
