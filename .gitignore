@@ -129,3 +129,6 @@ hs_err_pid*
 
 # IDEA
 !*.iml
+
+# reactjs source-map file
+/app/built/bundle.js.map
