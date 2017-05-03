@@ -9,9 +9,11 @@
   "dependencies": {
     "react": "^15.0.2",
     "react-addons-update": "^15.0.2",
+    "react-bootstrap": "^0.30.10",
+    "react-bootstrap-table": "^3.1.1",
     "react-dom": "^15.0.2",
-    "react-bootstrap": "^0.30.8",
-    "react-bootstrap-table": "^3.1.1"
+    "react-timer": "^1.0.2",
+    "react-timers": "^5.0.3"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,7 @@
     "webpack",
     "react"
   ],
-  "author": "Allison Zadrozny",
+  "author": "Zheng Linjun",
   "license": "ISC",
   "homepage": "https://github.com/allizad/jekyll-webpack#readme",
   "devDependencies": {

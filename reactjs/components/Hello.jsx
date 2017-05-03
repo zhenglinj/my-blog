@@ -34,3 +34,4 @@ class Hello extends Component {
 }
 
 export default Hello;
+/* ReactDOM.render(<Hello />, mountNode);*/
