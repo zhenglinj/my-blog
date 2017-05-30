@@ -1,0 +1,20 @@
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript">
+var uyan_config = {
+  // 自定义网页标题 #微博话题#
+  'title': '',
+  // 自定义网页链接
+  'url': document.location.href,
+  // 自定义图片链接地址，设置为空值则不分享图片
+  'pic': '',
+  // 自定义视频链接地址
+  'vid': '',
+  // 自定义指定域名
+  'du': '',
+  // 自定义网页标识
+  'su': ''
+};
+</script>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2084740"></script>
+<!-- UY END -->

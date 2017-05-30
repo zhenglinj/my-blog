@@ -117,9 +117,12 @@ JB :
     # provider : cloudtie
     # cloudtie :
     #   short_name : zjzhenglj
-    provider : duoshuo
-    duoshuo :
-      short_name : zhenglinj
+    provider : uyan
+    uyan :
+      short_name : zhenglj
+    # provider : duoshuo
+    # duoshuo :
+    #   short_name : zhenglinj
     # provider : disqus
     # disqus :
     #   short_name : zhenglj
