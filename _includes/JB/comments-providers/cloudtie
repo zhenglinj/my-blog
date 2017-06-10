@@ -4,7 +4,7 @@
 var cloudTieConfig = {
   url: document.location.href,
   sourceId: "",
-  productKey: "[object Object]",
+  productKey: "eb0b276c0f00410db0322e1a9a9b8bbc",
   target: "cloud-tie-wrapper"
 };
 var yunManualLoad = true;
