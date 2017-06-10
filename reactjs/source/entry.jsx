@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import TmcTimer from './components/OnlineTimer.jsx';
+import Hello from './components/Hello.jsx';
 
 ReactDOM.render(
-  <TmcTimer />,
+  <Hello />,
   document.getElementById('container'));
