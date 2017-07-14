@@ -9,6 +9,21 @@
     <h3 class="entry-title">
       <a href="{{ post.url | relative_url }}" rel="bookmark">{{ title }}</a>
     </h3>
+    {% assign feature_image = post.image.feature %}
+    {% if feature_image %}
+      <a href="{{ post.url | relative_url }}">
+        {% assign f = feature_image | split: '.' %}
+        <noscript><img src="{{ site.url }}{{ f[0] }}-320.{{ f[1] }}" class="entry-image"></noscript>
+        <img data-sizes="auto"
+             src="{{ site.url }}{{ f[0] }}-lq.{{ f[1] }}"
+             data-srcset="{{ site.url }}{{ f[0] }}-lq.{{ f[1] }} 20w,
+                          {{ site.url }}{{ f[0] }}-320.{{ f[1] }} 320w,
+                          {{ site.url }}{{ f[0] }}-768.{{ f[1] }} 768w,
+                          {{ site.url }}{{ f[0] }}-1024.{{ f[1] }} 1024w"
+             alt="{{ post.title | strip_html }}"
+             class="lazyload entry-image blur-up">
+      </a>
+    {% endif %}
   </header>
   <footer class="entry-meta">
     <ul>
@@ -17,6 +32,9 @@
     {% endif %}
     {% if post.read_time %}
       <li><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</li>
+    {% endif %}
+    {% if site.data.comments[post.slug].size > 0 %}
+      <li><span class="icon">{% include icon-comments.svg %}</span>{{ site.data.comments[post.slug] | size }} Comment{% if site.data.comments[post.slug].size > 1 %}s{% endif %}</li>
     {% endif %}
     </ul>
   </footer>
