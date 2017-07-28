@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++ 栈与堆比较"
-description: "C++ 内存管理，本文对比堆栈的区别并得出结论，何时用栈（Stack），何时用堆（Heap）"
+excerpt: "C++ 内存管理，本文对比堆栈的区别并得出结论，何时用栈（Stack），何时用堆（Heap）"
 category: "technology"
 draft: false
 analytics: true

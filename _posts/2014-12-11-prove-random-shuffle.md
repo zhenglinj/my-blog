@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "洗牌算法 Random shuffle 证明"
-description: "洗牌算法 Random shuffle 证明"
+excerpt: "洗牌算法 Random shuffle 证明"
 category: "technology"
 draft: false
 analytics: true

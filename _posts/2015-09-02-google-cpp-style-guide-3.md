@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google C++ Style Guide中英对照 (3)"
-description: "Google C++ Style Guide翻译版中英对照"
+excerpt: "Google C++ Style Guide翻译版中英对照"
 category: "technology"
 tags: [C++, google]
 ---

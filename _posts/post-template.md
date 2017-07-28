@@ -1,9 +1,13 @@
 ---
-layout: post
-title: ""
-description: ""
+title: "Title"
+excerpt: "Description"
+image:
+  path: &image /assets/images/.jpg
+  feature: *image
+  teaser: /assets/images/.jpg
+  thumbnail: /assets/images/.jpg
+  caption: "caption [**caption**](link)"
 category: "technology"
-draft: false
 analytics: true
 comments: true
 tags: []
