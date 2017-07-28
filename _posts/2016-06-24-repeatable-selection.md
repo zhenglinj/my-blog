@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "可重复选择问题解答"
-description: "K 个不同元素可重复选择 N 次（其中 N >= K），且 K 个元素全出现，该选择组合总数。这里用较复杂的方法解答了这个问题，若有简单的解法欢迎分享。"
+excerpt: "K 个不同元素可重复选择 N 次（其中 N >= K），且 K 个元素全出现，该选择组合总数。这里用较复杂的方法解答了这个问题，若有简单的解法欢迎分享。"
 category: "mathematic"
 draft: false
 analytics: true

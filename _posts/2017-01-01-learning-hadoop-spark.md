@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Learning Hadoop & Spark"
-description: ""
+excerpt: ""
 category: "technology"
 draft: false
 analytics: true

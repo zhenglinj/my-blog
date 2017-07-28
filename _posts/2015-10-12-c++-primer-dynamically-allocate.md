@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++ Primer 第5版 —— 动态内存"
-description: "C++ Primer 第5版 第12章动态内存的内容补充。本文主要介绍C++11中3种智能指针，以及循环引用导致的问题及其解决方法。"
+excerpt: "C++ Primer 第5版 第12章动态内存的内容补充。本文主要介绍C++11中3种智能指针，以及循环引用导致的问题及其解决方法。"
 category: "technology"
 draft: false
 analytics: true

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++ Primer 第5版 —— 表达式"
-description: "C++ Primer 第5版 第4章表达式的内容补充。本文主要介绍C++11中类型转换，4种显示类型转换。"
+excerpt: "C++ Primer 第5版 第4章表达式的内容补充。本文主要介绍C++11中类型转换，4种显示类型转换。"
 category: "technology"
 draft: false
 analytics: true
