@@ -1,12 +1,6 @@
 ---
 title: "Spring Boot + React.js Web Application"
 excerpt: "用(Spring Boot, MyBatis, MySQL, ...) + (React, Redux, ...)创建Web Application笔记"
-image:
-  path: &image /assets/images/.jpg
-  feature: *image
-  teaser: /assets/images/.jpg
-  thumbnail: /assets/images/.jpg
-  caption: "caption [**caption**](link)"
 category: "technology"
 analytics: true
 comments: true
