@@ -4,7 +4,7 @@ excerpt: "由于项目中需要解析文本文件，将其解析成JSON格式。
 category: "technology"
 analytics: true
 comments: true
-tags: [technology]
+tags: [antlr4]
 ---
 {% include JB/setup %}
 
