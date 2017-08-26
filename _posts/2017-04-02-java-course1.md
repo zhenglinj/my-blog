@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Java Courses 1 -- Introduction to Java"
-excerpt: "Java Courses 1"
+title: "Java Courses -- Java Fundamentals, Part 1"
+excerpt: "Java Courses -- Java Fundamentals, Part 1"
 category: "technology"
 draft: false
 analytics: true
@@ -18,10 +18,6 @@ Notes for [Java Courses 1](https://app.pluralsight.com/library/courses/java1/tab
 
 [IntelliJ IDEA tutorial](http://wiki.jikexueyuan.com/project/intellij-idea-tutorial/)
 [Eclipse tutorial]()
-
-```java
-{% include_relative code/Hello.java %}
-```
 
 ## Variables and Operators
 
