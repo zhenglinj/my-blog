@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Java Courses 2 -- Exceptions"
-excerpt: "Java Courses 2"
+title: "Java Courses -- Java Fundamentals, Part 2"
+excerpt: "Java Courses -- Java Fundamentals, Part 2"
 category: "technology"
 draft: false
 analytics: true
