@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    RedCloth (4.3.2)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     colorator (1.1.0)
@@ -54,6 +55,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
+  bundler
+  jekyll
   jekyll-theme-basically-basic
 
 BUNDLED WITH
