@@ -31,7 +31,7 @@ logo: /assets/favicon128x128.png # path of site logo, e.g. "/assets/images/logo.
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-basically-basic
-plugins:
+gems:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -54,16 +54,16 @@ exclude:
   - .sass-cache
   - .scss-lint.yml
   - CHANGELOG
+  - config.ru
   - Gemfile
   - Gemfile.lock
+  - gems
   - LICENSE
   - node_modules
+  - Procfile
   - Rakefile
   - README
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor
   - /docs # ignore Basically Basic sample site
   - /example # ignore Basically Basic dev site
 
