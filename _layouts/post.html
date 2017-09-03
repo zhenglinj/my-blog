@@ -25,3 +25,18 @@ layout: default
     {% include footer.html %}
   </div>
 </main>
+
+
+<script>
+ //Executes your code when the DOM is ready.  Acts the same as $(document).ready().
+ /* $(function() {
+  *   var toc = $("#toc").tocify({ selectors: "h2, h3, h4" }).data("toc-tocify");
+  *   prettyPrint();
+  *   $(".optionName").popover({ trigger: "hover" });
+  * });*/
+ $(function() {
+   // Calls the selectBoxIt method on your HTML select box and updates the showEffect option
+   var toc = $("#toc").tocify({ selectors: "h2, h3, h4" }).data("toc-tocify");
+   toc.setOptions({ scrollTo: 50, smoothScroll: false });
+ });
+</script>
