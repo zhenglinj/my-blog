@@ -34,4 +34,5 @@ navigation_pages:
   - categories.md
   - tags.md
   - about.md
+  # - app.md
   - cv.md
