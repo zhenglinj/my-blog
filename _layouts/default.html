@@ -8,32 +8,6 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no-js">
   {% include head.html %}
 
-  <script type="text/javascript">
-  function setTimeSpan(){
-    var date = new Date();
-    timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
-  }
-
-   Date.prototype.format = function(format)
-   {
-     var o =
-       {
-         "M+" : this.getMonth()+1, //month
-         "d+" : this.getDate(),    //day
-         "h+" : this.getHours(),   //hour
-         "m+" : this.getMinutes(), //minute
-         "s+" : this.getSeconds(), //second
-         "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
-         "S" : this.getMilliseconds() //millisecond
-       }
-     if (/(y+)/.test(format))
-       format = format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
-     for (var k in o)
-       if (new RegExp("("+ k +")").test(format))
-         format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
-     return format;
-   }
-  </script>
   <body onLoad="setInterval(setTimeSpan,1000);" class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {{ page.title | slugify }}">
 
     {% include skip-links.html %}
@@ -45,6 +19,11 @@
           <span class="navicon"></span>
         </span>
       </button>
+
+      {% if page.layout == "post" %}
+      <div id="toc" class="tocify" style="left: auto;right: 10px;"></div>
+      {% endif %}
+
     </div>
 
     <div id="sidebar" class="sidebar">
