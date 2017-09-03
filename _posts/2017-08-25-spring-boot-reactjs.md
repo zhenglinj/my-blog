@@ -12,7 +12,9 @@ tags: [spring-boot, reactjs, mybatis]
 
 ---
 
-## Spring Boot + React.js Maven Structure
+## Spring Boot + React.js
+
+### Maven Structure
 
 ### Spring Boot
 
@@ -26,8 +28,10 @@ tags: [spring-boot, reactjs, mybatis]
 [React-Bootstrap](https://react-bootstrap.github.io/)
 [react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)
 
-### Spring Boot + React.js
+### Spring Boot + React.js maven project
 
 [Example Code](https://github.com/zhenglinj/boot-react)
+
+## MyBatis
 
 
