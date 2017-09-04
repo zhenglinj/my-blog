@@ -81,13 +81,13 @@ JB:
   comments:
     # provider: cloudtie
     # cloudtie:
-    #   short_name: zjzhenglj
+    #   short_name: zhenglinj
     # provider: uyan
     # uyan:
-    #   short_name: zhenglj
+    #   short_name: zhenglinj
     provider: disqus
     disqus:
-      short_name: zhenglj
+      short_name: zhenglinj
     facebook:
       appid: 123
       num_posts: 5
