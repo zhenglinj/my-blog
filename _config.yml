@@ -82,12 +82,12 @@ JB:
     # provider: cloudtie
     # cloudtie:
     #   short_name: zjzhenglj
-    provider: uyan
-    uyan:
-      short_name: zhenglj
-    # provider: disqus
-    # disqus:
+    # provider: uyan
+    # uyan:
     #   short_name: zhenglj
+    provider: disqus
+    disqus:
+      short_name: zhenglj
     facebook:
       appid: 123
       num_posts: 5
