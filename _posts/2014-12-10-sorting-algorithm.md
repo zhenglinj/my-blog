@@ -108,7 +108,7 @@ Result: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 -  Random shuffle 随机化序列（洗牌算法）
    **简介**：可以用一句伪代码表达 `for i:=1 to n do swap(a[i], a[random(1,i)]);`
-   **证明**：见[这里](../prove-random-shuffle)
+   **证明**：见[这里](../../../2014/12/11/prove-random-shuffle.html)
 -  序列的逆序数
    **简介**：可以用类似 冒泡排序 或 归并排序 解决
    **证明**：略
