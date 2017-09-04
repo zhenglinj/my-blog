@@ -5,10 +5,14 @@
 @charset "utf-8";
 
 body { font-family:"Microsoft YaHei","Fira Sans", sans-serif; }
+
 .listing { padding-left: 0px; }
 .listing-item,.listing-seperator { list-style-type:none; }
 .listing-item { color:#999999; padding:.2em 1em; }
 .listing-seperator { font-weight:bold; }
+
+pre { background: whitesmoke; }
+code { background: whitesmoke; }
 
 // Theme skin
 @import "basically-basic/themes/{{ site.data.theme.skin | default: 'default' }}";
