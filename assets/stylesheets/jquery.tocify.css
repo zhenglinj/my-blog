@@ -52,6 +52,14 @@
     text-indent: 40px;
 }
 
+li.tocify-item.active {
+  background: #00848a;
+}
+
+li.tocify-item.active > a{
+  color: white;
+}
+
 /* Twitter Bootstrap Override Style */
 .nav-list > li > a, .nav-list .nav-header {
     margin: 0px;
