@@ -6,6 +6,7 @@ layout: about
 ### 关于我:
 
 程序员，热爱数学，编程。  
+40%technology + 30%sport + 30%outing = 100%space-time  
 
 <!-- ### 联系方式： -->
 
