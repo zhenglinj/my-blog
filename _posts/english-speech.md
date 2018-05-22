@@ -1,25 +1,27 @@
-# Competitive spirit definition
+THE MARVEL’S SUPERHEROES
+Background
 
-**What is Competitive Spirit? What Are the Advantages of a Competitive Spirit?**
+I still remember that I watched the movie Iron Man 1 during the summer graduated from high school. I just can say cool since my pool vocabulary in teenage but it deeply called my heroism.
+General speaking, most of the boys imaged to be a superhero when they were teenage, since they have watched the superheroes’ movies. Like Marvel’s, DC’s movies.
+They become good eggs when they grow up. It’s the Marvel’s and DC’s superheroes effected them.
 
-Those who have a competitive spirit are enthusiastic about the competition and often they seek this type of competitive atmosphere in whatever they do. These people are often seen as being very confident and always up for a challenge.
-A fine line exists between a competitive spirit and being aggressive. If healthy competition is developed, advantages in many different areas of life, such as career advancement, self worth respect from others, can be obtained.
+About MCU
 
-A fine line exists between a competitive spirit and being aggressive. If healthy competition is developed, advantages in many different areas of life, such as career advancement, self worth respect from others, can be obtained.
+MCU stand for “Marvel Cinematic Universe”. It shared universe that is centered on a series of superhero films, independently produced by Marvel Studios and based on characters that appear in American comic books published by Marvel Comics.
 
-## Advantages
+Talking about the Marvel’s superheroes films, we .
 
-## Disadvantages
 
-## Concluding
+Some Typical Superheroes
+-	Irony Man
+-	Captain America 
+-	Thor
+-	Doctor Strange
+-	Spider Man
 
-Having a healthy competitive spirit
 
-## More Information
+Conclusions
 
-[Competitive spirit on sports](http://www.ehow.com/list_6758186_advantages-competitive-spirit_.html)
-
-[Having a healthy competitive spirit](http://www.cleveland.com/employment/plaindealer/index.ssf/2013/11/having_a_healthy_competitive_spirit.html)
-
-[6 fitness reasons to embrace your competitive spirit today](http://www.discovergoodnutrition.com/2013/09/competitive-spirit/)
+At the same time, there are many superheroes in our Chinese movies. Like Jinyong’s heroes, Gulong’s heroes and so on.
+For now, I got understand that we could never be a superhero as above, but we can be a good person in our daily life. As a man, we can be a girl’s hero to protect her. As a future father, we can be our familiars’ hero to protect members.
 
