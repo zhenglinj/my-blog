@@ -13,6 +13,8 @@ Thumbs.db
 .rbenv-version
 .rvmrc
 
+.sass-cache
+
 # ------------------------- react js -------------------------
 node_modules/
 
