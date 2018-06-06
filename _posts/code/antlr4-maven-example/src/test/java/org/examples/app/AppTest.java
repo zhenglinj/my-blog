@@ -1,4 +1,4 @@
-package com.zhenglinj;
+package org.examples.app;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

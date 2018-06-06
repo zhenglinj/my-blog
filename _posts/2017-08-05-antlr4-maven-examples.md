@@ -1,6 +1,6 @@
 ---
-title: "ANTLR v4 Maven Example"
-excerpt: "由于项目中需要解析文本文件，将其解析成JSON格式。初步打算用类似编译器前端工具生成解析器目标Java代码，经过一番搜索研究，发现神器 ANTLR (ANother Tool for Language Recognition)，本文给出该工具的使用例子。"
+title: "ANTLR v4 Examples (Java + Python)"
+excerpt: "由于项目中需要解析文本文件，经过一番搜索研究，发现神器 ANTLR (ANother Tool for Language Recognition)，本文给出该工具的使用例子。"
 category: "technology"
 analytics: true
 comments: true
@@ -25,19 +25,25 @@ tags: [antlr4]
 
 ## 文档 & 代码示例
 
-[Github 项目源码](https://github.com/antlr/antlr4)  
+[ANTLR 4 Github 项目源码](https://github.com/antlr/antlr4)  
 [ANTLR 4 Documentation](https://github.com/antlr/antlr4/blob/master/doc/index.md)  
 [Offical Code Examples](https://media.pragprog.com/titles/tpantlr2/code/tpantlr2-code.tgz)  
 [A copy of code in "The Definitive ANTLR 4 Reference" for ANTLR 4.6](https://github.com/blindpirate/the-definitive-antlr4-reference-code)  
+[扩展巴科斯范式(EBNF)](https://zh.wikipedia.org/wiki/%E6%89%A9%E5%B1%95%E5%B7%B4%E7%A7%91%E6%96%AF%E8%8C%83%E5%BC%8F)  
 
 ## ANTLR4 -- Java Target Maven Example Project
 
+[]()  
+
+## ANTLR4 -- Python Target Example Project
 
 
-### ANTLR4 testsuite
+## ANTLR4 testsuite
 
 [](https://github.com/antlr/antlr4) `antlr4-tool-testsuite`
 
 ## ACE Editor with ANTLR4
 
-[](https://github.com/antlr/antlr4/blob/master/doc/ace-javascript-target.md)
+ACE.js是流行的前端页面编辑器，由JavaScript实现。可以结合ANTLR4实现自定义的语言关键字高亮等基本功能。
+
+[](https://github.com/antlr/antlr4/blob/master/doc/ace-javascript-target.md)  
