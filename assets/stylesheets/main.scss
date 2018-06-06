@@ -4,7 +4,12 @@
 
 @charset "utf-8";
 
-body { font-family:"Microsoft YaHei","Fira Sans", sans-serif; }
+// Theme skin
+@import "basically-basic/themes/{{ site.data.theme.skin | default: 'default' }}";
+
+@import "basically-basic";
+
+body { font-family: "Microsoft YaHei", "Fira Sans", sans-serif; }
 
 .listing { padding-left: 0px; }
 .listing-item,.listing-seperator { list-style-type:none; }
@@ -13,11 +18,9 @@ body { font-family:"Microsoft YaHei","Fira Sans", sans-serif; }
 
 pre { background: whitesmoke; } // border: 1px solid #ccc;
 code { background: whitesmoke; }
+
 table {
-  table-layout: fixed;
+    table-layout: auto;
+    overflow-wrap: break-word;
+    word-break: normal;
 }
-
-// Theme skin
-@import "basically-basic/themes/{{ site.data.theme.skin | default: 'default' }}";
-
-@import "basically-basic";
