@@ -13,6 +13,9 @@ body { font-family:"Microsoft YaHei","Fira Sans", sans-serif; }
 
 pre { background: whitesmoke; } // border: 1px solid #ccc;
 code { background: whitesmoke; }
+table {
+  table-layout: fixed;
+}
 
 // Theme skin
 @import "basically-basic/themes/{{ site.data.theme.skin | default: 'default' }}";

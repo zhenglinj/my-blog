@@ -2,11 +2,11 @@
 layout: post
 title: "洗牌算法 Random shuffle 证明"
 excerpt: "洗牌算法 Random shuffle 证明"
-category: "algorithm"
+category: "mathematic"
 draft: false
 analytics: true
 comments: true
-tags: [algorithm]
+tags: [mathematic]
 ---
 {% include JB/setup %}
 

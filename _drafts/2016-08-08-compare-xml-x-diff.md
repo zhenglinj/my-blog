@@ -2,11 +2,11 @@
 layout: post
 title: "比较XML文件算法"
 excerpt: "比较XML文件算法"
-category: "algorithm"
+category: "technology"
 draft: false
 analytics: true
 comments: true
-tags: [algorithm]
+tags: [technology]
 ---
 {% include JB/setup %}
 

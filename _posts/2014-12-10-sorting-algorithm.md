@@ -2,11 +2,11 @@
 layout: post
 title: "常用排序算法介绍"
 excerpt: "排序算法简单讲解，Python 比较接近伪代码所以采用 Python 简单实现"
-category: "algorithm"
+category: "technology"
 draft: false
 analytics: true
 comments: true
-tags: [sorting, algorithm, notes]
+tags: [sorting, technology, notes]
 ---
 {% include JB/setup %}
 

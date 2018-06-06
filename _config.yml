@@ -18,18 +18,39 @@ title: Zhenglinj's Blog               # '
 email: zhenglinj@hotmail.com
 description: Personal blog
 baseurl: # the optional subpath of your site, e.g. "/blog"
-url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url: "http://zhenglinj.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+postsurl: "https://github.com/zhenglinj/zhenglinj.github.io/blob/master/_posts/"
 author:
   name: zhenglinj
   twitter:
   picture:
   github: zhenglinj
+  sinaweibo: zhenglinj
+  qq: zhenglinj
+  email: zhenglinj@hotmail.com
 twitter_username:
 github_username: zhenglinj
 logo: /assets/favicon128x128.png # path of site logo, e.g. "/assets/images/logo.png"
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input:          GFM
+  auto_ids:       true
+  auto_id_prefix: 'id-'
+  # footnote_nr:   1
+  # entity_output: as_char
+  # toc_levels:    1..6
+  # smart_quotes:  lsquo,rsquo,ldquo,rdquo
+  # use_coderay:   true
+
+  # coderay:
+  #   coderay_wrap:              div
+  #   coderay_line_numbers:      inline
+  #   coderay_line_number_start: 1
+  #   coderay_tab_width:         2
+  #   coderay_bold_every:        10
+  #   coderay_css:               style
 theme: jekyll-theme-basically-basic
 plugins:
   - jekyll-feed

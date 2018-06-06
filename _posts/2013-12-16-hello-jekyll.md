@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello Jekyll"
-excerpt: "这是测试页面，测试显示的效果，以及一些插件、配置是否成功。内容主要介绍Jekyll在Github上建博客，用Emacs编辑Markdown写博文，和一些实用的插件。同时以下是简介及实例作为笔记备忘。"
+excerpt: "这是测试页面，测试显示的效果，以及一些插件、配置是否成功。内容主要介绍Jekyll在Github上建博客，用Markdown写博文，和一些实用的插件。同时以下是简介及实例作为笔记备忘。"
 category: "technology"
 draft: false
 analytics: true
@@ -42,7 +42,7 @@ Markdown语法说明：[Markdown语法说明](http://wowubuntu.com/markdown/ )  
 
 ### 语法文档
 
-![markdownsheet](/assets/images/markdownsheet.png )
+![markdownsheet](/posts/images/markdownsheet.png ){: .align-center}
 
 ### 列表
 
@@ -230,6 +230,8 @@ public:
 ```cpp
 {% include_relative code/hello-jekyll_demo.cpp %}
 ```
+
+[Code Snippet]({{ site.postsurl }}/code/hello-jekyll_demo.cpp )
 
 [参考这里](http://noyobo.com/2014/10/19/jekyll-kramdown-highlight.html )  
 
