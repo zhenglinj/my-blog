@@ -24,21 +24,19 @@ tags: [jekyll, markdown, notes]
 快速入门文档： [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)  
 详细用法的文档： [Jekyll Bootstrap](http://jekyllbootstrap.com)  
 
-**中文教程**
+**例子**
 
-主要是一些博文：
-[基于jekyll的github建站指南](http://jiyeqian.github.io/2012/07/host-your-pages-at-github-using-jekyll/#outline_0 )  
-[使用Github Pages建独立博客](http://beiyuu.com/github-pages/ )  
-[在Octopress中使用LaTeX](http://yanping.me/cn/blog/2012/03/10/octopress-with-latex/ )  
+本博客主题：[jekyll-theme-basically-basic](https://mmistakes.github.io/jekyll-theme-basically-basic/)
 
 以上只是几个例子，更多见Baidu, Google.  
 
 ---
 
-## Markdown语法说明
+## Markdown 语法简介
 
 现在用Markdown写博文很流行也确实很方便，很多网站的评论也开始支持Markdown语言。这种轻度标记语言挺简单，并且可以很轻松写出一些排版清楚的文字。同时Jekyll建博客后也是用这种语言发文章的，所以还是值得一学。  
-Markdown语法说明：[Markdown语法说明](http://wowubuntu.com/markdown/ )  [讲解 Markdown](http://alfred-sun.github.io/blog/2015/01/10/markdown-syntax-documentation/)  
+[Markdown 语法简介](http://wowubuntu.com/markdown/ )  
+[讲解 Markdown](http://alfred-sun.github.io/blog/2015/01/10/markdown-syntax-documentation/)  
 
 ### 语法文档
 
@@ -228,12 +226,15 @@ public:
 **效果：**
 
 ```cpp
-{% include_relative code/hello-jekyll_demo.cpp %}
+class Voila {
+public:
+    // Voila
+    static const string VOILA = "Voila";
+    // will not interfere with embedded tags.
+}
 ```
 
-[Code Snippet]({{ site.postsurl }}/code/hello-jekyll_demo.cpp )
-
-[参考这里](http://noyobo.com/2014/10/19/jekyll-kramdown-highlight.html )  
+[代码]({{ site.postsurl }}/code/hello-jekyll_demo.cpp )
 
 ### LATEX显示数学公式 MathJax
 
@@ -307,5 +308,3 @@ $$\frac{f(x)}{g(x)}$$
 <!-- </div> -->
 
 **最后**就是保持现在的这种激情写博文了！
-
-<p><object type="application/x-shockwave-flash" style="outline:none;" data="http://cdn.abowman.com/widgets/hamster/hamster.swf?up_bodyColor=f0e9cc&amp;up_feetColor=D4C898&amp;up_eyeColor=000567&amp;up_wheelSpokeColor=DEDEDE&amp;up_wheelColor=FFFFFF&amp;up_waterColor=E0EFFF&amp;up_earColor=b0c4de&amp;up_wheelOuterColor=FF4D4D&amp;up_snoutColor=F7F4E9&amp;up_bgColor=F0E4E4&amp;up_foodColor=cba920&amp;up_wheelCenterColor=E4EB2F&amp;up_tailColor=E6DEBE&amp;" width="400" height="320"></object></p>

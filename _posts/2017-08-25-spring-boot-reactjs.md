@@ -181,9 +181,9 @@ boot-react
 
 [React](https://facebook.github.io/react/)  
 [Redux](http://redux.js.org/)  
-React + Redux 框架例子：[react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)  
+[React + Redux react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)  
 
 ### Spring Boot + React.js maven project
 
-[Example boot-react](https://github.com/zhenglinj/boot-react)
+[SpringBoot+Reactjs boot-react](https://github.com/zhenglinj/boot-react)
 

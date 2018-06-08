@@ -10,7 +10,7 @@ layout: default
       <div class="entry-content">
         {{ content }}
         <hr>
-        <p>[转载请注明]：<a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a></p>
+        <p>[转载注明]：<a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a></p>
         <section align="right">
           <span>
             <a {% if page.previous %} href="{{ page.previous.url }}" class="pageNav"{% endif %} {% unless page.previous %} class="pageNavInvalid" {% endunless %} >Previous</a>
@@ -42,8 +42,7 @@ layout: default
          $("#toc").css("visibility", "hidden");
      } else {
          // not mobile phone
-         var toc = $("#toc").tocify({ selectors: "h2, h3, h4" }).data("toc-tocify");
-         toc.setOptions({ showAndHide: true });
+         var toc = $("#toc").tocify({ selectors: "h2, h3, h4", ignoreSelector: "h1.intro-title" }).data("toc-tocify");
      }
  });
 </script>
