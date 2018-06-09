@@ -1,32 +1,42 @@
 {% if jekyll.environment == 'production' and site.google_analytics %}
-{% include google-analytics.html %}
+  {% include google-analytics.html %}
 {% endif %}
 
 <script async src="{{ '/assets/javascripts/main.js' | relative_url }}"></script>
 
 <script type="text/javascript">
  function setTimeSpan(){
-   var date = new Date();
-   timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+     var date = new Date();
+     timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
  }
 
  Date.prototype.format = function(format)
  {
-   var o =
-     {
-       "M+" : this.getMonth()+1, //month
-       "d+" : this.getDate(),    //day
-       "h+" : this.getHours(),   //hour
-       "m+" : this.getMinutes(), //minute
-       "s+" : this.getSeconds(), //second
-       "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
-       "S" : this.getMilliseconds() //millisecond
-     }
-   if (/(y+)/.test(format))
-     format = format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
-   for (var k in o)
-     if (new RegExp("("+ k +")").test(format))
-       format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
-   return format;
+     var o =
+         {
+             "M+" : this.getMonth()+1, //month
+             "d+" : this.getDate(),    //day
+             "h+" : this.getHours(),   //hour
+             "m+" : this.getMinutes(), //minute
+             "s+" : this.getSeconds(), //second
+             "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+             "S" : this.getMilliseconds() //millisecond
+         }
+     if (/(y+)/.test(format))
+         format = format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+     for (var k in o)
+         if (new RegExp("("+ k +")").test(format))
+             format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+     return format;
  }
 </script>
+
+{% if site.search %}
+  {%- assign search_provider = site.search_provider | default: "lunr" -%}
+  {%- case search_provider -%}
+    {%- when "lunr" -%}
+      {% include search/lunr-search-scripts.html %}
+    {%- when "algolia" -%}
+      {% include search/algolia-search-scripts.html %}
+  {%- endcase -%}
+{% endif %}
