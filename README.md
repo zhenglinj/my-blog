@@ -1,8 +1,9 @@
 # [Basically Basic Jekyll Theme][1]
 
-[![Gem](https://img.shields.io/gem/v/jekyll-theme-basically-basic.svg?style=flat-square)](https://rubygems.org/gems/jekyll-theme-basically-basic)
-[![license](https://img.shields.io/github/license/mmistakes/jekyll-theme-basically-basic.svg?style=flat-square)](LICENSE.md)
-[![Code Climate](https://img.shields.io/codeclimate/github/mmistakes/jekyll-theme-basically-basic.svg?style=flat-square)](https://codeclimate.com/github/mmistakes/jekyll-theme-basically-basic)
+[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/mmistakes/jekyll-theme-basically-basic/blob/master/LICENSE.md)
+[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.6-blue.svg)](https://jekyllrb.com/)
+[![Ruby gem](https://img.shields.io/gem/v/jekyll-theme-basically-basic.svg)](https://rubygems.org/gems/jekyll-theme-basically-basic)
+[![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/mmistakes)
 
 Basically Basic is a [Jekyll theme](https://jekyllrb.com/docs/themes/) meant as 
 a substitute for the default --- [Minima](https://github.com/jekyll/minima). 
@@ -23,89 +24,103 @@ with a few enhancements thrown in for good measure:
 ## Table of Contents
 
 1. [Installation](#installation)
-   1. [Ruby Gem Method](#ruby-gem-method)
-   2. [GitHub Pages Compatible Method](#github-pages-compatible-method)
-      1. [Remove the Unnecessary](#remove-the-unnecessary)
-2. [Structure](#structure)
-   1. [Starting Fresh](#starting-fresh)
-   2. [Starting from jekyll new](#starting-from-jekyll-new)
-3. [Configuration](#configuration)
-   1. [Skin](#skin)
-   2. [Google Fonts](#google-fonts)
-   3. [Text](#text)
-   4. [Navigation](#navigation)
-   5. [Pagination](#pagination)
-   6. [Author](#author)
-   7. [Reading Time](#reading-time)
-   8. [Comments (via Disqus)](#comments-via-disqus)
-   9. [Google Analytics](#google-analytics)
-4. [Layouts](#layouts)
-   1. [Default](#layout-default)
-   2. [Post](#layout-post)
-   3. [Page](#layout-page)
-   4. [Home](#layout-home)
-   5. [About](#layout-about)
-   6. [Curriculum Vitæ/Resume](#layout-cv)
-5. [Customization](#customization)
-   1. [Overriding Includes and Layouts](#overriding-includes-and-layouts)
-   2. [Customizing Sass (SCSS)](#customizing-sass-scss)
-   3. [Customizing JavaScript](#customizing-javascript)
-   4. [SVG Icons](#svg-icons)
-   5. [Customizing Sidebar Content](#customizing-sidebar-content)
-6. [Development](#development)
-7. [Contributing](#contributing)
-   1. [Pull Requests](#pull-requests)
-8. [Credits](#credits)
+    1. [Ruby Gem Method](#ruby-gem-method)
+    2. [GitHub Pages Method](#github-pages-method)
+        1. [Remove the Unnecessary](#remove-the-unnecessary)
+2. [Upgrading](#upgrading)
+    1. [Ruby Gem](#ruby-gem)
+    2. [Remote Theme](#remote-theme)
+    3. [Use Git](#use-git)
+        1. [Pull Down Updates](#pull-down-updates)
+    4. [Update Files Manually](#update-files-manually)
+3. [Structure](#structure)
+    1. [Starting Fresh](#starting-fresh)
+    2. [Starting from `jekyll new`](#starting-from-jekyll-new)
+4. [Configuration](#configuration)
+    1. [Skin](#skin)
+    2. [Google Fonts](#google-fonts)
+    3. [Text](#text)
+    4. [Navigation](#navigation)
+    5. [Pagination](#pagination)
+    6. [Search](#search)
+        1. [Lunr (default)](#lunr-default)
+        2. [Algolia](#algolia)
+    7. [Author](#author)
+    8. [Reading Time](#reading-time)
+    9. [Comments (via Disqus)](#comments-via-disqus)
+    10. [Google Analytics](#google-analytics)
+5. [Layouts](#layouts)
+    1. [`layout: default`](#layout-default)
+    2. [`layout: post`](#layout-post)
+    3. [`layout: page`](#layout-page)
+    4. [`layout: home`](#layout-home)
+    5. [`layout: about`](#layout-about)
+    6. [`layout: cv`](#layout-cv)
+6. [Customization](#customization)
+    1. [Overriding Includes and Layouts](#overriding-includes-and-layouts)
+    2. [Customizing Sass (SCSS)](#customizing-sass-scss)
+    3. [Customizing JavaScript](#customizing-javascript)
+    4. [SVG Icons](#svg-icons)
+    5. [Customizing Sidebar Content](#customizing-sidebar-content)
+7. [Development](#development)
+8. [Contributing](#contributing)
+    1. [Pull Requests](#pull-requests)
+9. [Credits](#credits)
+10. [License](#license)
 
 ## Installation
 
-If you're running Jekyll v3.3+ and self-hosting you can quickly install the 
-theme as Ruby gem. If you're hosting with GitHub Pages you'll have to use the 
-"repo fork" method or directly copy all of the theme files (see 
-[structure](#structure) below) into your project.
+If you're running Jekyll v3.5+ and self-hosting you can quickly install the 
+theme as a Ruby gem. If you're hosting with GitHub Pages you can install as a 
+remote theme or directly copy all of the theme files (see [structure](#structure) 
+below) into your project.
 
 ### Ruby Gem Method
 
-1. Install the theme as a Ruby Gem by adding it to your `Gemfile` like so:
+1. Add this line to your Jekyll site's `Gemfile`:
 
    ```ruby
    gem "jekyll-theme-basically-basic"
    ```
-
-2. Fetch and update your bundled gems by running the following 
-   [Bundler](http://bundler.io/) command:
-   
-   ```bash
-   bundle
-   ```
-
-3. Set the `theme` in your project's Jekyll configuration, `_config.yml`:
+2. Add this line to your Jekyll site's `_config.yml` file:
 
    ```yaml
    theme: jekyll-theme-basically-basic
    ```
 
-### GitHub Pages Compatible Method
+2. Then run [Bundler](http://bundler.io/) to install the theme gem and dependencies:
+   
+   ```terminal
+   bundle install
+   ```
 
-Fork the [Basically Basic repo](https://github.com/mmistakes/jekyll-theme-basically-basic/fork), 
-then rename it to **USERNAME.github.io** --- replacing **USERNAME** with your 
-GitHub username.
+### GitHub Pages Method
+
+GitHub Pages has added [full support](https://github.com/blog/2464-use-any-theme-with-github-pages) 
+for any GitHub-hosted theme.
+
+1. Replace `gem "jekyll"` with:
+
+   ```ruby
+   gem "github-pages", group: :jekyll_plugins
+   ```
+
+2. Run `bundle update` and verify that all gems install properly.
+
+3. Add `remote_theme: "mmistakes/jekyll-theme-basically-basic"` to your 
+   `_config.yml` file. Remove any other `theme:` or `remote_theme:` entries.
+
+---
 
 **Note:** Your Jekyll site should be viewable immediately at 
 <http://USERNAME.github.io>. If it's not, you can force a rebuild by 
-**configuring your site** (see below for more details).
+**Customizing Your Site** (see below for more details).
 
-Replace the contents of `Gemfile` found in the root of your Jekyll site with 
-the following:
-
-```ruby
-source "https://rubygems.org"
-
-gem "github-pages", group: :jekyll_plugins
-```
-
-Then run `bundle update` and verify that the [GitHub Pages gem](https://github.com/github/pages-gem)
-and its dependencies install properly.
+If you're hosting several Jekyll based sites under the same GitHub username you 
+will have to use Project Pages instead of User Pages. Essentially you rename the 
+repo to something other than **USERNAME.github.io** and create a `gh-pages` 
+branch off of `master`. For more details on how to set things up check 
+[GitHub's documentation](https://help.github.com/articles/user-organization-and-project-pages/).
 
 #### Remove the Unnecessary
 
@@ -126,6 +141,95 @@ safely remove the following files and folders:
 - `/docs`
 - `/example`
 
+## Upgrading
+
+If you're using the Ruby Gem or remote theme versions of Basically Basic, 
+upgrading is fairly painless.
+
+To check which version you are currently using, view the source of your built 
+site and you should something similar to:
+
+```
+<!--
+    Basically Basic Jekyll Theme 1.2.0
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+-->
+```
+
+At the top of every `.html` file, `/assets/css/main.css`, and `/assets/js/main.js`.
+
+### Ruby Gem
+
+Simply run `bundle update` if you're using Bundler (have a `Gemfile`) or `gem 
+update jekyll-theme-basically-basic` if you're not.
+
+### Remote Theme
+
+When hosting with GitHub Pages you'll need to push up a commit to force a 
+rebuild with the latest [theme release](https://github.com/mmistakes/jekyll-theme-basically-basic/releases).
+
+An empty commit will get the job done too if you don't have anything to push at 
+the moment:
+
+```terminal
+git commit --allow-empty -m "Force rebuild of site"
+```
+
+### Use Git
+
+If you want to get the most out of the Jekyll + GitHub Pages workflow, then 
+you'll need to utilize Git. To pull down theme updates you must first ensure 
+there's an upstream remote. If you forked the theme's repo then you're likely 
+good to go.
+
+To double check, run `git remote -v` and verify that you can fetch from `origin https://github.com/mmistakes/jekyll-theme-basically-basic.git`.
+
+To add it you can do the following:
+
+```terminal
+git remote add upstream https://github.com/mmistakes/jekyll-theme-basically-basic.git
+```
+
+#### Pull Down Updates
+
+Now you can pull any commits made to theme's `master` branch with:
+
+```terminal
+git pull upstream master
+```
+
+Depending on the amount of customizations you've made after forking, there's 
+likely to be merge conflicts. Work through any conflicting files Git flags, 
+staging the changes you wish to keep, and then commit them.
+
+### Update Files Manually
+
+Another way of dealing with updates is [downloading the theme](https://github.com/mmistakes/jekyll-theme-basically-basic/archive/master.zip) 
+--- replacing your layouts, includes, and assets with the newer ones manually. 
+To be sure that you don't miss any changes it's probably a good idea to review 
+the theme's [commit history](https://github.com/mmistakes/jekyll-theme-basically-basic/commits/master) 
+to see what's changed since.
+
+Here's a quick checklist of the important folders/files you'll want to be 
+mindful of:
+
+| Name                   |     |
+| ----                   | --- |
+| `_layouts`             | Replace all. Apply edits if you customized any layouts. |
+| `_includes`            | Replace all. Apply edits if you customized any includes. |
+| `assets`               | Replace all. Apply edits if you customized stylesheets or scripts. |
+| `_sass`                | Replace all. Apply edits if you customized Sass partials. |
+| `_data/theme.yml`      | Safe to keep. Verify that there were no major structural changes or additions. |
+| `_config.yml`          | Safe to keep. Verify that there were no major structural changes or additions. |
+
+---
+
+**Note:** If you're not seeing the latest version, be sure to flush browser and 
+CDN caches. Depending on your hosting environment older versions of 
+`/assets/css/main.css`, `/assets/js/main.js`, or `*.html` may be cached.
+
 ## Structure
 
 Layouts, includes, Sass partials, and data files are all placed in their default 
@@ -136,7 +240,7 @@ files in the project's root directory.
 files found in `/_layouts`, `/_includes`, `/_sass`, and `/assets` will be 
 missing. This is normal as they are bundled with the [`jekyll-theme-basically-basic`](https://rubygems.org/gems/jekyll-theme-basically-basic) gem.
 
-```bash
+```terminal
 jekyll-theme-basically-basic
 ├── _data                      # data files
 |  └── theme.yml               # theme settings and custom text
@@ -298,6 +402,67 @@ add the following front matter:
    paginate: true
    ```
 
+### Search
+
+To enable site-wide search add `search: true` to your `_config.yml`.
+
+#### Lunr (default)
+
+The default search uses [**Lunr**](https://lunrjs.com/) to build a search index of all your documents. This method is 100% compatible with sites hosted on GitHub Pages.
+
+**Note:** Only the first 50 words of a post or page's body content is added to the Lunr search index. Setting `search_full_content` to `true` in your `_config.yml` will override this and could impact page load performance.
+
+#### Algolia
+
+For faster and more relevant search:
+
+1. Add the [`jekyll-algolia`](https://github.com/algolia/jekyll-algolia) gem to your `Gemfile`, in the `:jekyll_plugins` section.
+
+   ```ruby
+   group :jekyll_plugins do
+     gem "jekyll-feed"
+     gem "jekyll-seo-tag"
+     gem "jekyll-sitemap"
+     gem "jekyll-paginate"
+     gem "jekyll-algolia"
+   end
+   ```
+
+   Once this is done, download all dependencies by running `bundle install`.
+
+2. Switch search providers from `lunr` to `algolia` in your `_config.yml` file:
+
+   ```yaml
+   search_provider: algolia
+   ```
+
+3. Add the following Algolia credentials to your `_config.yml` file. *If you don't have an Algolia account, you can open a free [Community plan](https://www.algolia.com/users/sign_up/hacker). Once signed in, you can grab your credentials from [your dashboard](https://www.algolia.com/licensing).*
+
+   ```yaml
+   algolia:
+     application_id: # YOUR_APPLICATION_ID
+     index_name: # YOUR_INDEX_NAME
+     search_only_api_key: # YOUR_SEARCH_ONLY_API_KEY
+     powered_by: # true (default), false
+   ```
+
+4. Once your credentials are setup, you can run the indexing with the following command:
+
+   ```
+   ALGOLIA_API_KEY=your_admin_api_key bundle exec jekyll algolia
+   ```
+
+   For Windows users you will have to use `set` to assigned the `ALGOLIA_API_KEY` environment variable.
+
+   ```
+   set ALGOLIA_API_KEY=your_admin_api_key
+   bundle exec jekyll algolia
+   ```
+
+   Note that `ALGOLIA_API_KEY` should be set to your admin API key.
+
+To use the Algolia search with GitHub Pages hosted sites follow [this deployment guide](https://community.algolia.com/jekyll-algolia/github-pages.html). Or this guide for [deploying on Netlify](https://community.algolia.com/jekyll-algolia/netlify.html).
+
 ### Author
 
 Author information is used as meta data for post "by lines" and propagates the 
@@ -356,7 +521,8 @@ Front Matter.
 Optionally, if you have a [Disqus](https://disqus.com/) account, you can show a 
 comments section below each post.
 
-To enable Disqus comments, add your [Disqus shortname](https://help.disqus.com/customer/portal/articles/466208) to your project's `_config.yml` file:
+To enable Disqus comments, add your [Disqus shortname](https://help.disqus.com/customer/portal/articles/466208) to your project's 
+`_config.yml` file:
 
 ```yaml
   disqus:
@@ -517,18 +683,16 @@ To override the default [Sass](http://sass-lang.com/guide) (located in theme's
    - Customize what you want inside `<your_project/assets/stylesheets/main.scss`.
 
 **Note:** To make more extensive changes and customize the Sass partials bundled 
-in the gem. You will need to copy the complete contents the `_sass` directory to 
-`<your_project>` due to the way Jekyll currently reads those files.
+in the gem. You will need to copy the complete contents of the `_sass` directory 
+to `<your_project>` due to the way Jekyll currently reads those files.
 
 To make basic tweaks to theme's style Sass variables can be overridden by adding 
 to `<your_project>/assets/stylesheets/main.scss`. For instance, to change the 
-accent color used throughout the theme add:
+accent color used throughout the theme add the following:
 
 ```scss
 $accent-color: red;
 ```
-
-Before any `@import` lines.
 
 ### Customizing JavaScript
 
@@ -692,7 +856,7 @@ grammar, etc.
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Michael Rose
+Copyright (c) 2017-2018 Michael Rose and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -711,3 +875,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Basically Basic incorporates icons from [The Noun Project](https://thenounproject.com/).
+Icons are distributed under Creative Commons Attribution 3.0 United States (CC BY 3.0 US).
+
+Basically Basic incorporates photographs from [Unsplash](https://unsplash.com).
+
+Basically Basic incorporates [Susy](http://susy.oddbird.net/),
+Copyright (c) 2017, Miriam Eric Suzanne.
+Susy is distributed under the terms of the [BSD 3-clause "New" or "Revised" License](https://opensource.org/licenses/BSD-3-Clause).
+
+Basically Basic incorporates [Breakpoint](http://breakpoint-sass.com/).
+Breakpoint is distributed under the terms of the [MIT/GPL Licenses](http://opensource.org/licenses/MIT).

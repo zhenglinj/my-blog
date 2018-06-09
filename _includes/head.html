@@ -11,8 +11,6 @@
   <script type="text/javascript" src="/assets/javascripts/jquery-ui-1.9.1.custom.min.js"></script>
   <script type="text/javascript" src="/assets/javascripts/jquery.tocify.min.js"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript" src="/assets/javascripts/highlightjs-line-numbers.min.js"></script>
 
   <!-- MathJax for LaTeX -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -22,15 +20,15 @@
   });
   </script>
   <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['$$$','$$$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [ ['$','$'], ['$$$','$$$'], ["\\(","\\)"] ],
+           processEscapes: true
+       }
+   });
   </script>
 
-  {% if site.plugins contains 'jekyll-seo-tag' %}
+  {% if site.plugins contains 'jekyll-seo-tag' or site.gems contains 'jekyll-seo-tag' %}
     {% comment %}
       Add metadata for search engines and social networks if jekyll-seo-tag plugin is enabled
     {% endcomment %}
@@ -53,7 +51,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={% for font in site.data.theme.google_fonts %}{{ font.name | replace: ' ', '+' }}{% if font.weights %}:{% endif %}{{ font.weights | remove: ' ' }}{% if forloop.last != true %}|{% endif %}{% endfor %}">
   {% endif %}
 
-  {% if site.plugins contains 'jekyll-feed' %}
+  {% if site.plugins contains 'jekyll-feed' or site.gems contains 'jekyll-feed'%}
     {% comment %}
       Add Atom feed link if jekyll-feed plugin is enabled
     {% endcomment %}

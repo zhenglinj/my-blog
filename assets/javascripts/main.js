@@ -2,8 +2,8 @@
 ---
 
 /*!
- * Basically Basic Jekyll Theme 1.1.0
- * Copyright 2017 Michael Rose - mademistakes | @mmistakes
+ * Basically Basic Jekyll Theme 1.2.0
+ * Copyright 2017-2018 Michael Rose - mademistakes | @mmistakes
  * Free for personal and commercial use under the MIT license
  * https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
 */
@@ -55,3 +55,13 @@ myMenu.addEventListener('click', function() {
   toggleClassMenu();
   animateMenuItems();
 }, false);
+
+// Search toggle
+$(".search-toggle").on("click", function() {
+  $(".search-content").toggleClass("is--visible");
+  $(".initial-content").toggleClass("is--hidden");
+  // set focus on input
+  setTimeout(function() {
+    $("#search").focus();
+  }, 400);
+});

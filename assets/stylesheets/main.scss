@@ -24,3 +24,7 @@ table {
     overflow-wrap: break-word;
     word-break: normal;
 }
+
+.intro-image::before {
+    background-color: rgba(0, 0, 0, 0);
+}
