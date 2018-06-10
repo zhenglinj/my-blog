@@ -81,7 +81,7 @@ shared_ptr<int> p2(new int(2));// 通过原生指针构造
 
 运行结果为：
 
-```nohighlight
+```markdown
 sa use count:2
 sb use count:2
 ```
@@ -104,7 +104,7 @@ sb use count:2
 **使用`weak_ptr`来打破循环引用，将以上代码中 pb 声明为 `weak_ptr` 即可解决。**
 输出结果：
 
-```nohighlight
+```markdown
 sa use count:2
 sb use count:1
 kill B

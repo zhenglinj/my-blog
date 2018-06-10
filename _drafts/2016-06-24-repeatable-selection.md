@@ -107,7 +107,7 @@ $$
 
 结果如下：
 
-```nohighlight
+```markdown
 >>> K items repeatable all selection N times (N >= k, N = 10):
 a(10, 1) = 1,
 a(10, 2) = 1022,

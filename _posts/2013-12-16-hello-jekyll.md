@@ -117,7 +117,7 @@ Jekyll 可以采用不同的 Markdown 解释器，如：Maruku, Redcarpet和Kram
 
 ### 表格扩展
 
-````nohighlight
+````markdown
 |-----------------|------------|-----------------|----------------|
 | Default aligned |Left aligned| Center aligned  | Right aligned  |
 |-----------------|:-----------|:---------------:|---------------:|
@@ -161,7 +161,7 @@ That\'s the second paragraph.
 
 扩展功能，使用ID为你的标题提供页面内引用地址，可以像超链接一样跳转。
 
-```nohighlight
+```markdown
 ## Kramdown 语法简介  {#intro-kramdown}
 
 [Goto introduce kramdown](#intro-kramdown)
@@ -212,7 +212,7 @@ kramdown:
 
 **示例：**
 
-````nohighlight
+````markdown
 ```cpp
 class Voila {
 public:
@@ -260,7 +260,7 @@ public:
 
 **示例：**
 
-```nohighlight
+```markdown
 $$(a_1,b_1,a_2,b_2,\cdots,an,bn)$$
 
 $$(O(1))$$

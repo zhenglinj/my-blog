@@ -82,7 +82,7 @@ string str(pc);
 
 ## 旧式的强制类型转换
 
-```nohighlight
+```markdown
 type (expr);
 (type) expr;
 ```
