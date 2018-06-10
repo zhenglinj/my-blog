@@ -245,7 +245,7 @@ while (true) {
 
 我们可以通过ncat命令和它聊天：
 
-```nohighlight
+```markdown
 $ ncat 127.0.0.1 8000
 hello
 it's echo man

@@ -56,7 +56,7 @@ C++和Python实现：
 
 演示输出结果：
 
-````nohighlight
+````markdown
 Selection sort
 Origin: [8, 4, 3, 1, 9, 6, 5, 7, 2, 0]
 Result: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -122,7 +122,7 @@ Result: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 输出结果：
 
-````nohighlight
+````markdown
 [3, 8, 6, 7, 9, 2, 1, 5, 0, 4]
 The number of inversions:  30
 The number of inversions:  30
