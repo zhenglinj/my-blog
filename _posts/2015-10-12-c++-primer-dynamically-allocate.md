@@ -147,7 +147,7 @@ Thingy* foo()
 }
 ```
 
-## 结论
+**结论**
 
 > Store it on the stack, if you CAN.
 >
@@ -167,8 +167,8 @@ Thingy* foo()
 
 ## 参考
 
-[C++ 智能指针及循环引用问题](http://blog.csdn.net/daniel_ustc/article/details/23096229)
-[智能指针（现代 C++）](http://msdn.microsoft.com/zh-cn/library/hh279674.aspx)
-[关于避免循环引用](http://www.dewen.org/q/8560/%E5%85%B3%E4%BA%8E%E9%81%BF%E5%85%8D%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8)
-[Proper stack and heap usage in C++](http://stackoverflow.com/questions/599308/proper-stack-and-heap-usage-in-c)
-[Stack vs. Heap](http://www.programgo.com/article/9288878764/)
+[C++ 智能指针及循环引用问题](http://blog.csdn.net/daniel_ustc/article/details/23096229)  
+[智能指针（现代 C++）](http://msdn.microsoft.com/zh-cn/library/hh279674.aspx)  
+[关于避免循环引用](http://www.dewen.org/q/8560/%E5%85%B3%E4%BA%8E%E9%81%BF%E5%85%8D%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8)  
+[Proper stack and heap usage in C++](http://stackoverflow.com/questions/599308/proper-stack-and-heap-usage-in-c)  
+[Stack vs. Heap](http://www.programgo.com/article/9288878764/)  
