@@ -15,17 +15,19 @@ Thumbs.db
 
 .sass-cache
 
-# ------------------------- react js -------------------------
+Gemfile.lock
+
+# ##### react js #####
 node_modules/
 
-# ------------------------- src files -------------------------
+# ##### src files #####
 !/_posts/code
 
 GPATH
 GRTAGS
 GTAGS
 
-# ------------------------- C++ -------------------------
+# ##### C++ #####
 # Compiled Object files
 *.slo
 *.lo
@@ -55,7 +57,7 @@ GTAGS
 *.out
 *.app
 
-# ------------------------- Python -------------------------
+# ##### Python #####
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -115,7 +117,7 @@ docs/_build/
 # PyBuilder
 target/
 
-# ------------------------- Java -------------------------
+# ##### Java #####
 *.class
 
 # Mobile Tools for Java (J2ME)
