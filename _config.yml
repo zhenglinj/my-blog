@@ -115,8 +115,11 @@ JB:
     # provider: uyan
     # uyan:
     #   short_name: zhenglinj
-    provider: disqus
-    disqus:
+    # provider: disqus
+    # disqus:
+    #   short_name: zhenglinj
+    provider: gitalk
+    gitalk:
       short_name: zhenglinj
     facebook:
       appid: 123
