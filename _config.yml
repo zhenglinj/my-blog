@@ -149,4 +149,4 @@ JB:
   # Set 'provider' to false to turn sharing off globally.
   #
   sharing:
-    provider: jiathis
+    provider: addtoany # jiathis
