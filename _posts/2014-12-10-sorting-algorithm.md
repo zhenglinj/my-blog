@@ -10,7 +10,7 @@ tags: [sorting, technology, notes]
 ---
 {% include JB/setup %}
 
-排序算法简单讲解，因为 Python 比较接近伪代码所以采用 Python 简单实现
+排序算法简单讲解
 
 ---
 
@@ -30,100 +30,50 @@ tags: [sorting, technology, notes]
 
 ## 复杂度比较
 
-| 排序法 | 平均时间        | 最差情形          | 稳定度 | 额外空间       | 备注                          |
-|--------|-----------------|-------------------|--------|----------------|-------------------------------|
-| 冒泡   | $$O(n^2)$$      | $$O(n^2)$$        | 稳定   | $$O(1)$$       | n小时较好                     |
-| 交换   | $$O(n^2)$$      | $$O(n^2)$$        | 不稳定 | $$O(1)$$       | n小时较好                     |
-| 选择   | $$O(n^2)$$      | $$O(n^2)$$        | 不稳定 | $$O(1)$$       | n小时较好                     |
-| 插入   | $$O(n^2)$$      | $$O(n^2)$$        | 稳定   | $$O(1)$$       | 大部分已排序时较好            |
-| 基数   | $$O(log _R B)$$ | $$O(log _R B)$$   | 稳定   | $$O(n)$$       | B是真数(0-9)，R是基数(个十百) |
-| Shell  | $$O(n log n)$$  | $$O(n^s)$$, 1<s<2 | 不稳定 | $$O(1)$$       | s是所选分组                   |
-| 快速   | $$O(n log n)$$  | $$O(n2)$$         | 不稳定 | $$O(n log n)$$ | n大时较好                     |
-| 归并   | $$O(n log n)$$  | $$O(n log n)$$    | 稳定   | $$O(1)$$       | n大时较好                     |
-| 堆     | $$O(n log n)$$  | $$O(n log n)$$    | 不稳定 | $$O(1)$$       | n大时较好                     |
+[zh.Wikipedia](https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95)  
+[en.Wikipedia](https://en.wikipedia.org/wiki/Sorting_algorithm)  
+
+| 排序法 | 稳定度 | 平均时间         | 最差情形          | 额外空间       | 备注                          |
+|--------|--------|------------------|-------------------|----------------|-------------------------------|
+| 冒泡   | 稳定   | $$O(n^2)$$       | $$O(n^2)$$        | $$O(1)$$       | n小时较好                     |
+| 选择   | 不稳定 | $$O(n^2)$$       | $$O(n^2)$$        | $$O(1)$$       | n小时较好                     |
+| 插入   | 稳定   | $$O(n^2)$$       | $$O(n^2)$$        | $$O(1)$$       | 大部分已排序时较好            |
+| 堆排   | 不稳定 | $$O(n log n)$$   | $$O(n log n)$$    | $$O(1)$$       | n大时较好                     |
+| 归并   | 稳定   | $$O(n log n)$$   | $$O(n log n)$$    | $$O(1)$$       | n大时较好                     |
+| 快速   | 不稳定 | $$O(n log n)$$   | $$O(n2)$$         | $$O(n log n)$$ | n大时较好                     |
+| 希尔   | 不稳定 | $$O(n log^2 n)$$ | $$O(n^s)$$, 1<s<2 | $$O(1)$$       | s是所选分组                   |
+| 基数   | 稳定   | $$O(log _R B)$$  | $$O(log _R B)$$   | $$O(n)$$       | B是真数(0-9)，R是基数(个十百) |
 
 ## 简单实现
 
-C++和Python实现：
-
+C++实现：
 ```cpp
-{% include_relative code/xxx_sort.h %}
+{% include_relative code/xxx_sort.hpp %}
 ```
-
-```python
-{% include_relative code/xxx_sort.py %}
+```cpp
+{% include_relative code/xxx_sort_test.cpp %}
 ```
-
-演示输出结果：
-
-````markdown
-Selection sort
-Origin: [8, 4, 3, 1, 9, 6, 5, 7, 2, 0]
-Result: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-Bubble sort
-Origin: [8, 4, 3, 1, 9, 6, 5, 7, 2, 0]
-Result: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-Quick sort
-Origin: [8, 4, 3, 1, 9, 6, 5, 7, 2, 0]
-Devide: [0, 4, 3, 1, 2, 6, 5, 7] 8 [9]
-Devide:  0 [4, 3, 1, 2, 6, 5, 7]
-   Devide: [2, 3, 1] 4 [6, 5, 7]
-   Devide: [1] 2 [3]
-   Concat: [1, 2, 3]
-               Devide: [5] 6 [7]
-               Concat: [5, 6, 7]
-   Concat: [1, 2, 3, 4, 5, 6, 7]
-Concat: [0, 1, 2, 3, 4, 5, 6, 7]
-Concat: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-Result: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-Merge sort
-Origin: [8, 4, 3, 1, 9, 6, 5, 7, 2, 0]
-Devide: [8, 4, 3, 1, 9][6, 5, 7, 2, 0]
-:   Devide: [8, 4][3, 1, 9]
-:   :   Devide: [8][4]
-:   :   Merge:  [4, 8]
-:   :   Devide: [3][1, 9]
-:   :   :   Devide: [1][9]
-:   :   :   Merge:  [1, 9]
-:   :   Merge:  [1, 3, 9]
-:   Merge:  [1, 3, 4, 8, 9]
-:   Devide: [6, 5][7, 2, 0]
-:   :   Devide: [6][5]
-:   :   Merge:  [5, 6]
-:   :   Devide: [7][2, 0]
-:   :   :   Devide: [2][0]
-:   :   :   Merge:  [0, 2]
-:   :   Merge:  [0, 2, 7]
-:   Merge:  [0, 2, 5, 6, 7]
-Merge:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-Result: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-````
 
 ## 延伸问题及解答
 
 排序算法可以延伸解决其他问题，以下是几个例子：
 
--  Random shuffle 随机化序列（洗牌算法）
-   **简介**：可以用一句伪代码表达 `for i:=1 to n do swap(a[i], a[random(1,i)]);`
-   **证明**：见[这里](../../../2014/12/11/prove-random-shuffle.html)
--  序列的逆序数
-   **简介**：可以用类似 冒泡排序 或 归并排序 解决
-   **证明**：略
--  TODO
+**问题1** 给定序列，Random shuffle 随机化序列（洗牌算法）  
+   **思路**：类似与选择排序。随机选择第1到第i之间的数与第i交换，可以用一句伪代码表达 `for i:=1 to n do swap(a[i], a[random(1,i)]);`  
+   **证明**：见[这里](../../../2014/12/11/prove-random-shuffle.html)  
 
-代码如下：
+**问题2** 给定序列，求序列的逆序数  
+   **思路**：可以用类似 冒泡排序 或 归并排序 解决来求解。冒泡排序的思路，计数第i个数向右侧冒泡的次数，累计冒泡总数。归并排序的思路，每次归并两个已排序序列发现右侧逆序数可以根据左侧序列所剩长度求和求得，具体逻辑见代码。归并排序的思路有更好的时间效率  
+   **证明**：略  
 
+分别给出Python代码解答如下：  
 ````python
 {% include_relative code/sorting_extention.py %}
 ````
 
 输出结果：
-
 ````markdown
-[3, 8, 6, 7, 9, 2, 1, 5, 0, 4]
-The number of inversions:  30
-The number of inversions:  30
+The array after random shuffle:  [8, 1, 9, 4, 5, 3, 0, 7, 6, 2]
+The inversions number of array  [3, 8, 6, 7, 9, 2, 1, 5, 0, 4] :  30
+The inversions number of array  [3, 8, 6, 7, 9, 2, 1, 5, 0, 4] :  30
 ````
