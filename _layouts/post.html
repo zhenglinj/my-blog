@@ -11,10 +11,10 @@ layout: default
         {{ content }}
         <hr>
         <p>[转载注明]：<a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a></p>
+        <p>{% include JB/sharing %}</p>
         <section align="right">
           <span>
             <a {% if page.previous %} href="{{ page.previous.url }}" class="pageNav"{% endif %} {% unless page.previous %} class="pageNavInvalid" {% endunless %} >Previous</a>
-            &nbsp;&nbsp;&nbsp;
             <a {% if page.next %} href="{{ page.next.url }}" class="pageNav"{% endif %} {% unless page.next %} class="pageNavInvalid" {% endunless %} >Next</a>
           </span>
         </section>
