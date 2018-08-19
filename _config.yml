@@ -32,6 +32,8 @@ twitter_username:
 github_username: zhenglinj
 logo: /assets/favicon128x128.png # path of site logo, e.g. "/assets/images/logo.png"
 
+words_per_minute: 120
+
 search: true # true, false (default)
 search_full_content: false # true, false (default)
 search_provider: lunr # lunr (default), algolia
@@ -116,8 +118,10 @@ JB:
     # provider: uyan
     # uyan:
     #   short_name: zhenglinj
-    provider: disqus
-    disqus:
+    provider: livere
+    # disqus:
+    #   short_name: zhenglinj
+    livere:
       short_name: zhenglinj
     # provider: gitalk
     # gitalk:

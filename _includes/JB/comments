@@ -9,6 +9,8 @@
   {% include JB/comments-providers/duoshuo %}
 {% when "disqus" %}
   {% include JB/comments-providers/disqus %}
+{% when "livere" %}
+  {% include JB/comments-providers/livere %}
 {% when "gitalk" %}
   {% include JB/comments-providers/gitalk %}
 {% when "livefyre" %}
