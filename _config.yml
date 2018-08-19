@@ -60,7 +60,8 @@ kramdown:
   #   coderay_tab_width:         2
   #   coderay_bold_every:        10
   #   coderay_css:               style
-theme: jekyll-theme-basically-basic
+# theme: jekyll-theme-basically-basic
+remote_theme: "mmistakes/jekyll-theme-basically-basic"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
