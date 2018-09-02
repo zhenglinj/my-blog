@@ -9,20 +9,18 @@ layout: default
     <article class="entry-wrap">
       <div class="entry-content">
         {{ content }}
-        <hr>
-        <p>[From]:<a href="{{ site.url }}{{ page.url }}">{{ site.url }}</a></p>
-        <p>{% include JB/sharing %}</p>
+        <hr/>
+        <p>[From]:&nbsp;<a href="{{ site.url }}{{ page.url }}">{{ site.url }}</a></p>
         <section align="right">
           <span>
             <a {% if page.previous %} href="{{ page.previous.url }}" class="pageNav"{% endif %} {% unless page.previous %} class="pageNavInvalid" {% endunless %} >Previous</a>
             <a {% if page.next %} href="{{ page.next.url }}" class="pageNav"{% endif %} {% unless page.next %} class="pageNavInvalid" {% endunless %} >Next</a>
           </span>
         </section>
+        <hr/>
+        {% include JB/sharing %}
         {% include JB/comments %}
       </div>
-      {% if site.disqus.shortname %}
-      {% include disqus_comments.html %}
-      {% endif %}
     </article>
 
     {% include footer.html %}
