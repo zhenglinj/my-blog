@@ -5,8 +5,15 @@ layout: about
 
 ### 关于我:
 
-程序员，热爱数学，编程。  
-technology + mathematic + thought = my blog   
+- 程序员
+- 热爱数学/编程
+- 业余健身爱好者
+- 老年足球选手
+- 老年游戏玩家
+
+### 关于本博客：
+
+Technology + Mathematic + Thought = MyBlog
 
 ### 联系方式：
 
@@ -18,4 +25,4 @@ QQ : [{{ site.author.qq }}](http://wpa.qq.com/msgrd?v=3&uin=657006463&site=qq&me
 
 ----
 
-本博客clone自[mmistakes](https://github.com/mmistakes/jekyll-theme-basically-basic)，在此非常感谢这个简洁漂亮的主题。
+本博客clone自[mmistakes](https://github.com/mmistakes/jekyll-theme-basically-basic)，在此非常感谢该作者分享的这个简洁漂亮主题。
