@@ -1,6 +1,6 @@
 ---
 title: "Spring Boot + React.js Web Application"
-excerpt: "用 Spring Boot + React.js 创建 Web Application"
+excerpt: "Spring Boot作为后端框架，React.js作为前端框架的单页面网站示例，Web Application微服务"
 category: "technology"
 analytics: true
 comments: true
@@ -8,13 +8,16 @@ tags: [spring-boot, reactjs]
 ---
 {% include JB/setup %}
 
-<!-- TODO -->
+Spring Boot作为后端框架，React.js作为前端框架的单页面网站示例，Web Application微服务
 
 ---
 
 ## Spring Boot + React.js
 
-### Maven Structure
+Spring Boot是目前流行的Java后端框架，相比于SpringMVC配置更简单，习惯约定的默认配置。  
+React.js是目前流行的前端框架，相比于Vue.js更适合写大型项目。  
+
+### 前后端分离Maven工程结构
 
 工程的目录结构按照前端、后端分开。`backend`, `frontend`
 
@@ -172,18 +175,106 @@ boot-react
 </project>
 ```
 
-### Backend
+### 后端介绍
 
-[Spring Boot Offical](http://projects.spring.io/spring-boot/)  
-[MyBatis Offical](http://www.mybatis.org/mybatis-3/zh/)  
+- [Spring Boot](https://spring.io/projects/spring-boot) Spring Boot官方网站教程  
 
-### Frontend
+由于前端React.js框架写的单页面网页，后端要相应配置资源请求定向到更目录URL。配置代码如下：
 
-[React](https://facebook.github.io/react/)  
-[Redux](http://redux.js.org/)  
-[React + Redux react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)  
+```java
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.util.StringUtils;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.resource.ResourceResolver;
+import org.springframework.web.servlet.resource.ResourceResolverChain;
 
-### Spring Boot + React.js maven project
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * Redirects every page to index.html
+ * Used to handle the router
+ */
+@Configuration
+public class SinglePageAppConfig extends WebMvcConfigurerAdapter {
+
+  @Override
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    registry.addResourceHandler("/**")
+      .addResourceLocations("classpath:/static/")
+      .resourceChain(false)
+      .addResolver(new PushStateResourceResolver());
+  }
+
+  private class PushStateResourceResolver implements ResourceResolver {
+    private Resource index = new ClassPathResource("/static/index.html");
+    private List<String> handledExtensions = Arrays.asList("html", "js", "json", "csv", "css", "png", "svg", "eot", "ttf", "woff", "appcache", "jpg", "jpeg", "gif", "ico");
+    private List<String> ignoredPaths = Arrays.asList("api");
+
+    @Override
+    public Resource resolveResource(HttpServletRequest request, String requestPath, List<? extends Resource> locations, ResourceResolverChain chain) {
+      return resolve(requestPath, locations);
+    }
+
+    @Override
+    public String resolveUrlPath(String resourcePath, List<? extends Resource> locations, ResourceResolverChain chain) {
+      Resource resolvedResource = resolve(resourcePath, locations);
+      if (resolvedResource == null) {
+        return null;
+      }
+      try {
+        return resolvedResource.getURL().toString();
+      } catch (IOException e) {
+        return resolvedResource.getFilename();
+      }
+    }
+
+    private Resource resolve(String requestPath, List<? extends Resource> locations) {
+      if (isIgnored(requestPath)) {
+        return null;
+      }
+      if (isHandled(requestPath)) {
+        return locations.stream()
+          .map(loc -> createRelative(loc, requestPath))
+          .filter(resource -> resource != null && resource.exists())
+          .findFirst()
+          .orElseGet(null);
+      }
+      return index;
+    }
+
+    private Resource createRelative(Resource resource, String relativePath) {
+      try {
+        return resource.createRelative(relativePath);
+      } catch (IOException e) {
+        return null;
+      }
+    }
+
+    private boolean isIgnored(String path) {
+      return ignoredPaths.contains(path);
+    }
+
+    private boolean isHandled(String path) {
+      String extension = StringUtils.getFilenameExtension(path);
+      return handledExtensions.stream().anyMatch(ext -> ext.equals(extension));
+    }
+  }
+}
+```
+
+### 前端介绍
+
+- [React](https://facebook.github.io/react/)是基本框架  
+- [Redux](http://redux.js.org/)(a predictable state container for JavaScript apps)，用于保存页面状态  
+- [React + Redux react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example) GitHub上教科书一般的示例，值得深入学习  
+
+## Spring Boot + React.js 完整代码
 
 [SpringBoot+Reactjs boot-react](https://github.com/zhenglinj/boot-react)
 
