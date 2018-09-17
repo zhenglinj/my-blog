@@ -6,7 +6,7 @@ category: "technology"
 draft: false
 analytics: true
 comments: true
-tags: [jekyll, markdown, notes]
+tags: [jekyll, markdown]
 ---
 {% include JB/setup %}
 
