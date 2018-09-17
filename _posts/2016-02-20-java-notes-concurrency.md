@@ -6,7 +6,7 @@ category: "technology"
 draft: false
 analytics: true
 comments: true
-tags: [java, notes]
+tags: [java]
 ---
 {% include JB/setup %}
 
