@@ -15,7 +15,7 @@ Thumbs.db
 
 .sass-cache
 
-Gemfile.lock
+#Gemfile.lock
 
 # ##### react js #####
 node_modules/
