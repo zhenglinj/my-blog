@@ -6,7 +6,7 @@ category: "technology"
 draft: false
 analytics: true
 comments: true
-tags: [C++]
+tags: [c++]
 ---
 {% include JB/setup %}
 
