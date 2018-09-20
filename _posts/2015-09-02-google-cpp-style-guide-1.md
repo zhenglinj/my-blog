@@ -3,7 +3,7 @@ layout: post
 title: "Google C++ Style Guide中英对照 (1)"
 excerpt: "Google C++ Style Guide翻译版中英对照"
 category: "technology"
-tags: [C++, google]
+tags: [c++, google]
 ---
 {% include JB/setup %}
 
