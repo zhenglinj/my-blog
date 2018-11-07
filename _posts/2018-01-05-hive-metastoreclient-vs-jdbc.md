@@ -34,7 +34,37 @@ Hive Metastore服务和Metastore数据库部署在不同的主机，用JDBC连�
 
 具体的配置过程见Cloudera文档[Configuring the Hive Metastore](https://www.cloudera.com/documentation/enterprise/5-8-x/topics/cdh_ig_hive_metastore_configure.html)
 
-## Hive MetaStoreClient VS JDBC HiveQL
+## HiveMetaStoreClient, HiveJdbcDriver
+
+> using hive metastore server, which then connects in the background to a relational db such as mysql for schema manifestation. This runs on port 9083, generally.
+>
+> using hive jdbc server, called HiveServer2, which runs on port 10001, generally
+>
+> Now, in the earlier editions of hive, hiveserver2 used to be not so stable and in fact it's multi-threading support was also limited. Things have probably improved in that arena, I'd imagine.
+> 
+> So for JDBC api - yes, it would let you communicate using JDBC and sql.
+> 
+> For the metastore connectivity, there appear to be 2 features.
+> 
+> - to actually run SQL queries - DML
+> - to perform DDL operations - DDL
+> 
+> DDL, the metastore APIs come in handy, org.apache.hadoop.hive.metastore.HiveMetaStoreClient HiveMetaStoreClient class can be utilized for that purpose
+> 
+> DML, what I have found useful in this regard is the org.apache.hadoop.hive.ql.Driver https://hive.apache.org/javadocs/r0.13.1/api/ql/org/apache/hadoop/hive/ql/Driver.html hive.ql.Driver class This class has a method called run() which lets you execute a SQL statement and get the result back. for e.g. you can do following
+> 
+> ```
+> Driver driver = new Driver(hiveConf);
+> HiveMetaStoreClient client = new HiveMetaStoreClient(hiveConf);
+> SessionState.start(new CliSessionState(hiveConf));
+> driver.run("select  * from employee);
+> // DDL example
+> client.dropTable(db, table);
+> ```
+
+### HiveMetaStoreClient, HiveJdbcDriver, HiveServer2
+
+
 
 ## 参考
 
