@@ -53,7 +53,7 @@ Hive Metastore服务和Metastore数据库部署在不同的主机，用JDBC连�
 > 
 > DML, what I have found useful in this regard is the org.apache.hadoop.hive.ql.Driver https://hive.apache.org/javadocs/r0.13.1/api/ql/org/apache/hadoop/hive/ql/Driver.html hive.ql.Driver class This class has a method called run() which lets you execute a SQL statement and get the result back. for e.g. you can do following
 > 
-> ```
+> ```java
 > Driver driver = new Driver(hiveConf);
 > HiveMetaStoreClient client = new HiveMetaStoreClient(hiveConf);
 > SessionState.start(new CliSessionState(hiveConf));
@@ -75,3 +75,4 @@ Hive Metastore服务和Metastore数据库部署在不同的主机，用JDBC连�
 [https://community.hortonworks.com/questions/21993/hcatalog-and-kerberos.html](https://community.hortonworks.com/questions/21993/hcatalog-and-kerberos.html)
 
 [https://github.com/onefoursix/Cloudera-Impala-JDBC-Example](https://github.com/onefoursix/Cloudera-Impala-JDBC-Example)
+
