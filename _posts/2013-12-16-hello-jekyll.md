@@ -122,7 +122,7 @@ Jekyll 可以采用不同的 Markdown 解释器，如：Maruku, Redcarpet和Kram
 | Default aligned |Left aligned| Center aligned  | Right aligned  |
 |-----------------|:-----------|:---------------:|---------------:|
 | First body part |Second cell | Third cell      | fourth cell    |
-| Second line     |foo         | **strong**      | baz            |
+| Second line     |foo         | **strong**     | baz            |
 | Third line      |quux        | baz             | bar            |
 |-----------------|------------|-----------------|----------------|
 | Second body     |            |                 |                |
@@ -213,14 +213,14 @@ kramdown:
 **示例：**
 
 ````markdown
-```cpp
+​```cpp
 class Voila {
 public:
     // Voila
     static const string VOILA = "Voila";
     // will not interfere with embedded tags.
 }
-```
+​```
 ````
 
 **效果：**
