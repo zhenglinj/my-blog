@@ -137,3 +137,9 @@ hs_err_pid*
 # reactjs source-map file
 /app/built/bundle.js.map
 .tern-port
+
+# hexo
+db.json
+/public/*
+# hexo deployer
+.deploy_*
