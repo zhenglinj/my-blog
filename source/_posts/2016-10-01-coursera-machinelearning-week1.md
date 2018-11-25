@@ -1,10 +1,9 @@
 ---
-title: "coursera机器学习第一周笔记"
+title: "Coursera Andrew Ng 机器学习第一周笔记"
 categories: "technology"
 tags:
   - machine-learning
 ---
-
 
 ---
 
