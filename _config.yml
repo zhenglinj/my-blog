@@ -92,6 +92,12 @@ deploy:
 # ---------------------------------------------------------------
 # Third Party Services/Plugins Settings
 # ---------------------------------------------------------------
+## Local Search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 ## MathJax https://github.com/hexojs/hexo-math
 math:
@@ -106,6 +112,7 @@ math:
     config:
       # KaTeX config
 
+## Flowchart
 flowchart:
   # raphael:   # optional, the source url of raphael.js
   # flowchart: # optional, the source url of flowchart.js
