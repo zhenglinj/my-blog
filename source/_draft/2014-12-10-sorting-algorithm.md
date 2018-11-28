@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "常用排序算法介绍"
 categories: "technology"
 tags: [sorting, technology]

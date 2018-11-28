@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "Hive MetaStoreClient VS JDBC HiveQL"
 categories: "technology"
 tags:

@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "Java 从零进阶 - JVM"
 categories: "technology"
 tags:

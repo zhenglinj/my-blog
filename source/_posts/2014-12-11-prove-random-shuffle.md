@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "洗牌算法 Random shuffle 证明"
 categories: "mathematic"
 tags: 

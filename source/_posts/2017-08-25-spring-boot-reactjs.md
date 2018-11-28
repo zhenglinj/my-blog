@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "Spring Boot + React.js Web Application"
 categories: "technology"
 tags:

@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "Java 从零进阶 - 语言基础"
 categories: "technology"
 tags:

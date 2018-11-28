@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "Java 从零进阶 - 并发编程"
 categories: "technology"
 tags: 

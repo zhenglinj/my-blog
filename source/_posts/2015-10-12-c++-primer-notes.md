@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "C++ Primer 第5版笔记"
 categories: "technology"
 tags: [c++]

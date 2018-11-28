@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "Hello Markdown"
 categories: "technology"
 tags:

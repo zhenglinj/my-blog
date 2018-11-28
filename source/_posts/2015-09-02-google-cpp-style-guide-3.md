@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "Google C++ Style Guide中英对照 (3)"
 categories: "technology"
 tags:
